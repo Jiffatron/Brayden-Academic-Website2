@@ -59,7 +59,7 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
     >
       <motion.nav
-        className={`glass px-6 ${scrolled ? "py-2 shadow-md" : "py-4"}`}
+        className={`glass-nav px-6 ${scrolled ? "py-2 shadow-lg" : "py-4"}`}
         initial="visible"
         animate={visible ? "visible" : "hidden"}
         variants={navbarVariants}
@@ -67,7 +67,7 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
       >
         <div className="flex justify-between items-center">
           <a href="#hero" className="text-2xl font-serif font-bold text-primary hover:text-primary/80 transition-colors">
-            BMS
+            BJ
           </a>
 
           {/* Desktop Navigation */}
@@ -109,7 +109,7 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`md:hidden glass flex flex-col py-4 px-6 space-y-4 transition-all duration-300 ${
+        className={`md:hidden glass-nav flex flex-col py-4 px-6 space-y-4 transition-all duration-500 ${
           isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >

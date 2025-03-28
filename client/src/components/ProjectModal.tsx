@@ -48,7 +48,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
         tabIndex={-1}
       >
         <motion.div
-          className="absolute inset-0 bg-[hsl(var(--navy-dark))] bg-opacity-90 backdrop-blur-sm"
+          className="absolute inset-0 bg-[hsl(var(--navy-dark))] bg-opacity-75 backdrop-blur-md"
           initial="hidden"
           animate="visible"
           exit="hidden"
@@ -58,7 +58,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
         />
         
         <motion.div
-          className="relative bg-card rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto m-4"
+          className="relative glass-card rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto m-4 border border-primary/20"
           initial="hidden"
           animate="visible"
           exit="hidden"
@@ -87,7 +87,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 <div className="mb-4 flex justify-between items-center">
                   <button 
                     onClick={() => setShowPdfPreview(false)}
-                    className="text-primary hover:text-primary/80 transition-colors flex items-center gap-2"
+                    className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-md text-primary hover:bg-primary/20 transition-colors flex items-center gap-2 shadow-md"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="19" y1="12" x2="5" y2="12"></line>
@@ -98,7 +98,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                   <a 
                     href={project.pdfUrl} 
                     download
-                    className="text-primary hover:text-primary/80 transition-colors flex items-center gap-2"
+                    className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/80 transition-colors flex items-center gap-2 shadow-md"
                     onClick={handleDownloadPdf}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -111,17 +111,20 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 </div>
                 <iframe
                   src={project.pdfUrl}
-                  className="w-full h-[70vh] border border-border rounded"
+                  className="w-full h-[70vh] border border-primary/20 rounded-lg shadow-lg"
                   title={`${project.title} PDF`}
                 ></iframe>
               </div>
             ) : (
               <>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover rounded mb-6"
-                />
+                <div className="relative overflow-hidden rounded-lg mb-6 shadow-lg">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--navy-dark))] to-transparent opacity-40"></div>
+                </div>
                 <h2 className="text-2xl font-serif font-bold mb-4">{project.title}</h2>
                 <div
                   className="prose prose-sm max-w-none dark:prose-invert"
@@ -129,11 +132,31 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 />
                 
                 {project.hasPreview && project.pdfUrl && (
-                  <div 
-                    className="view-preview-btn-container" 
-                    onClick={handleViewInBrowser}
-                  >
-                    {/* The view-preview-btn class is used to attach event listeners for preview */}
+                  <div className="mt-6 flex flex-wrap gap-4">
+                    <button
+                      onClick={handleViewInBrowser}
+                      className="view-preview-btn px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/80 transition-colors flex items-center gap-2 shadow-md"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                      View in Browser
+                    </button>
+                    <a
+                      href={project.pdfUrl}
+                      download
+                      className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-md text-primary hover:bg-primary/20 transition-colors flex items-center gap-2 shadow-md"
+                      onClick={handleDownloadPdf}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                      </svg>
+                      Download PDF
+                    </a>
+                    <div className="view-preview-btn-container hidden" onClick={handleViewInBrowser}></div>
                   </div>
                 )}
               </>

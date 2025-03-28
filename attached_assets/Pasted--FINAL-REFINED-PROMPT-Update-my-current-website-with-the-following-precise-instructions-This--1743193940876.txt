@@ -1,0 +1,53 @@
+⚙️ FINAL REFINED PROMPT:
+🚨 Update my current website with the following precise instructions. This is critical — do not make assumptions. Follow everything exactly.
+
+🔧 Content Corrections:
+Replace any mention of a minor in Accounting with:
+❌ "Accounting" ➜ ✅ No official minor
+
+Remove all references to fraternity or Greek life — I was never involved in a fraternity.
+
+In the bio or about section, use this updated copy instead:
+
+"I'm Brayden Judge, a senior Finance major at Texas Tech University. My interests include financial modeling, public and private sector investment analysis, and the intersection of AI and capital markets. I’m currently interning at the Municipal Advisory Council of Texas, working with public bond data and fiscal reporting. I’m passionate about data-driven decision-making and long-term economic impact."
+
+Correct any reference to schools, degrees, or affiliations not explicitly stated above.
+
+🎨 Visual & Theme Update:
+Switch to a dark theme — base it on deep navy, charcoal black, and cool neutrals, with accent tones like electric cyan, muted gold, or subtle gradient hues.
+
+Use glassmorphism or subtle 3D-style depth in the background. Example: layered card shadows, blur-glass UI elements, or parallax effects.
+
+Font pair:
+
+Headings: Playfair Display or Sora
+
+Body: Inter, DM Sans, or Space Grotesk
+
+Add smooth scrolling animation and slight section transitions (fade-in, slide-up, etc.) for a luxury modern UX feel.
+
+🧠 Functional Enhancements:
+Keep all current sections (About, Research, Resume, Blog, Contact).
+
+Add a dark/light mode toggle in the top-right corner.
+
+Add smooth scroll-to-anchor navigation when clicking header links.
+
+In the "Projects" or "Research" section, give each card:
+
+A floating effect on hover
+
+A “Read More” modal or expandable section to explain project details
+
+Add an optional "Download Resume" button below the Resume section.
+
+If possible, show a "Last Updated" timestamp at the bottom of the site in a tiny font.
+
+✅ Content to Keep:
+The overall structure and layout look fantastic — keep that!
+
+Keep the professional tone and single-page navigation feel.
+
+Keep the contact form and LinkedIn link.
+
+✨ Reminder: This site is intended to feel like a custom-designed, luxury academic site — something that looks like it was made by a high-end agency.

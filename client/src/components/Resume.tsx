@@ -86,7 +86,6 @@ const Resume = () => {
               <p className="text-primary text-sm mb-2">
                 Bachelor of Business Administration in Finance | 2020 - 2024
               </p>
-              <p className="text-muted-foreground mb-3">Minor in Accounting</p>
               <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• GPA: 3.8/4.0</li>
                 <li>• Relevant Coursework: Security Analysis & Portfolio Management, Intermediate Corporate Finance, Management Information Systems, Financial Statement Analysis</li>

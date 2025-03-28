@@ -53,13 +53,7 @@ const About = () => {
         <div className="grid md:grid-cols-5 gap-12 items-start">
           <motion.div className="md:col-span-3" variants={itemVariants}>
             <p className="text-lg leading-relaxed mb-6">
-              I'm a finance professional with a strong background in financial analysis and investment strategies. Currently pursuing my education at Texas Tech University, I focus on understanding market dynamics and quantitative methods in finance.
-            </p>
-            <p className="text-lg leading-relaxed mb-6">
-              My academic journey has been focused on mastering financial modeling, investment analysis, and understanding how market forces shape economic outcomes. I'm particularly fascinated by the intersection of traditional finance and emerging technologies.
-            </p>
-            <p className="text-lg leading-relaxed mb-6">
-              Outside of my academic pursuits, I enjoy analyzing market trends, exploring data visualization techniques, and staying current with developments in financial technology and investment strategies.
+              I'm Brayden Judge, a senior Finance major at Texas Tech University. My interests include financial modeling, public and private sector investment analysis, and the intersection of AI and capital markets. I'm currently interning at the Municipal Advisory Council of Texas, working with public bond data and fiscal reporting. I'm passionate about data-driven decision-making and long-term economic impact.
             </p>
             <div className="mt-8">
               <h3 className="text-xl font-medium mb-4">Core Interests</h3>
@@ -96,7 +90,7 @@ const About = () => {
               <div className="absolute -left-4 -top-4 w-full h-full border-2 border-primary z-0"></div>
               <img 
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Portrait of Brayden Swavey" 
+                alt="Portrait of Brayden Judge" 
                 className="relative z-10 rounded shadow-lg w-full"
               />
             </div>

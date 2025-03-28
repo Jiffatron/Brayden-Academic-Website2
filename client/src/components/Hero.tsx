@@ -69,13 +69,13 @@ const Hero = () => {
           >
             <a
               href="#research"
-              className="px-6 py-3 border-2 border-primary text-primary rounded hover:bg-primary hover:bg-opacity-10 transition-all duration-300"
+              className="px-6 py-3 border-2 border-primary text-primary rounded-md hover:bg-primary hover:bg-opacity-10 transition-all duration-300 backdrop-blur-sm"
             >
               View Research
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/80 transition-colors duration-300"
+              className="px-6 py-3 bg-primary text-primary-foreground font-medium rounded-md shadow-lg hover:bg-primary/80 transition-colors duration-300 hover:shadow-primary/25 hover:shadow-xl"
             >
               Get in Touch
             </a>
@@ -89,14 +89,15 @@ const Hero = () => {
           variants={containerVariants}
         >
           <motion.div
-            className="headshot-container w-64 h-64 md:w-80 md:h-80"
+            className="headshot-container w-64 h-64 md:w-80 md:h-80 depth-effect"
             variants={itemVariants}
           >
             <img
               src="https://images.unsplash.com/photo-1571512599661-302b13ab1bfb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               alt="Brayden Swavey headshot"
-              className="object-cover w-full h-full rounded shadow-lg"
+              className="object-cover w-full h-full rounded-lg shadow-xl"
             />
+            <div className="absolute inset-0 bg-primary/10 mix-blend-overlay rounded-lg"></div>
           </motion.div>
         </motion.div>
       </div>
