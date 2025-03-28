@@ -1,0 +1,90 @@
+Build me a fully responsive, high-end personal academic website inspired by https://lawrencezhao.com/, but with an extremely unique, luxury-grade UI and modern web design aesthetics. The site should feel like it cost over $10,000 to design and develop. Prioritize elegance, clarity, performance, and minimalism.
+
+🔹 Site Overview:
+This is a personal academic site for a professor or PhD-level researcher in finance or quantitative economics.
+
+The layout should follow a single-page scroll OR separate pages, depending on what suits a clean UX.
+
+Avoid templates that look generic — I want subtle animations, custom typography, and artistic balance in layout.
+
+🔹 Required Sections (Matching Lawrence Zhao's content):
+Header / Hero
+
+Professional headshot (use placeholder).
+
+Name: Brayden Judge
+
+Title: Undergraduate Student | Finance | Texas Tech University
+
+Subtext: Short mission line — "Exploring the quantitative backbone of markets and decision-making."
+
+Include minimalist navbar linking to: About / Research / Resume / Blog / Contact.
+
+Consider a parallax effect or slight hero animation on scroll.
+
+About
+
+Bio with professional tone but personable.
+
+Example: "I'm a senior undergraduate student in finance at Texas Tech University. My interests include financial modeling, public and private sector investment analysis, and the intersection of AI and market behavior."
+
+Include a sharp portrait photo (placeholder OK).
+
+Research / Projects
+
+Section for describing major projects, including:
+
+Equity research (e.g., Boeing)
+
+Financial statement analysis (e.g., Municipal Advisory Council internship)
+
+Academic interests like Efficient Market Hypothesis, interest rate risk, and public finance
+
+Styled like journal entries or elegant cards, with hover animations and expandable text.
+
+Resume / CV
+
+Button to download PDF resume
+
+Also embed resume content into the page, styled in a clean, readable format with sections: Education, Experience, Skills, Certifications.
+
+Blog
+
+Simple, clean blog feed layout for future posts
+
+Each post has a bold title, date, short preview, and elegant "Read More" link.
+
+Contact
+
+Professional contact form: Name / Email / Message
+
+Email address shown: brayden.judge@email.com (or placeholder)
+
+Minimalist social icons (LinkedIn, GitHub)
+
+🎨 Design Style:
+Use a dark theme or ultra-clean light theme with unique color palette (deep navy + electric cyan OR ivory white + muted earth tones).
+
+Ultra-smooth UI/UX: section transitions, subtle motion, floating nav bar.
+
+Custom typography — pair one serif (e.g., Playfair Display) with a geometric sans-serif (e.g., DM Sans, Inter).
+
+Soft shadows, glassmorphism, or tasteful gradients OK if subtle.
+
+Responsive and pixel-perfect on mobile, tablet, and desktop.
+
+🔍 Technical Considerations:
+Fully responsive
+
+Clean semantic HTML and accessible markup
+
+Fast loading speed with image optimization and compressed CSS/JS
+
+SEO-optimized for academic/professional name queries
+
+Optional: light/dark mode toggle
+
+🧠 Tone of Voice:
+Intelligent, clean, approachable, modern
+
+Avoid fluff, focus on content that demonstrates thought leadership and depth
