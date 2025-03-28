@@ -50,7 +50,9 @@ const Resume = () => {
             <span className="absolute -bottom-2 left-0 w-1/2 h-px bg-primary"></span>
           </h2>
           <a
-            href="#"
+            href="https://drive.google.com/file/d/1Gk2Wzzja44Y-cep4V7VrF0CeJ75Y0d_h/view"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-4 md:mt-0 px-5 py-2 border-2 border-primary text-primary rounded flex items-center hover:bg-primary hover:bg-opacity-10 transition-all duration-300"
           >
             <i className="fas fa-download mr-2"></i>
@@ -71,19 +73,18 @@ const Resume = () => {
             <div className="timeline-item mb-8 pl-4">
               <h4 className="text-xl font-medium">Texas Tech University</h4>
               <p className="text-primary text-sm mb-2">
-                Bachelor of Science in Finance | 2020 - 2024
+                Bachelor of Science in Industrial Engineering | 2019 - 2023
               </p>
-              <p className="text-muted-foreground mb-3">Minor in Economics</p>
+              <p className="text-muted-foreground mb-3">Minor in Business Administration</p>
               <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• GPA: 3.92/4.0</li>
-                <li>• Dean's List: 8 consecutive semesters</li>
+                <li>• GPA: 3.2/4.0</li>
+                <li>• Alpha Pi Mu (Industrial Engineering Honor Society)</li>
                 <li>
-                  • Honors Thesis: "Quantitative Analysis of Market Efficiency in
-                  Post-Pandemic Recovery"
+                  • Senior Design Project: "Optimization of Manufacturing Process Flow and Quality Assurance"
                 </li>
                 <li>
-                  • Relevant Coursework: Financial Modeling, Investment Analysis,
-                  Advanced Corporate Finance, Econometrics
+                  • Relevant Coursework: Quality Assurance & Engineering Statistics, 
+                  Operations Research, Production/Inventory Control, Manufacturing Engineering
                 </li>
               </ul>
             </div>
@@ -96,75 +97,64 @@ const Resume = () => {
             </h3>
 
             <div className="timeline-item mb-8 pl-4">
-              <h4 className="text-xl font-medium">Municipal Advisory Council</h4>
+              <h4 className="text-xl font-medium">ASML</h4>
               <p className="text-primary text-sm mb-2">
-                Financial Analysis Intern | Summer 2023
+                Quality Engineer | 2023 - Present
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li>
-                  • Conducted comprehensive financial statement analysis for 15+
-                  municipal entities
+                  • Implement and maintain quality assurance systems for semiconductor manufacturing equipment
                 </li>
                 <li>
-                  • Developed spreadsheet models to assess debt service coverage
-                  and financial stability
+                  • Analyze quality data to identify trends and recommend improvements to manufacturing processes
                 </li>
                 <li>
-                  • Assisted in drafting advisory reports for municipal clients
-                  regarding capital structure optimization
+                  • Collaborate with cross-functional teams to resolve quality issues and implement corrective actions
                 </li>
                 <li>
-                  • Presented findings to senior advisors and contributed to
-                  client presentations
+                  • Conduct quality inspections and audits to ensure compliance with standards and specifications
                 </li>
               </ul>
             </div>
 
             <div className="timeline-item mb-8 pl-4">
-              <h4 className="text-xl font-medium">University Investment Club</h4>
+              <h4 className="text-xl font-medium">Texas Instruments</h4>
               <p className="text-primary text-sm mb-2">
-                Research Analyst | 2021 - Present
+                Manufacturing Engineering Intern | Summer 2022
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li>
-                  • Lead a team of 5 student analysts in researching equity
-                  investment opportunities
+                  • Assisted in developing process improvement initiatives that reduced manufacturing cycle time by 15%
                 </li>
                 <li>
-                  • Developed and presented investment theses for potential
-                  portfolio additions
+                  • Conducted statistical analysis of production data to identify bottlenecks and inefficiencies
                 </li>
                 <li>
-                  • Created financial models to value companies across multiple
-                  sectors
+                  • Participated in lean manufacturing projects that increased overall equipment effectiveness
                 </li>
                 <li>
-                  • Contributed to club portfolio performance of +15% in 2022,
-                  outperforming benchmark by 3%
+                  • Created documentation for standard operating procedures and work instructions
                 </li>
               </ul>
             </div>
 
             <div className="timeline-item pl-4">
-              <h4 className="text-xl font-medium">Data Analytics Lab</h4>
+              <h4 className="text-xl font-medium">University Industrial Engineering Lab</h4>
               <p className="text-primary text-sm mb-2">
-                Research Assistant | 2022 - 2023
+                Research Assistant | 2021 - 2023
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li>
-                  • Assisted faculty with research on algorithmic trading
-                  strategies and market microstructure
+                  • Supported faculty research on optimizing manufacturing processes and quality control systems
                 </li>
                 <li>
-                  • Processed and cleaned financial datasets using Python and R
+                  • Collected and analyzed data using statistical tools and software
                 </li>
                 <li>
-                  • Conducted statistical analysis to identify patterns in market
-                  behavior
+                  • Assisted in designing experiments to test process improvements
                 </li>
                 <li>
-                  • Co-authored a paper on high-frequency trading impacts on
-                  market liquidity
+                  • Contributed to research papers on manufacturing efficiency and quality management
                 </li>
               </ul>
             </div>
@@ -180,24 +170,24 @@ const Resume = () => {
               <div>
                 <h4 className="font-medium mb-3">Technical Skills</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Financial Modeling & Valuation</li>
-                  <li>• Data Analysis & Visualization</li>
-                  <li>• Financial Statement Analysis</li>
-                  <li>• Risk Assessment</li>
-                  <li>• Market Research</li>
-                  <li>• Economic Forecasting</li>
+                  <li>• Quality Control & Assurance</li>
+                  <li>• Process Improvement</li>
+                  <li>• Statistical Process Control</li>
+                  <li>• Root Cause Analysis</li>
+                  <li>• Lean Manufacturing</li>
+                  <li>• Six Sigma Methodologies</li>
                 </ul>
               </div>
 
               <div>
                 <h4 className="font-medium mb-3">Software & Tools</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Excel/VBA (Advanced)</li>
-                  <li>• Bloomberg Terminal</li>
-                  <li>• Python (Pandas, NumPy)</li>
-                  <li>• R (Statistical Analysis)</li>
-                  <li>• Tableau</li>
-                  <li>• SQL (Basic)</li>
+                  <li>• Excel (Advanced)</li>
+                  <li>• Minitab</li>
+                  <li>• Python (Data Analysis)</li>
+                  <li>• CAD Software</li>
+                  <li>• Manufacturing Execution Systems</li>
+                  <li>• Quality Management Systems</li>
                 </ul>
               </div>
             </div>
@@ -214,10 +204,10 @@ const Resume = () => {
                 <i className="fas fa-certificate text-primary mt-1 mr-3"></i>
                 <div>
                   <h4 className="font-medium">
-                    Financial Modeling & Valuation Analyst (FMVA)
+                    Lean Six Sigma Green Belt
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    Corporate Finance Institute | 2022
+                    American Society for Quality | 2022
                   </p>
                 </div>
               </div>
@@ -225,9 +215,9 @@ const Resume = () => {
               <div className="flex items-start">
                 <i className="fas fa-certificate text-primary mt-1 mr-3"></i>
                 <div>
-                  <h4 className="font-medium">Bloomberg Market Concepts</h4>
+                  <h4 className="font-medium">Quality Engineering Fundamentals</h4>
                   <p className="text-sm text-muted-foreground">
-                    Bloomberg LP | 2021
+                    Texas Tech University | 2022
                   </p>
                 </div>
               </div>
@@ -235,7 +225,7 @@ const Resume = () => {
               <div className="flex items-start">
                 <i className="fas fa-certificate text-primary mt-1 mr-3"></i>
                 <div>
-                  <h4 className="font-medium">Python for Finance</h4>
+                  <h4 className="font-medium">Python for Data Analysis</h4>
                   <p className="text-sm text-muted-foreground">
                     DataCamp | 2022
                   </p>
@@ -245,9 +235,9 @@ const Resume = () => {
               <div className="flex items-start">
                 <i className="fas fa-certificate text-primary mt-1 mr-3"></i>
                 <div>
-                  <h4 className="font-medium">Investment Foundations</h4>
+                  <h4 className="font-medium">Statistical Process Control</h4>
                   <p className="text-sm text-muted-foreground">
-                    CFA Institute | 2021
+                    Manufacturing Institute | 2021
                   </p>
                 </div>
               </div>

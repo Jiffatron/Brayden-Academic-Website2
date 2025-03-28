@@ -67,7 +67,7 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
       >
         <div className="flex justify-between items-center">
           <a href="#hero" className="text-2xl font-serif font-bold text-primary hover:text-primary/80 transition-colors">
-            BJ
+            BMS
           </a>
 
           {/* Desktop Navigation */}

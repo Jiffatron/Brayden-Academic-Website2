@@ -46,21 +46,21 @@ const Hero = () => {
             className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-4"
             variants={itemVariants}
           >
-            Brayden<br /><span className="text-primary">Judge</span>
+            Brayden<br /><span className="text-primary">Swavey</span>
           </motion.h1>
           
           <motion.h2
             className="text-xl text-muted-foreground font-light mb-6"
             variants={itemVariants}
           >
-            Undergraduate Student | Finance | Texas Tech University
+            Quality Engineer | ASML | Texas Tech University
           </motion.h2>
           
           <motion.p
             className="text-lg md:text-xl mb-8 max-w-xl"
             variants={itemVariants}
           >
-            Exploring the quantitative backbone of markets and decision-making.
+            Experienced in quality assurance, data analysis, and continuous improvement processes.
           </motion.p>
           
           <motion.div
@@ -94,7 +94,7 @@ const Hero = () => {
           >
             <img
               src="https://images.unsplash.com/photo-1571512599661-302b13ab1bfb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Brayden Judge headshot"
+              alt="Brayden Swavey headshot"
               className="object-cover w-full h-full rounded shadow-lg"
             />
           </motion.div>
