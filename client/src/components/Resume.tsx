@@ -49,15 +49,26 @@ const Resume = () => {
             Resume
             <span className="absolute -bottom-2 left-0 w-1/2 h-px bg-primary"></span>
           </h2>
-          <a
-            href="https://drive.google.com/file/d/1Gk2Wzzja44Y-cep4V7VrF0CeJ75Y0d_h/view"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 md:mt-0 px-5 py-2 border-2 border-primary text-primary rounded flex items-center hover:bg-primary hover:bg-opacity-10 transition-all duration-300"
-          >
-            <i className="fas fa-download mr-2"></i>
-            <span>Download PDF</span>
-          </a>
+          <div className="mt-4 md:mt-0 flex space-x-3">
+            <a
+              href="https://drive.google.com/file/d/1Gk2Wzzja44Y-cep4V7VrF0CeJ75Y0d_h/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 border-2 border-primary text-primary rounded flex items-center hover:bg-primary hover:bg-opacity-10 transition-all duration-300"
+            >
+              <i className="fas fa-eye mr-2"></i>
+              <span>View PDF</span>
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1Gk2Wzzja44Y-cep4V7VrF0CeJ75Y0d_h/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-primary text-primary-foreground rounded flex items-center hover:bg-primary/80 transition-all duration-300"
+            >
+              <i className="fas fa-download mr-2"></i>
+              <span>Download PDF</span>
+            </a>
+          </div>
         </motion.div>
 
         <motion.div
@@ -73,19 +84,14 @@ const Resume = () => {
             <div className="timeline-item mb-8 pl-4">
               <h4 className="text-xl font-medium">Texas Tech University</h4>
               <p className="text-primary text-sm mb-2">
-                Bachelor of Science in Finance | 2020 - 2024
+                Bachelor of Business Administration in Finance | 2020 - 2024
               </p>
-              <p className="text-muted-foreground mb-3">Minor in Economics</p>
+              <p className="text-muted-foreground mb-3">Minor in Accounting</p>
               <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• GPA: 3.9/4.0</li>
-                <li>• Dean's List: Multiple semesters</li>
-                <li>
-                  • Research Project: "Quantitative Analysis of Market Efficiency in Post-Pandemic Recovery"
-                </li>
-                <li>
-                  • Relevant Coursework: Financial Modeling, Investment Analysis, 
-                  Corporate Finance, Financial Markets, Econometrics
-                </li>
+                <li>• GPA: 3.8/4.0</li>
+                <li>• Relevant Coursework: Security Analysis & Portfolio Management, Intermediate Corporate Finance, Management Information Systems, Financial Statement Analysis</li>
+                <li>• Phi Beta Kappa Honor Society</li>
+                <li>• Presidential Scholarship Recipient</li>
               </ul>
             </div>
           </div>
@@ -97,64 +103,64 @@ const Resume = () => {
             </h3>
 
             <div className="timeline-item mb-8 pl-4">
-              <h4 className="text-xl font-medium">Municipal Advisory Council</h4>
+              <h4 className="text-xl font-medium">Municipal Advisory Council of Texas</h4>
               <p className="text-primary text-sm mb-2">
                 Financial Analysis Intern | Summer 2023
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li>
-                  • Conducted comprehensive financial statement analysis for municipal entities
+                  • Analyzed comprehensive financial statements and debt obligations for municipal entities in Texas
                 </li>
                 <li>
-                  • Developed spreadsheet models to assess debt service coverage and financial stability
+                  • Assisted in creating and maintaining databases tracking bond issuances and local government finances
                 </li>
                 <li>
-                  • Assisted in drafting advisory reports for municipal clients regarding capital structure optimization
+                  • Contributed to client reports on municipal market conditions and debt issuance strategies
                 </li>
                 <li>
-                  • Presented findings to senior advisors and contributed to client presentations
+                  • Developed forecasting models for revenue streams and debt service coverage ratios
                 </li>
               </ul>
             </div>
 
             <div className="timeline-item mb-8 pl-4">
-              <h4 className="text-xl font-medium">University Investment Club</h4>
+              <h4 className="text-xl font-medium">Texas Tech Student Managed Investment Fund</h4>
               <p className="text-primary text-sm mb-2">
-                Research Analyst | 2021 - Present
+                Student Analyst | 2022 - Present
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li>
-                  • Lead a team of student analysts in researching equity investment opportunities
+                  • Conduct fundamental analysis of potential investments across various sectors using discounted cash flow models
                 </li>
                 <li>
-                  • Developed and presented investment theses for potential portfolio additions
+                  • Present detailed investment recommendations to the investment committee based on thorough research
                 </li>
                 <li>
-                  • Created financial models to value companies across multiple sectors
+                  • Collaborate with team members to manage a $3M+ equity portfolio with focus on long-term growth
                 </li>
                 <li>
-                  • Contributed to club portfolio performance of +15% in 2022, outperforming benchmark by 3%
+                  • Monitor macroeconomic trends and company-specific developments to optimize portfolio allocation
                 </li>
               </ul>
             </div>
 
             <div className="timeline-item pl-4">
-              <h4 className="text-xl font-medium">Financial Data Analytics Lab</h4>
+              <h4 className="text-xl font-medium">Rawls College of Business</h4>
               <p className="text-primary text-sm mb-2">
-                Research Assistant | 2022 - 2023
+                Finance Research Assistant | 2021 - 2022
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li>
-                  • Assisted faculty with research on market behavior and algorithmic trading strategies
+                  • Supported faculty research on corporate governance structures and their impact on firm performance
                 </li>
                 <li>
-                  • Processed and cleaned financial datasets using Python and statistical tools
+                  • Compiled and analyzed datasets from financial databases including CRSP and Compustat
                 </li>
                 <li>
-                  • Conducted statistical analysis to identify patterns in market dynamics
+                  • Applied statistical methods to identify correlations between governance metrics and stock performance
                 </li>
                 <li>
-                  • Contributed to academic papers on financial market efficiency and trading impacts
+                  • Helped prepare research findings for academic publication and presentation
                 </li>
               </ul>
             </div>
@@ -170,24 +176,24 @@ const Resume = () => {
               <div>
                 <h4 className="font-medium mb-3">Financial Skills</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Financial Modeling</li>
-                  <li>• Valuation Analysis</li>
-                  <li>• Investment Research</li>
+                  <li>• Discounted Cash Flow Analysis</li>
+                  <li>• Comparable Company Analysis</li>
+                  <li>• Equity Research & Valuation</li>
                   <li>• Financial Statement Analysis</li>
-                  <li>• Portfolio Management</li>
-                  <li>• Risk Assessment</li>
+                  <li>• Portfolio Construction</li>
+                  <li>• Fixed Income Analysis</li>
                 </ul>
               </div>
 
               <div>
-                <h4 className="font-medium mb-3">Software & Tools</h4>
+                <h4 className="font-medium mb-3">Technical Skills</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Excel (Advanced)</li>
+                  <li>• Microsoft Excel (Advanced)</li>
                   <li>• Bloomberg Terminal</li>
-                  <li>• Python (Financial Analysis)</li>
-                  <li>• R (Statistical Analysis)</li>
-                  <li>• SQL (Database Queries)</li>
-                  <li>• Financial Modeling Software</li>
+                  <li>• Capital IQ</li>
+                  <li>• Python (NumPy, Pandas)</li>
+                  <li>• Power BI</li>
+                  <li>• SQL</li>
                 </ul>
               </div>
             </div>
@@ -196,50 +202,17 @@ const Resume = () => {
           {/* Certifications Section */}
           <div className="cv-section pl-8">
             <h3 className="text-2xl font-serif font-semibold mb-6 text-primary">
-              Certifications
+              Certifications & Licenses
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 pl-4">
-              <div className="flex items-start">
-                <i className="fas fa-certificate text-primary mt-1 mr-3"></i>
-                <div>
-                  <h4 className="font-medium">
-                    Financial Modeling & Valuation
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    Wall Street Prep | 2023
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <i className="fas fa-certificate text-primary mt-1 mr-3"></i>
-                <div>
-                  <h4 className="font-medium">Investment Management Essentials</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Texas Tech University | 2022
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <i className="fas fa-certificate text-primary mt-1 mr-3"></i>
-                <div>
-                  <h4 className="font-medium">Python for Financial Analysis</h4>
-                  <p className="text-sm text-muted-foreground">
-                    DataCamp | 2022
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <i className="fas fa-certificate text-primary mt-1 mr-3"></i>
-                <div>
-                  <h4 className="font-medium">Excel for Financial Modeling</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Corporate Finance Institute | 2021
-                  </p>
-                </div>
+            <div className="pl-4">
+              <p className="text-muted-foreground italic">
+                Currently pursuing certifications in finance and investment management. This section will be updated as credentials are obtained.
+              </p>
+              
+              <div className="mt-4 text-sm text-muted-foreground">
+                <p>• Preparing for CFA Level I</p>
+                <p>• Bloomberg Market Concepts (In Progress)</p>
               </div>
             </div>
           </div>

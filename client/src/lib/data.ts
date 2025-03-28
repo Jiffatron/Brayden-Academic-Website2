@@ -5,6 +5,8 @@ export interface ProjectType {
   image: string;
   tags: string[];
   content: string;
+  pdfUrl?: string;
+  hasPreview?: boolean;
 }
 
 export interface InterestType {
@@ -29,6 +31,8 @@ export const projects: ProjectType[] = [
     image:
       "https://images.unsplash.com/photo-1494607275613-3f679549aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     tags: ["Financial Analysis", "Equity Valuation", "Industry Research"],
+    pdfUrl: "https://example.com/boeing-equity-research.pdf", // This will be updated with your actual PDF URL
+    hasPreview: true,
     content: `
       <p class="mb-4">This comprehensive equity research project examines Boeing's financial position following recent industry challenges, including the 737 MAX issues and pandemic impacts on the aviation sector.</p>
       
@@ -51,8 +55,18 @@ export const projects: ProjectType[] = [
         <li>• Scenario Analysis (Bull, Base, Bear cases)</li>
       </ul>
       
-      <div class="flex justify-end">
-        <a href="#" class="px-4 py-2 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/80 transition-colors duration-300">Download Full Report</a>
+      <h3 class="text-xl font-medium mb-3 mt-8">Report Preview</h3>
+      <div class="mb-6 preview-placeholder bg-muted p-4 rounded-md flex items-center justify-center h-96">
+        <p class="text-muted-foreground">Interactive report preview will be displayed here</p>
+      </div>
+      
+      <div class="flex justify-end gap-4">
+        <button class="px-4 py-2 bg-secondary text-secondary-foreground font-medium rounded hover:bg-secondary/80 transition-colors duration-300 view-preview-btn">
+          View in Browser
+        </button>
+        <a href="#" download class="px-4 py-2 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/80 transition-colors duration-300">
+          Download PDF
+        </a>
       </div>
     `,
   },

@@ -38,6 +38,21 @@ function App() {
   useEffect(() => {
     document.documentElement.classList.toggle('dark', darkMode);
   }, [darkMode]);
+  
+  // Add event listeners to preview buttons when modal is opened
+  useEffect(() => {
+    if (isModalOpen && selectedProject?.hasPreview) {
+      const previewBtn = document.querySelector('.view-preview-btn');
+      if (previewBtn) {
+        previewBtn.addEventListener('click', () => {
+          const container = document.querySelector('.view-preview-btn-container');
+          if (container) {
+            container.dispatchEvent(new Event('click'));
+          }
+        });
+      }
+    }
+  }, [isModalOpen, selectedProject]);
 
   return (
     <div className={`${darkMode ? 'dark' : 'light'}`}>
