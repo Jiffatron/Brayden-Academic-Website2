@@ -53,40 +53,40 @@ const About = () => {
         <div className="grid md:grid-cols-5 gap-12 items-start">
           <motion.div className="md:col-span-3" variants={itemVariants}>
             <p className="text-lg leading-relaxed mb-6">
-              I'm a Quality Engineer at ASML with a degree in Industrial Engineering from Texas Tech University. My expertise includes quality assurance, data analysis, and continuous improvement methodologies.
+              I'm a finance professional with a strong background in financial analysis and investment strategies. Currently pursuing my education at Texas Tech University, I focus on understanding market dynamics and quantitative methods in finance.
             </p>
             <p className="text-lg leading-relaxed mb-6">
-              My professional journey has been focused on ensuring product quality, implementing process improvements, and utilizing data-driven approaches to solve complex problems. I'm particularly interested in how engineering principles can be applied to optimize manufacturing processes.
+              My academic journey has been focused on mastering financial modeling, investment analysis, and understanding how market forces shape economic outcomes. I'm particularly fascinated by the intersection of traditional finance and emerging technologies.
             </p>
             <p className="text-lg leading-relaxed mb-6">
-              Outside of my professional pursuits, I enjoy exploring new technologies, contributing to team-based projects, and staying current with developments in industrial engineering and quality management.
+              Outside of my academic pursuits, I enjoy analyzing market trends, exploring data visualization techniques, and staying current with developments in financial technology and investment strategies.
             </p>
             <div className="mt-8">
               <h3 className="text-xl font-medium mb-4">Core Interests</h3>
               <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
                 <li className="flex items-center">
                   <i className="fas fa-chart-line text-primary mr-2"></i>
-                  <span>Data Analysis</span>
+                  <span>Financial Modeling</span>
                 </li>
                 <li className="flex items-center">
-                  <i className="fas fa-cogs text-primary mr-2"></i>
-                  <span>Process Improvement</span>
+                  <i className="fas fa-landmark text-primary mr-2"></i>
+                  <span>Investment Analysis</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-brain text-primary mr-2"></i>
-                  <span>Quality Management</span>
+                  <span>Market Behavior</span>
                 </li>
                 <li className="flex items-center">
-                  <i className="fas fa-check-square text-primary mr-2"></i>
-                  <span>Quality Control</span>
+                  <i className="fas fa-balance-scale text-primary mr-2"></i>
+                  <span>Risk Assessment</span>
                 </li>
                 <li className="flex items-center">
-                  <i className="fas fa-industry text-primary mr-2"></i>
-                  <span>Manufacturing</span>
+                  <i className="fas fa-university text-primary mr-2"></i>
+                  <span>Financial Institutions</span>
                 </li>
                 <li className="flex items-center">
-                  <i className="fas fa-project-diagram text-primary mr-2"></i>
-                  <span>Process Engineering</span>
+                  <i className="fas fa-dollar-sign text-primary mr-2"></i>
+                  <span>Economic Theory</span>
                 </li>
               </ul>
             </div>

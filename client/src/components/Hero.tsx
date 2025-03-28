@@ -53,14 +53,14 @@ const Hero = () => {
             className="text-xl text-muted-foreground font-light mb-6"
             variants={itemVariants}
           >
-            Quality Engineer | ASML | Texas Tech University
+            Finance Professional | Texas Tech University
           </motion.h2>
           
           <motion.p
             className="text-lg md:text-xl mb-8 max-w-xl"
             variants={itemVariants}
           >
-            Experienced in quality assurance, data analysis, and continuous improvement processes.
+            Exploring the quantitative backbone of markets and financial decision-making.
           </motion.p>
           
           <motion.div
