@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode variables */
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 47% 11%;
+    
+    --radius: 0.5rem;
+
+    /* Custom light theme colors */
+    --navy-light: 217 51% 18%;
+    --navy: 217 51% 11%;
+    --navy-dark: 219 67% 5%;
+    --cyan: 160 100% 70%;
+    --cyan-dark: 174 65% 53%;
+    --slate-light: 217 100% 95%;
+    --slate: 216 32% 63%;
+    --slate-dark: 217 26% 36%;
+    --ivory: 60 30% 96%;
+  }
+  
+  .dark {
+    /* Dark mode variables */
+    --background: 217 51% 11%;
+    --foreground: 217 100% 95%;
+    
+    --card: 217 51% 18%;
+    --card-foreground: 217 100% 95%;
+    
+    --popover: 217 51% 18%;
+    --popover-foreground: 217 100% 95%;
+    
+    --primary: 160 100% 70%;
+    --primary-foreground: 217 51% 11%;
+    
+    --secondary: 217 26% 36%;
+    --secondary-foreground: 217 100% 95%;
+    
+    --muted: 217 26% 20%;
+    --muted-foreground: 216 32% 63%;
+    
+    --accent: 217 26% 36%;
+    --accent-foreground: 217 100% 95%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 217 100% 95%;
+    
+    --border: 217 26% 36%;
+    --input: 217 26% 36%;
+    --ring: 160 100% 70%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased transition-colors duration-300;
+  }
+
+  /* Custom Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-24 px-6 md:px-16 lg:px-24 opacity-0;
+  }
+
+  .section-visible {
+    @apply opacity-100 transition-opacity duration-700 ease-in-out;
+  }
+
+  .navy-dark-section {
+    @apply bg-[hsl(var(--navy-dark))];
+  }
+
+  .nav-link {
+    @apply relative text-sm tracking-wide hover:text-primary transition-colors;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute bottom-[-5px] left-0 w-0 h-[2px] bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .glass {
+    @apply bg-card/70 backdrop-blur-md;
+  }
+
+  .headshot-container {
+    @apply relative;
+  }
+
+  .headshot-container::before {
+    @apply content-[''] absolute top-5 left-5 w-full h-full border-2 border-primary z-[-1] transition-transform duration-300;
+  }
+
+  .headshot-container:hover::before {
+    @apply transform -translate-x-[10px] -translate-y-[10px];
+  }
+
+  .project-card {
+    @apply transition-all duration-300;
+  }
+
+  .project-card:hover {
+    @apply transform -translate-y-[5px] shadow-lg;
+  }
+
+  .blog-card {
+    @apply transition-transform duration-300;
+  }
+
+  .blog-card:hover {
+    @apply transform translate-x-2;
+  }
+
+  .cv-section {
+    @apply relative;
+  }
+
+  .cv-section::before {
+    @apply content-[''] absolute left-0 top-3 h-10 w-0.5 bg-primary;
+  }
+
+  .timeline-item {
+    @apply relative;
+  }
+
+  .timeline-item::before {
+    @apply content-[''] absolute left-[-25px] top-2 h-2 w-2 rounded-full bg-primary;
+  }
+
+  .timeline-item::after {
+    @apply content-[''] absolute left-[-22px] top-5 h-[calc(100%+20px)] w-0.5 bg-primary/30;
+  }
+
+  .timeline-item:last-child::after {
+    @apply hidden;
+  }
+}
