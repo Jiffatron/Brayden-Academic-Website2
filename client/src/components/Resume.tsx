@@ -86,7 +86,7 @@ const Resume = () => {
                 Bachelor of Business Administration in Finance | Expected May 2025
               </p>
               <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Dean's List Fall 2022</li>
+                <li>• Dean's List Spring 2022, Spring 2024, Fall 2024</li>
                 <li>• Major GPA: 3.53</li>
               </ul>
             </div>
