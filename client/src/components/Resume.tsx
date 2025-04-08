@@ -80,17 +80,14 @@ const Resume = () => {
             <h3 className="text-2xl font-serif font-semibold mb-6 text-primary">
               Education
             </h3>
-
             <div className="timeline-item mb-8 pl-4">
               <h4 className="text-xl font-medium">Texas Tech University</h4>
               <p className="text-primary text-sm mb-2">
-                Bachelor of Business Administration in Finance | 2020 - 2024
+                Bachelor of Business Administration in Finance | Expected May 2025
               </p>
               <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• GPA: 3.8/4.0</li>
-                <li>• Relevant Coursework: Security Analysis & Portfolio Management, Intermediate Corporate Finance, Management Information Systems, Financial Statement Analysis</li>
-                <li>• Phi Beta Kappa Honor Society</li>
-                <li>• Presidential Scholarship Recipient</li>
+                <li>• Dean's List Fall 2022</li>
+                <li>• Major GPA: 3.53</li>
               </ul>
             </div>
           </div>
@@ -100,67 +97,39 @@ const Resume = () => {
             <h3 className="text-2xl font-serif font-semibold mb-6 text-primary">
               Experience
             </h3>
-
             <div className="timeline-item mb-8 pl-4">
               <h4 className="text-xl font-medium">Municipal Advisory Council of Texas</h4>
               <p className="text-primary text-sm mb-2">
-                Financial Analysis Intern | Summer 2023
+                Financial Analyst Intern | May 2024 - August 2024
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
-                <li>
-                  • Analyzed comprehensive financial statements and debt obligations for municipal entities in Texas
-                </li>
-                <li>
-                  • Assisted in creating and maintaining databases tracking bond issuances and local government finances
-                </li>
-                <li>
-                  • Contributed to client reports on municipal market conditions and debt issuance strategies
-                </li>
-                <li>
-                  • Developed forecasting models for revenue streams and debt service coverage ratios
-                </li>
+                <li>• Maintained accurate financial data for school districts for investor analysis</li>
+                <li>• Verified school audit information and financial statements</li>
+                <li>• Surpassed production goals by 102% with high accuracy</li>
               </ul>
             </div>
 
             <div className="timeline-item mb-8 pl-4">
-              <h4 className="text-xl font-medium">Texas Tech Student Managed Investment Fund</h4>
+              <h4 className="text-xl font-medium">Amazon Seller</h4>
               <p className="text-primary text-sm mb-2">
-                Student Analyst | 2022 - Present
+                Independent Contractor | Dec 2020 - Present
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
-                <li>
-                  • Conduct fundamental analysis of potential investments across various sectors using discounted cash flow models
-                </li>
-                <li>
-                  • Present detailed investment recommendations to the investment committee based on thorough research
-                </li>
-                <li>
-                  • Collaborate with team members to manage a $3M+ equity portfolio with focus on long-term growth
-                </li>
-                <li>
-                  • Monitor macroeconomic trends and company-specific developments to optimize portfolio allocation
-                </li>
+                <li>• Negotiated with wholesalers and retailers for optimal deals</li>
+                <li>• Collaborated with other merchants to grow profitability</li>
+                <li>• Scaled business by 500% in first year via strategic planning</li>
               </ul>
             </div>
 
             <div className="timeline-item pl-4">
-              <h4 className="text-xl font-medium">Rawls College of Business</h4>
+              <h4 className="text-xl font-medium">Mint Moving LLC</h4>
               <p className="text-primary text-sm mb-2">
-                Finance Research Assistant | 2021 - 2022
+                General Manager | Aug 2023 - Dec 2024
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
-                <li>
-                  • Supported faculty research on corporate governance structures and their impact on firm performance
-                </li>
-                <li>
-                  • Compiled and analyzed datasets from financial databases including CRSP and Compustat
-                </li>
-                <li>
-                  • Applied statistical methods to identify correlations between governance metrics and stock performance
-                </li>
-                <li>
-                  • Helped prepare research findings for academic publication and presentation
-                </li>
+                <li>• Supervised staff and daily operations on and off-site</li>
+                <li>• Attracted new clients and retained existing ones</li>
+                <li>• Provided financial advising to optimize growth</li>
               </ul>
             </div>
           </div>
@@ -170,29 +139,26 @@ const Resume = () => {
             <h3 className="text-2xl font-serif font-semibold mb-6 text-primary">
               Skills
             </h3>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 pl-4">
               <div>
-                <h4 className="font-medium mb-3">Financial Skills</h4>
+                <h4 className="font-medium mb-3">Soft Skills</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Discounted Cash Flow Analysis</li>
-                  <li>• Comparable Company Analysis</li>
-                  <li>• Equity Research & Valuation</li>
-                  <li>• Financial Statement Analysis</li>
-                  <li>• Portfolio Construction</li>
-                  <li>• Fixed Income Analysis</li>
+                  <li>• Communication</li>
+                  <li>• Leadership</li>
+                  <li>• Work Ethic</li>
+                  <li>• Adaptability</li>
+                  <li>• Collaboration</li>
                 </ul>
               </div>
-
               <div>
-                <h4 className="font-medium mb-3">Technical Skills</h4>
+                <h4 className="font-medium mb-3">Hard Skills</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Microsoft Excel (Advanced)</li>
-                  <li>• Bloomberg Terminal</li>
-                  <li>• Capital IQ</li>
-                  <li>• Python (NumPy, Pandas)</li>
-                  <li>• Power BI</li>
-                  <li>• SQL</li>
+                  <li>• Financial Analysis</li>
+                  <li>• Market Assessment</li>
+                  <li>• PowerPoint</li>
+                  <li>• Excel</li>
+                  <li>• Word</li>
+                  <li>• Foxit PDF</li>
                 </ul>
               </div>
             </div>
@@ -201,17 +167,13 @@ const Resume = () => {
           {/* Certifications Section */}
           <div className="cv-section pl-8">
             <h3 className="text-2xl font-serif font-semibold mb-6 text-primary">
-              Certifications & Licenses
+              Certifications & Coursework
             </h3>
-
             <div className="pl-4">
-              <p className="text-muted-foreground italic">
-                Currently pursuing certifications in finance and investment management. This section will be updated as credentials are obtained.
-              </p>
-              
               <div className="mt-4 text-sm text-muted-foreground">
-                <p>• Preparing for CFA Level I</p>
-                <p>• Bloomberg Market Concepts (In Progress)</p>
+                <p>• Financial Accounting & Intermediate Accounting I & II</p>
+                <p>• Markets and Institutions</p>
+                <p>• Corporate Finance</p>
               </div>
             </div>
           </div>
