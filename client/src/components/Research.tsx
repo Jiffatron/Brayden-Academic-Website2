@@ -47,15 +47,25 @@ const Research = ({ onProjectClick }: ResearchProps) => {
         variants={containerVariants}
       >
         <motion.h2
-          className="text-3xl md:text-4xl font-serif font-bold mb-12 relative inline-block"
+          className="text-3xl md:text-4xl font-serif font-bold mb-6 relative inline-block"
           variants={itemVariants}
         >
           Research & Projects
           <span className="absolute -bottom-2 left-0 w-1/2 h-px bg-primary"></span>
         </motion.h2>
 
+        <motion.p
+          className="text-muted-foreground text-base mb-12 max-w-3xl"
+          variants={itemVariants}
+        >
+          A showcase of my ongoing research and applied projects at the intersection of
+          financial analysis, investment strategy, and macroeconomic theory. These efforts
+          reflect a deep curiosity for how financial systems operate, evolve, and influence
+          both individual decision-making and broader market behaviors.
+        </motion.p>
+
         <motion.div
-          className="grid md:grid-cols-2 gap-8 mb-8"
+          className="grid md:grid-cols-2 gap-8 mb-16"
           variants={containerVariants}
         >
           {projects.map((project) => (
@@ -71,8 +81,12 @@ const Research = ({ onProjectClick }: ResearchProps) => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-serif font-semibold mb-3">{project.title}</h3>
-                <p className="text-muted-foreground mb-4">{project.description}</p>
+                <h3 className="text-xl font-serif font-semibold mb-3">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  {project.description}
+                </p>
                 <div className="flex gap-2 mb-4 flex-wrap">
                   {project.tags.map((tag, index) => (
                     <span
@@ -101,7 +115,17 @@ const Research = ({ onProjectClick }: ResearchProps) => {
         >
           Academic Interests
         </motion.h3>
-        
+
+        <motion.p
+          className="text-muted-foreground text-base mb-8 max-w-3xl"
+          variants={itemVariants}
+        >
+          My academic pursuits emphasize real-world application of theoretical finance, focusing
+          on topics like risk management, market psychology, public finance, and portfolio strategy.
+          I aim to bridge conceptual models with pragmatic insights that influence high-stakes decisions
+          in both public and private sectors.
+        </motion.p>
+
         <motion.div
           className="grid md:grid-cols-3 gap-6"
           variants={containerVariants}
