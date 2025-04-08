@@ -53,7 +53,11 @@ const About = () => {
         <div className="grid md:grid-cols-5 gap-12 items-start">
           <motion.div className="md:col-span-3" variants={itemVariants}>
             <p className="text-lg leading-relaxed mb-6">
-              I'm Brayden Judge, a senior Finance major at Texas Tech University. My interests include financial modeling, public and private sector investment analysis, and the intersection of AI and capital markets. I'm currently interning at the Municipal Advisory Council of Texas, working with public bond data and fiscal reporting. I'm passionate about data-driven decision-making and long-term economic impact.
+              I'm Brayden Judge, a senior Finance major at Texas Tech University. I specialize in
+              analyzing both public and private sector financials and am fascinated by the long-term
+              macroeconomic impacts of capital allocation. Currently, I’m interning at the Municipal
+              Advisory Council of Texas, where I work with school district bond data, fiscal disclosures,
+              and assist in preparing municipal reports for investors and financial institutions.
             </p>
             <div className="mt-8">
               <h3 className="text-xl font-medium mb-4">Core Interests</h3>
@@ -68,19 +72,19 @@ const About = () => {
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-brain text-primary mr-2"></i>
-                  <span>Market Behavior</span>
+                  <span>Behavioral Finance</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-balance-scale text-primary mr-2"></i>
-                  <span>Risk Assessment</span>
+                  <span>Risk Strategy</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-university text-primary mr-2"></i>
-                  <span>Financial Institutions</span>
+                  <span>Public Finance</span>
                 </li>
                 <li className="flex items-center">
-                  <i className="fas fa-dollar-sign text-primary mr-2"></i>
-                  <span>Economic Theory</span>
+                  <i className="fas fa-code text-primary mr-2"></i>
+                  <span>Markets & AI</span>
                 </li>
               </ul>
             </div>
@@ -88,9 +92,9 @@ const About = () => {
           <motion.div className="md:col-span-2" variants={itemVariants}>
             <div className="relative">
               <div className="absolute -left-4 -top-4 w-full h-full border-2 border-primary z-0"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Portrait of Brayden Judge" 
+              <img
+                src="/brayden-profile.jpg"
+                alt="Portrait of Brayden Judge"
                 className="relative z-10 rounded shadow-lg w-full"
               />
             </div>
