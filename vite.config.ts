@@ -12,12 +12,13 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "client", "src"),
       "@shared": path.resolve(__dirname, "shared"),
-      "@assets": path.resolve(__dirname, "attached_assets"),
-    },
+      "@assets": path.resolve(__dirname, "attached_assets")
+    }
   },
   root: path.resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(__dirname, "docs"), // GitHub Pages expects /docs
-    emptyOutDir: true,
+    outDir: path.resolve(__dirname, "docs"),
+    emptyOutDir: true
   },
+  base: "/Brayden-Academic-Website2/"
 });
