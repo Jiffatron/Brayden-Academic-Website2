@@ -76,7 +76,7 @@ export const projects: ProjectType[] = [
     description:
       "A mathematical and visual exploration of fractal geometry using only Microsoft Excel, showcasing the computational power hidden in spreadsheets.",
     image:
-      "https://drive.google.com/file/d/1UJnI-WSsydpFUuogEREPEFHP6oup4zVF/view?usp=drive_link",
+      "https://imgur.com/a/W87udOf",
     tags: ["Fractals", "Excel", "Complex Numbers", "Visualization"],
     content: `
       <p class="mb-4">This project demonstrates the generation of the Mandelbrot set—a complex fractal pattern—entirely within Microsoft Excel. Built during my free time as an experimental dive into visual mathematics, it blends the iterative formula Z = Z² + C with Excel’s conditional formatting and complex number logic.</p>
@@ -101,7 +101,7 @@ export const projects: ProjectType[] = [
       <p class="mb-4">This project proves that advanced mathematical concepts and visualizations can be implemented with tools outside traditional programming. It pushed Excel to its limits and turned a purely mathematical pattern into a fully functional spreadsheet visualization.</p>
   
       <div class="flex justify-end">
-        <a href="https://drive.google.com/file/d/1UJnI-WSsydpFUuogEREPEFHP6oup4zVF/view?usp=drive_link" class="px-4 py-2 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/80 transition-colors duration-300">Download Excel File</a>
+        <a href="https://imgur.com/a/W87udOf" class="px-4 py-2 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/80 transition-colors duration-300">Download Excel File</a>
       </div>
     `,
   },

@@ -29,6 +29,8 @@ const About = () => {
     },
   };
 
+  const imageUrl = "https://imgur.com/a/website-wapsguU"; // Image Link 
+
   return ( 
     <section
       id="about"
@@ -93,7 +95,7 @@ const About = () => {
             <div className="relative">
               <div className="absolute -left-4 -top-4 w-full h-full border-2 border-primary z-0"></div>
               <img
-                src="/brayden-profile.JPG"
+                src={imageUrl}
                 alt="Portrait of Brayden Swavey"
                 className="relative z-10 rounded shadow-lg w-full object-cover"
               />
