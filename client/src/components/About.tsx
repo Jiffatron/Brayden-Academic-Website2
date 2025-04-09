@@ -29,7 +29,7 @@ const About = () => {
     },
   };
 
-  const imageUrl = "https://imgur.com/a/website-wapsguU"; // Image Link 
+  const imageUrl = "https://i.imgur.com/AfsugwE.jpeg"; // Image Link 
 
   return ( 
     <section
