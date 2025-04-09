@@ -41,17 +41,17 @@ export const projects: ProjectType[] = [
         <li>• Strong long-term growth potential despite short-term volatility</li>
         <li>• Defense division providing stability amid commercial aviation fluctuations</li>
         <li>• Improving free cash flow projection for 2023-2025</li>
-        <li>• Supply chain improvements leading to increased production capacity</li>
+        <li>• Supply chain improvements leading to increased production capacity and decreased failure rates</li>
       </ul>
       
       <h3 class="text-xl font-medium mb-3">Valuation Summary</h3>
-      <p class="mb-4">Utilizing a DCF model with a WACC of 10.20% and terminal growth rate of "N/A", the analysis established a fair value range of $138 per share, suggesting the stock was overvalued by approximately 11% at the time of analysis.</p>
+      <p class="mb-4">Utilizing a FCF model with a WACC of 10.20% and terminal growth rate of "N/A", the analysis established a fair value range of $138 per share, suggesting the stock was overvalued by approximately 11% at the time of analysis.</p>
       
       <h3 class="text-xl font-medium mb-3">Methodologies</h3>
       <ul class="mb-6 space-y-2">
-        <li>• Discounted Cash Flow (DCF) Analysis</li>
-        <li>• Comparable Company Analysis</li>
-        <li>• Free Cash Flow Valuation</li>
+        <li>• Discounted Cash Flow (DCF) and Free Cash Flow (FCF) Analysis</li>
+        <li>• Comparable / Peer Company Analysis</li>
+        <li>• Comparision with overall market dynamics </li>
         <li>• Scenario Analysis (Bull, Base, Bear cases)</li>
       </ul>
       
@@ -94,7 +94,7 @@ export const projects: ProjectType[] = [
       <ul class="mb-6 space-y-2">
         <li>• Iterative math in a non-programmatic environment</li>
         <li>• Creative problem-solving under Excel’s formula constraints</li>
-        <li>• How to improve preformance in VBA and reduce fluff for minimal hardware computers</li>
+        <li>• How to improve preformance in VBA and reduce fluff for minimum hardware compliance</li>
         <li>• How fractals reveal patterns within infinite complexity</li>
         <li>• Chaning varibales ever so slightly will result in durastically different patterns</li>
       </ul>
