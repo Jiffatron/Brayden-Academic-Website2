@@ -114,8 +114,7 @@ const Contact = () => {
           className="text-muted-foreground text-lg mb-12 max-w-2xl"
           variants={itemVariants}
         >
-          Feel free to reach out if you'd like to discuss research opportunities,
-          collaborate on projects, or simply connect about finance and economics.
+          This page is under construction!! Please email me at Bjudge@ttu.edu or contact my via Linkedin
         </motion.p>
 
         <div className="grid md:grid-cols-2 gap-12">
