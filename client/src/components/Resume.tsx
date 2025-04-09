@@ -87,7 +87,7 @@ const Resume = () => {
               </p>
               <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• Dean's List Spring 2022, Spring 2024, Fall 2024</li>
-                <li>• Major GPA: 3.53</li>
+                <li>• Major GPA: 3.53 – Focused coursework in corporate finance, markets, and accounting</li>
               </ul>
             </div>
           </div>
@@ -103,9 +103,14 @@ const Resume = () => {
                 Financial Analyst Intern | May 2024 - August 2024
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
-                <li>• Maintained accurate financial data for school districts for investor analysis</li>
-                <li>• Verified school audit information and financial statements</li>
-                <li>• Surpassed production goals by 102% with high accuracy</li>
+                <li>• Extracted and curated investor-relevant data from school district audits and municipal reports across Texas of all sizes</li>
+                <li>• Districts included San Antonio ISD, Houston ISD, Highland Park ISD, Katy ISD</li>
+                <li>• Ensured audit consistency by verifying and aligning key metrics with reported financials such as verifying average daily attendance</li>
+                <li>• Played a direct role in the backend compilation of the Texas Municipal Report, a vital reference for underwriters</li>
+                <li>• Surpassed Financial Analyst production targets by 102% while maintaining high data integrity and low error rates</li>
+                <li>• Contributed to complex debt reconciliation procedures, aligning outstanding principal and interest schedules with audited statements</li>
+                <li>• Contacted several school districts to verify validity and inacuracies to ensure financial transparency  </li>
+                <li>• Strengthened skills in Foxit PDF, PDF extraction, and working knowledge of public finance metrics like DSCR and capital expenditures</li>
               </ul>
             </div>
 
@@ -115,9 +120,11 @@ const Resume = () => {
                 Independent Contractor | Dec 2020 - Present
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
-                <li>• Negotiated with wholesalers and retailers for optimal deals</li>
-                <li>• Collaborated with other merchants to grow profitability</li>
-                <li>• Scaled business by 500% in first year via strategic planning</li>
+                <li>• Launched and scaled an online resale operation focused on retail arbitrage and wholesale sourcing</li>
+                <li>• Built key supplier relationships and negotiated pricing terms to maximize margin</li>
+                <li>• Leveraged market trends and seasonal data to dynamically adjust product strategy</li>
+                <li>• Leveraged third-party applications to track relevant supply and demand volatility to better time markets</li>
+                <li>• Successfully scaled business by 500% in its first year through strategic pricing, demand forecasting, and reinvestment</li>
               </ul>
             </div>
 
@@ -127,9 +134,10 @@ const Resume = () => {
                 General Manager | Aug 2023 - Dec 2024
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
-                <li>• Supervised staff and daily operations on and off-site</li>
-                <li>• Attracted new clients and retained existing ones</li>
-                <li>• Provided financial advising to optimize growth</li>
+                <li>• Oversaw operations for a local service business including scheduling, logistics, and financial management</li>
+                <li>• Led and trained a small team, ensuring smooth execution of client moves and maintaining customer satisfaction</li>
+                <li>• Provided strategic planning advice, helped establish pricing structure, and optimized margins</li>
+                <li>• Served as the primary point of contact for client outreach, reviews, and follow-ups</li>
               </ul>
             </div>
           </div>
@@ -143,22 +151,22 @@ const Resume = () => {
               <div>
                 <h4 className="font-medium mb-3">Soft Skills</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Communication</li>
-                  <li>• Leadership</li>
-                  <li>• Work Ethic</li>
-                  <li>• Adaptability</li>
-                  <li>• Collaboration</li>
+                  <li>• Strong verbal and written communication</li>
+                  <li>• Confident leadership in small team environments</li>
+                  <li>• High self-motivation and problem solving under pressure</li>
+                  <li>• Fast learner with adaptability across industries</li>
+                  <li>• Works well independently and in collaborative projects</li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-medium mb-3">Hard Skills</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Financial Analysis</li>
-                  <li>• Market Assessment</li>
-                  <li>• PowerPoint</li>
-                  <li>• Excel</li>
-                  <li>• Word</li>
-                  <li>• Foxit PDF</li>
+                  <li>• Financial Statement Interpretation</li>
+                  <li>• Excel modeling and data parsing and VBA</li>
+                  <li>• Market & sector analysis</li>
+                  <li>• Presentation building (PowerPoint)</li>
+                  <li>• Document handling (Foxit PDF, Word)</li>
+                  <li>• Basic HTML, CSS, and React familiarity</li>
                 </ul>
               </div>
             </div>
@@ -171,9 +179,9 @@ const Resume = () => {
             </h3>
             <div className="pl-4">
               <div className="mt-4 text-sm text-muted-foreground">
-                <p>• Financial Accounting & Intermediate Accounting I & II</p>
-                <p>• Markets and Institutions</p>
-                <p>• Corporate Finance</p>
+                <p>• Financial Accounting & Intermediate Accounting I & II – Foundation for interpreting income statements, balance sheets, and cash flow statements</p>
+                <p>• Markets and Institutions – Focus on the structure, function, and regulatory environment of financial markets</p>
+                <p>• Corporate Finance – Concepts in capital structure, WACC, investment decisions, and valuation modeling</p>
               </div>
             </div>
           </div>
