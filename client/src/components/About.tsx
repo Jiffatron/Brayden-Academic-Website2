@@ -95,7 +95,7 @@ const About = () => {
               <img
                 src="/brayden-profile.jpg"
                 alt="Portrait of Brayden Judge"
-                className="relative z-10 rounded shadow-lg w-full"
+                className="relative z-10 rounded shadow-lg w-full object-cover"
               />
             </div>
           </motion.div>
