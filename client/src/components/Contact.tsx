@@ -7,13 +7,13 @@ const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
   const { toast } = useToast();
-  
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  
+
   const [errors, setErrors] = useState({
     name: false,
     email: false,
@@ -43,14 +43,15 @@ const Contact = () => {
     },
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
     });
-    
-    // Clear error when user types
+
     if (errors[name as keyof typeof errors]) {
       setErrors({
         ...errors,
@@ -61,27 +62,24 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Validate form
+
     const newErrors = {
       name: !formData.name.trim(),
-      email: !formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email),
+      email:
+        !formData.email.trim() ||
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email),
       message: !formData.message.trim(),
     };
-    
+
     setErrors(newErrors);
-    
-    // If no errors, submit form
+
     if (!newErrors.name && !newErrors.email && !newErrors.message) {
-      // Form submission logic would go here
-      
       toast({
         title: "Message sent!",
         description: "Thanks for reaching out. I'll get back to you soon.",
         duration: 5000,
       });
-      
-      // Reset form
+
       setFormData({
         name: "",
         email: "",
@@ -109,12 +107,13 @@ const Contact = () => {
           Contact -- Under Construction
           <span className="absolute -bottom-2 left-0 w-1/2 h-px bg-primary"></span>
         </motion.h2>
-        
+
         <motion.p
           className="text-muted-foreground text-lg mb-12 max-w-2xl"
           variants={itemVariants}
         >
-          This page is under construction!! Please email me at Bjudge@ttu.edu or contact my via Linkedin
+          This page is under construction!! Please email me at Bjudge@ttu.edu or
+          contact me via LinkedIn
         </motion.p>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -210,13 +209,20 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Email</h4>
-                    <a
-                      href="mailto:brayden.swavey@email.com"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      brayden.swavey@email.com
-                      Bjudge@ttu.edu
-                    </a>
+                    <div className="flex flex-col space-y-1">
+                      <a
+                        href="mailto:brayden.swavey@email.com"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        brayden.swavey@email.com
+                      </a>
+                      <a
+                        href="mailto:bjudge@ttu.edu"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        Bjudge@ttu.edu
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -234,9 +240,11 @@ const Contact = () => {
               <h3 className="text-xl font-medium mb-4">Connect on Socials</h3>
               <div className="flex space-x-4">
                 <a
-                  href="www.linkedin.com/in/brayden-swavey"
+                  href="https://www.linkedin.com/in/brayden-swavey"
                   className="text-muted-foreground hover:text-primary text-xl transition-colors"
                   aria-label="LinkedIn"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-linkedin-in"></i>
                 </a>
@@ -244,6 +252,8 @@ const Contact = () => {
                   href="https://github.com/Jiffatron"
                   className="text-muted-foreground hover:text-primary text-xl transition-colors"
                   aria-label="GitHub"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-github"></i>
                 </a>
