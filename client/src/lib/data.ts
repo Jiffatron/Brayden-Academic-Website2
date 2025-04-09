@@ -139,10 +139,10 @@ export const blogPosts: BlogPostType[] = [
       "A reflective look at how emotion, perception, and cognitive bias drive financial behavior — revealing that markets are as much psychological landscapes as they are numerical systems.",
   },
   {
-    title: "Rethinking Modern Portfolio Theory",
-    date: "April 3, 2023",
+    title: "Lorum Ipsum",
+    date: "April 3, 2025",
     preview:
-      "A critical examination of MPT's assumptions in today's market environment. How can investors adapt traditional portfolio construction techniques to account for changing correlations and non-normal return distributions?",
+      "Lorum Ipsum",
   },
   {
     title: "How Video Game Markets Produce Safe Assets",
