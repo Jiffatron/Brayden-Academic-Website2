@@ -60,7 +60,7 @@ const Resume = () => {
               <span>View PDF</span>
             </a>
             <a
-              href="https://drive.google.com/file/d/1Gk2Wzzja44Y-cep4V7VrF0CeJ75Y0d_h/view"
+              href="https://drive.google.com/file/d/1Gk2Wzzja44Y-cep4V7VrF0CeJ75Y0d_h/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 bg-primary text-primary-foreground rounded flex items-center hover:bg-primary/80 transition-all duration-300"

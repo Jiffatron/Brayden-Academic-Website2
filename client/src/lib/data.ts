@@ -101,7 +101,7 @@ export const projects: ProjectType[] = [
       <p class="mb-4">This project proves that advanced mathematical concepts and visualizations can be implemented with tools outside traditional programming. It pushed Excel to its limits and turned a purely mathematical pattern into a fully functional spreadsheet visualization.</p>
   
       <div class="flex justify-end">
-        <a href="https://imgur.com/a/W87udOf" class="px-4 py-2 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/80 transition-colors duration-300">Download Excel File</a>
+        <a href="https://imgur.com/a/W87udOf" class="px-4 py-2 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/80 transition-colors duration-300">Project Not Finished</a>
       </div>
     `,
   },
