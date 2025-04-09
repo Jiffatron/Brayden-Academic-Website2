@@ -214,7 +214,7 @@ const Contact = () => {
                         href="mailto:brayden.swavey@email.com"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        brayden.swavey@email.com
+                        Brayden.Swavey@gmail.com
                       </a>
                       <a
                         href="mailto:bjudge@ttu.edu"
