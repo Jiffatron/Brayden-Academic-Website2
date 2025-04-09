@@ -53,7 +53,7 @@ const About = () => {
         <div className="grid md:grid-cols-5 gap-12 items-start">
           <motion.div className="md:col-span-3" variants={itemVariants}>
             <p className="text-lg leading-relaxed mb-6">
-              I'm Brayden Judge, a senior Finance major at Texas Tech University. I specialize in
+              My name is Brayden Swavey, a senior Finance major at Texas Tech University. I specialize in
               analyzing both public and private sector financials and am fascinated by the long-term
               macroeconomic impacts of capital allocation. Currently, I’m interning at the Municipal
               Advisory Council of Texas, where I work with school district bond data, fiscal disclosures,
@@ -94,7 +94,7 @@ const About = () => {
               <div className="absolute -left-4 -top-4 w-full h-full border-2 border-primary z-0"></div>
               <img
                 src="/brayden-profile.JPG"
-                alt="Portrait of Brayden Judge"
+                alt="Portrait of Brayden Swavey"
                 className="relative z-10 rounded shadow-lg w-full object-cover"
               />
             </div>
