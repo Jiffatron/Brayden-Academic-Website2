@@ -29,7 +29,7 @@ const About = () => {
     },
   };
 
-  return (
+  return ( 
     <section
       id="about"
       ref={sectionRef}
@@ -93,7 +93,7 @@ const About = () => {
             <div className="relative">
               <div className="absolute -left-4 -top-4 w-full h-full border-2 border-primary z-0"></div>
               <img
-                src="/brayden-profile.jpg"
+                src="/brayden-profile.JPG"
                 alt="Portrait of Brayden Judge"
                 className="relative z-10 rounded shadow-lg w-full object-cover"
               />
