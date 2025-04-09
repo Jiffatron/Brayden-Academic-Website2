@@ -106,7 +106,7 @@ const Contact = () => {
           className="text-3xl md:text-4xl font-serif font-bold mb-6 relative inline-block"
           variants={itemVariants}
         >
-          Contact
+          Contact -- Under Construction
           <span className="absolute -bottom-2 left-0 w-1/2 h-px bg-primary"></span>
         </motion.h2>
         
@@ -215,6 +215,7 @@ const Contact = () => {
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
                       brayden.swavey@email.com
+                      Bjudge@ttu.edu
                     </a>
                   </div>
                 </div>
@@ -225,22 +226,22 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Location</h4>
-                    <p className="text-muted-foreground">Lubbock, Texas</p>
+                    <p className="text-muted-foreground">Sunnyvale, Texas</p>
                   </div>
                 </div>
               </div>
 
-              <h3 className="text-xl font-medium mb-4">Connect</h3>
+              <h3 className="text-xl font-medium mb-4">Connect on Socials</h3>
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="www.linkedin.com/in/brayden-swavey"
                   className="text-muted-foreground hover:text-primary text-xl transition-colors"
                   aria-label="LinkedIn"
                 >
                   <i className="fab fa-linkedin-in"></i>
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/Jiffatron"
                   className="text-muted-foreground hover:text-primary text-xl transition-colors"
                   aria-label="GitHub"
                 >
@@ -249,7 +250,7 @@ const Contact = () => {
                 <a
                   href="#"
                   className="text-muted-foreground hover:text-primary text-xl transition-colors"
-                  aria-label="Twitter"
+                  aria-label="X"
                 >
                   <i className="fab fa-twitter"></i>
                 </a>
