@@ -53,14 +53,14 @@ const Hero = () => {
             className="text-xl text-muted-foreground font-light mb-6"
             variants={itemVariants}
           >
-            Finance Professional | Texas Tech University
+            Finance Student | Texas Tech University
           </motion.h2>
           
           <motion.p
             className="text-lg md:text-xl mb-8 max-w-xl"
             variants={itemVariants}
           >
-            Exploring the quantitative backbone of markets and financial decision-making.
+            Delving into the quantitative frameworks that drive markets and shape strategic financial decisions
           </motion.p>
           
           <motion.div
@@ -93,7 +93,7 @@ const Hero = () => {
             variants={itemVariants}
           >
             <img
-              src="https://images.unsplash.com/photo-1571512599661-302b13ab1bfb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              src="https://drive.google.com/file/d/1mJb_ijwsIcVbykylKQd1mQPvLm0cmegG/view?usp=drive_link"
               alt="Brayden Swavey headshot"
               className="object-cover w-full h-full rounded-lg shadow-xl"
             />

@@ -29,9 +29,9 @@ export const projects: ProjectType[] = [
     description:
       "Comprehensive analysis of Boeing's financial position, market strategy, and future prospects in the aerospace industry. Includes DCF valuation model and competitive positioning assessment.",
     image:
-      "https://images.unsplash.com/photo-1494607275613-3f679549aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "https://img.ctykit.com/cdn/wa-bellevue/images/tr:w-900/8_16_17_member_the_boeing_company.jpg",
     tags: ["Financial Analysis", "Equity Valuation", "Industry Research"],
-    pdfUrl: "https://example.com/boeing-equity-research.pdf", // This will be updated with your actual PDF URL
+    pdfUrl: "https://drive.google.com/file/d/1mAMPFzCaC-Oc5XHnGcFW7ubHwlyfmpQ4/view?usp=drive_link", 
     hasPreview: true,
     content: `
       <p class="mb-4">This comprehensive equity research project examines Boeing's financial position following recent industry challenges, including the 737 MAX issues and pandemic impacts on the aviation sector.</p>
@@ -51,13 +51,13 @@ export const projects: ProjectType[] = [
       <ul class="mb-6 space-y-2">
         <li>• Discounted Cash Flow (DCF) Analysis</li>
         <li>• Comparable Company Analysis</li>
-        <li>• Sum-of-Parts Valuation</li>
+        <li>• Free Cash Flow Valuation</li>
         <li>• Scenario Analysis (Bull, Base, Bear cases)</li>
       </ul>
       
       <h3 class="text-xl font-medium mb-3 mt-8">Report Preview</h3>
       <div class="mb-6 preview-placeholder bg-muted p-4 rounded-md flex items-center justify-center h-96">
-        <p class="text-muted-foreground">Interactive report preview will be displayed here</p>
+        <p class="text-muted-foreground">Please contact me if this preview is not avaliable</p>
       </div>
       
       <div class="flex justify-end gap-4">
@@ -71,43 +71,41 @@ export const projects: ProjectType[] = [
     `,
   },
   {
-    id: "financial-statement",
-    title: "Financial Statement Analysis",
+    id: "mandelbrot-excel",
+    title: "Mandelbrot Set in Excel -- Work in Progress",
     description:
-      "In-depth analysis conducted during my internship at the Municipal Advisory Council, focusing on ratio analysis, cash flow assessment, and trend identification for public sector entities.",
+      "A mathematical and visual exploration of fractal geometry using only Microsoft Excel, showcasing the computational power hidden in spreadsheets.",
     image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["Financial Statements", "Public Finance", "Ratio Analysis"],
+      "https://drive.google.com/file/d/1UJnI-WSsydpFUuogEREPEFHP6oup4zVF/view?usp=drive_link",
+    tags: ["Fractals", "Excel", "Complex Numbers", "Visualization"],
     content: `
-      <p class="mb-4">During my internship at the Municipal Advisory Council, I conducted in-depth financial statement analyses for various public sector entities to assess their fiscal health and debt service capabilities.</p>
-      
-      <h3 class="text-xl font-medium mb-3">Project Scope</h3>
-      <p class="mb-4">The analysis covered 15 municipal entities across Texas, ranging from small rural utilities to mid-sized cities, focusing on:</p>
+      <p class="mb-4">This project demonstrates the generation of the Mandelbrot set—a complex fractal pattern—entirely within Microsoft Excel. Built during my free time as an experimental dive into visual mathematics, it blends the iterative formula Z = Z² + C with Excel’s conditional formatting and complex number logic.</p>
+  
+      <h3 class="text-xl font-medium mb-3">Technical Breakdown</h3>
+      <p class="mb-4">The spreadsheet uses Excel's complex number functions to iterate over a grid of complex values. Each cell represents a point on the complex plane and determines escape time (number of iterations until divergence), which is then visualized using conditional formatting.</p>
       <ul class="mb-6 space-y-2">
-        <li>• Debt service coverage analysis</li>
-        <li>• Liquidity and cash flow assessment</li>
-        <li>• Revenue stability evaluation</li>
-        <li>• Long-term liability management</li>
-        <li>• Capital planning effectiveness</li>
+        <li>• Utilized <code>IMPRODUCT</code>, <code>IMSUM</code>, and <code>IMABS</code> for core logic</li>
+        <li>• Escaping iterations capped at 50 for performance</li>
+        <li>• Dynamic color gradient based on divergence speed</li>
+        <li>• Custom zoom settings for deeper fractal layers</li>
       </ul>
-      
-      <h3 class="text-xl font-medium mb-3">Key Metrics Analyzed</h3>
+  
+      <h3 class="text-xl font-medium mb-3">What I Learned</h3>
       <ul class="mb-6 space-y-2">
-        <li>• Debt Service Coverage Ratio (DSCR)</li>
-        <li>• Days Cash on Hand</li>
-        <li>• Operating Ratio</li>
-        <li>• Debt to Asset Ratio</li>
-        <li>• Revenue Growth Rate vs. Expenditure Growth Rate</li>
+        <li>• Iterative math in a non-programmatic environment</li>
+        <li>• Creative problem-solving under Excel’s formula constraints</li>
+        <li>• How fractals reveal patterns within infinite complexity</li>
       </ul>
-      
-      <h3 class="text-xl font-medium mb-3">Impact</h3>
-      <p class="mb-4">The analysis identified potential financial risks in three entities, leading to proactive advisory services that helped restructure approaching debt obligations and improve fiscal planning. For two municipalities, our analysis supported successful bond rating improvements.</p>
-      
+  
+      <h3 class="text-xl font-medium mb-3">Why It Matters</h3>
+      <p class="mb-4">This project proves that advanced mathematical concepts and visualizations can be implemented with tools outside traditional programming. It pushed Excel to its limits and turned a purely mathematical pattern into a fully functional spreadsheet visualization.</p>
+  
       <div class="flex justify-end">
-        <a href="#" class="px-4 py-2 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/80 transition-colors duration-300">View Methodology</a>
+        <a href="#" class="px-4 py-2 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/80 transition-colors duration-300">Download Excel File</a>
       </div>
     `,
   },
+  
 ];
 
 // Academic interests data
@@ -135,10 +133,10 @@ export const interests: InterestType[] = [
 // Blog post data
 export const blogPosts: BlogPostType[] = [
   {
-    title: "The Impact of AI on Financial Markets",
-    date: "May 15, 2023",
+    title: "A Deep Dive into the Human Psychology of Finance",
+    date: "Arpil 7, 2025",
     preview:
-      "Exploring how artificial intelligence and machine learning algorithms are transforming trading strategies, risk management, and market efficiency. Are we heading toward a more efficient market, or is AI creating new forms of information asymmetry?",
+      "A reflective look at how emotion, perception, and cognitive bias drive financial behavior — revealing that markets are as much psychological landscapes as they are numerical systems.",
   },
   {
     title: "Rethinking Modern Portfolio Theory",
@@ -147,15 +145,15 @@ export const blogPosts: BlogPostType[] = [
       "A critical examination of MPT's assumptions in today's market environment. How can investors adapt traditional portfolio construction techniques to account for changing correlations and non-normal return distributions?",
   },
   {
-    title: "Public Finance in the Post-Pandemic Era",
-    date: "March 12, 2023",
+    title: "How Video Game Markets Produce Safe Assets",
+    date: "March 10, 2025",
     preview:
-      "Analyzing how municipal and state governments are adapting their financing strategies following the fiscal challenges of the pandemic. What innovations in public finance are emerging, and how might they reshape government funding models?",
+      "Lorum Ipsum",
   },
   {
-    title: "Quantitative Easing: Long-term Implications",
-    date: "February 28, 2023",
+    title: "How The Ikon Pass Could Lead to the Destruction of Skiing",
+    date: "Arpil 28, 2025",
     preview:
-      "Examining the lasting effects of expansionary monetary policy on asset prices, inflation expectations, and market dynamics. How have traditional valuation models been affected by prolonged low interest rates?",
+      "Lorum Ipsum",
   },
 ];

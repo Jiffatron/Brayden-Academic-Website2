@@ -10,7 +10,7 @@ const Footer = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          &copy; {new Date().getFullYear()} Brayden Judge. All rights reserved.
+          &copy; {new Date().getFullYear()} Brayden Swavey. All rights reserved.
         </motion.div>
         <motion.div 
           className="flex space-x-6"
@@ -31,7 +31,7 @@ const Footer = () => {
             Blog
           </a>
           <a href="#contact" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-            Contact
+            Contact -- Under Construction
           </a>
         </motion.div>
       </div>

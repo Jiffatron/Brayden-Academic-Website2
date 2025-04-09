@@ -55,7 +55,7 @@ const About = () => {
             <p className="text-lg leading-relaxed mb-6">
               My name is Brayden Swavey, a senior Finance major at Texas Tech University. I specialize in
               analyzing both public and private sector financials and am fascinated by the long-term
-              macroeconomic impacts of capital allocation. Currently, I’m interning at the Municipal
+              macroeconomic impacts of capital allocation. Recently, I interned at the Municipal
               Advisory Council of Texas, where I work with school district bond data, fiscal disclosures,
               and assist in preparing municipal reports for investors and financial institutions.
             </p>
