@@ -80,7 +80,7 @@ Error generating stack: `+s.message+`
           Download PDF
         </a>
       </div>
-    `},{id:"mandelbrot-excel",title:"Mandelbrot Set in Excel -- Work in Progress",description:"A mathematical and visual exploration of fractal geometry using only Microsoft Excel, showcasing the computational power hidden in spreadsheets.",image:"https://imgur.com/a/W87udOf",tags:["Fractals","Excel","Complex Numbers","Visualization"],content:`
+    `},{id:"mandelbrot-excel",title:"Mandelbrot Set in Excel -- Work in Progress",description:"A mathematical and visual exploration of fractal geometry using only Microsoft Excel, showcasing the computational power hidden in spreadsheets.",image:"https://i.imgur.com/kLamLkF.png",tags:["Fractals","Excel","Complex Numbers","Visualization"],content:`
       <p class="mb-4">This project demonstrates the generation of the Mandelbrot set—a complex fractal pattern—entirely within Microsoft Excel. Built during my free time as an experimental dive into visual mathematics, it blends the iterative formula Z = Z² + C with Excel’s conditional formatting and complex number logic.</p>
   
       <h3 class="text-xl font-medium mb-3">Technical Breakdown</h3>
