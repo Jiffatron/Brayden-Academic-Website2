@@ -57,7 +57,7 @@ Error generating stack: `+s.message+`
       </ul>
       
       <h3 class="text-xl font-medium mb-3">Valuation Summary</h3>
-      <p class="mb-4">Utilizing a DCF model with a WACC of 8.7% and terminal growth rate of 2.5%, the analysis established a fair value range of $215-$240 per share, suggesting the stock was undervalued by approximately 15% at the time of analysis.</p>
+      <p class="mb-4">Utilizing a DCF model with a WACC of 10.20% and terminal growth rate of "N/A", the analysis established a fair value range of $138 per share, suggesting the stock was overvalued by approximately 11% at the time of analysis.</p>
       
       <h3 class="text-xl font-medium mb-3">Methodologies</h3>
       <ul class="mb-6 space-y-2">
@@ -87,16 +87,18 @@ Error generating stack: `+s.message+`
       <p class="mb-4">The spreadsheet uses Excel's complex number functions to iterate over a grid of complex values. Each cell represents a point on the complex plane and determines escape time (number of iterations until divergence), which is then visualized using conditional formatting.</p>
       <ul class="mb-6 space-y-2">
         <li>• Utilized <code>IMPRODUCT</code>, <code>IMSUM</code>, and <code>IMABS</code> for core logic</li>
-        <li>• Escaping iterations capped at 50 for performance</li>
+        <li>• Escaping iterations capped at 100 for performance</li>
         <li>• Dynamic color gradient based on divergence speed</li>
-        <li>• Custom zoom settings for deeper fractal layers</li>
+        <li>• Custom zoom settings for deeper fractal layers beyond the -1 to 1 spectrum</li>
       </ul>
   
       <h3 class="text-xl font-medium mb-3">What I Learned</h3>
       <ul class="mb-6 space-y-2">
         <li>• Iterative math in a non-programmatic environment</li>
         <li>• Creative problem-solving under Excel’s formula constraints</li>
+        <li>• How to improve preformance in VBA and reduce fluff for minimal hardware computers</li>
         <li>• How fractals reveal patterns within infinite complexity</li>
+        <li>• Chaning varibales ever so slightly will result in durastically different patterns</li>
       </ul>
   
       <h3 class="text-xl font-medium mb-3">Why It Matters</h3>
