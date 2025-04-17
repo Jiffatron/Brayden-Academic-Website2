@@ -138,7 +138,7 @@ export const blogPosts: BlogPostType[] = [
     date: "Arpil 7, 2025",
     preview:
       "A reflective look at how emotion, perception, and cognitive bias drive financial behavior — revealing that markets are as much psychological landscapes as they are numerical systems.",
-      content: `This is working!!!!`
+      content:"This is working!!!!"
   },
   {
     title: "Rethinking Modern Portfolio Theory",
