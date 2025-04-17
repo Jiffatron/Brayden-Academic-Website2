@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -21,12 +21,12 @@ function App() {
   const handleProjectClick = (project: ProjectType) => {
     setSelectedProject(project);
     setIsModalOpen(true);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = "auto";
   };
 
   const toggleDarkMode = () => {
@@ -34,17 +34,17 @@ function App() {
   };
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', darkMode);
+    document.documentElement.classList.toggle("dark", darkMode);
   }, [darkMode]);
 
   useEffect(() => {
     if (isModalOpen && selectedProject?.hasPreview) {
-      const previewBtn = document.querySelector('.view-preview-btn');
+      const previewBtn = document.querySelector(".view-preview-btn");
       if (previewBtn) {
-        previewBtn.addEventListener('click', () => {
-          const container = document.querySelector('.view-preview-btn-container');
+        previewBtn.addEventListener("click", () => {
+          const container = document.querySelector(".view-preview-btn-container");
           if (container) {
-            container.dispatchEvent(new Event('click'));
+            container.dispatchEvent(new Event("click"));
           }
         });
       }
@@ -52,32 +52,36 @@ function App() {
   }, [isModalOpen, selectedProject]);
 
   return (
-    <div className={`${darkMode ? 'dark' : 'light'}`}>
+    <div className={darkMode ? "dark" : "light"}>
       <Router>
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        
         <Routes>
           <Route
             path="/"
             element={
-              <main>
+              <>
                 <Hero />
                 <About />
                 <Research onProjectClick={handleProjectClick} />
                 <Resume />
                 <Blog />
                 <Contact />
-              </main>
+              </>
             }
           />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
         </Routes>
+
         <Footer />
+
         {isModalOpen && selectedProject && (
-          <ProjectModal 
-            project={selectedProject} 
-            onClose={handleCloseModal} 
+          <ProjectModal
+            project={selectedProject}
+            onClose={handleCloseModal}
           />
         )}
+
         <Toaster />
       </Router>
     </div>
