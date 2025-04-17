@@ -8,6 +8,7 @@ import ProjectModal from "@/components/ProjectModal";
 import Resume from "@/components/Resume";
 import Blog from "@/components/Blog";
 import BlogPostPage from "@/pages/BlogPostPage";
+import BlogLanding from "@/pages/BlogLanding";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
@@ -55,7 +56,7 @@ function App() {
     <div className={darkMode ? "dark" : "light"}>
       <Router>
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        
+
         <Routes>
           <Route
             path="/"
@@ -70,16 +71,14 @@ function App() {
               </>
             }
           />
+          <Route path="/blog" element={<BlogLanding />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
         </Routes>
 
         <Footer />
 
         {isModalOpen && selectedProject && (
-          <ProjectModal
-            project={selectedProject}
-            onClose={handleCloseModal}
-          />
+          <ProjectModal project={selectedProject} onClose={handleCloseModal} />
         )}
 
         <Toaster />
