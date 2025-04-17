@@ -16,6 +16,7 @@ export interface InterestType {
 }
 
 export interface BlogPostType {
+  slug: string;
   title: string;
   date: string;
   preview: string;
@@ -134,31 +135,42 @@ export const interests: InterestType[] = [
 // Blog post data
 export const blogPosts: BlogPostType[] = [
   {
+    slug: "human-psychology-of-finance",
     title: "A Deep Dive into the Human Psychology of Finance",
-    date: "Arpil 7, 2025",
+    date: "April 7, 2025",
     preview:
       "A reflective look at how emotion, perception, and cognitive bias drive financial behavior — revealing that markets are as much psychological landscapes as they are numerical systems.",
-      content:"This is working!!!!"
+    content: `
+      <p>This is working!!!!</p>
+    `,
   },
   {
+    slug: "rethinking-modern-portfolio-theory",
     title: "Rethinking Modern Portfolio Theory",
     date: "April 3, 2023",
     preview:
       "A critical examination of MPT's assumptions in today's market environment. How can investors adapt traditional portfolio construction techniques to account for changing correlations and non-normal return distributions?",
-      content:`Not Yet Avaliable`
+    content: `
+      <p>Not Yet Available</p>
+    `,
   },
   {
+    slug: "video-game-markets-safe-assets",
     title: "How Video Game Markets Produce Safe Assets",
     date: "March 10, 2025",
-    preview:
-      "Lorum Ipsum",
-      content:`Not Yet Avaliable`
+    preview: "Lorum Ipsum",
+    content: `
+      <p>Not Yet Available</p>
+    `,
   },
   {
+    slug: "ikon-pass-skiing-impact",
     title: "How The Ikon Pass Could Lead to the Destruction of Skiing",
-    date: "Arpil 28, 2025",
-    preview:
-      "Lorum Ipsum",
-      content:`Not Yet Avaliable`
+    date: "April 28, 2025",
+    preview: "Lorum Ipsum",
+    content: `
+      <p>Not Yet Available</p>
+    `,
   },
 ];
+
