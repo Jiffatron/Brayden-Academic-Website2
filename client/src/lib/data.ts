@@ -19,6 +19,7 @@ export interface BlogPostType {
   title: string;
   date: string;
   preview: string;
+  content: string;
 }
 
 // Project data
@@ -137,23 +138,27 @@ export const blogPosts: BlogPostType[] = [
     date: "Arpil 7, 2025",
     preview:
       "A reflective look at how emotion, perception, and cognitive bias drive financial behavior — revealing that markets are as much psychological landscapes as they are numerical systems.",
+      content: `This is working!!!!`
   },
   {
     title: "Rethinking Modern Portfolio Theory",
     date: "April 3, 2023",
     preview:
       "A critical examination of MPT's assumptions in today's market environment. How can investors adapt traditional portfolio construction techniques to account for changing correlations and non-normal return distributions?",
+      content:`Not Yet Avaliable`
   },
   {
     title: "How Video Game Markets Produce Safe Assets",
     date: "March 10, 2025",
     preview:
       "Lorum Ipsum",
+      content:`Not Yet Avaliable`
   },
   {
     title: "How The Ikon Pass Could Lead to the Destruction of Skiing",
     date: "Arpil 28, 2025",
     preview:
       "Lorum Ipsum",
+      content:`Not Yet Avaliable`
   },
 ];
