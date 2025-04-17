@@ -1,11 +1,14 @@
+// Blog.tsx
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import { useRef } from "react";
 import { blogPosts } from "@/lib/data";
+import BlogModal from "./BlogModal";
 
 const Blog = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
+  const [activePost, setActivePost] = useState(null);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -66,21 +69,18 @@ const Blog = () => {
                 {post.title}
               </h3>
               <p className="text-muted-foreground mb-4">{post.preview}</p>
-              <a
-                href="#"
+              <button
+                onClick={() => setActivePost(post)}
                 className="text-primary flex items-center text-sm hover:text-primary/80 transition-colors"
               >
                 <span>Read More</span>
                 <i className="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-              </a>
+              </button>
             </motion.div>
           ))}
         </motion.div>
 
-        <motion.div
-          className="mt-12 text-center"
-          variants={itemVariants}
-        >
+        <motion.div className="mt-12 text-center" variants={itemVariants}>
           <a
             href="#"
             className="inline-flex items-center px-6 py-3 border-2 border-primary text-primary rounded hover:bg-primary hover:bg-opacity-10 transition-all duration-300"
@@ -89,6 +89,10 @@ const Blog = () => {
             <i className="fas fa-arrow-right ml-2"></i>
           </a>
         </motion.div>
+
+        {activePost && (
+          <BlogModal post={activePost} onClose={() => setActivePost(null)} />
+        )}
       </motion.div>
     </section>
   );
