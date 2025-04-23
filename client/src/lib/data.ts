@@ -191,7 +191,7 @@ What started as a journey into finance has evolved into something much more pers
     slug: "video-game-markets-safe-assets",
     title: "How Video Game Markets Produce Safe Assets",
     date: "March 10, 2025",
-    preview: "Lorum Ipsum",
+    preview: "In Progress",
     content: `
       <p>Not Yet Available</p>
     `,
@@ -200,7 +200,7 @@ What started as a journey into finance has evolved into something much more pers
     slug: "ikon-pass-skiing-impact",
     title: "How The Ikon Pass Could Lead to the Destruction of Skiing",
     date: "April 28, 2025",
-    preview: "Lorum Ipsum",
+    preview: "In Progress",
     content: `
       <p>Not Yet Available</p>
     `,
