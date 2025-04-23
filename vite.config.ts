@@ -36,5 +36,5 @@ export default defineConfig({
     outDir: path.resolve(__dirname, "docs"),
     emptyOutDir: true,
   },
-  base: "/Brayden-Academic-Website2/",
+  base: "/",
 });
