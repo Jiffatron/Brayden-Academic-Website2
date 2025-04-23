@@ -16,7 +16,6 @@ const About = () => {
       },
     },
   };
-
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {

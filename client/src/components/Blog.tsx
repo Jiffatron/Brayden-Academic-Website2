@@ -4,11 +4,12 @@ import { motion } from "framer-motion";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { blogPosts } from "@/lib/data";
 import BlogModal from "./BlogModal";
+import type { BlogPostType } from "@/lib/data";
 
 const Blog = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
-  const [activePost, setActivePost] = useState(null);
+  const [activePost, setActivePost] = useState<BlogPostType | null>(null);
 
   const containerVariants = {
     hidden: { opacity: 0 },

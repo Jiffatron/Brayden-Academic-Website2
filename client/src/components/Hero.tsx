@@ -89,11 +89,11 @@ const Hero = () => {
           variants={containerVariants}
         >
           <motion.div
-            className="headshot-container w-64 h-64 md:w-80 md:h-80 depth-effect"
+            className="w-[360px] h-[360px] sm:w-[440px] sm:h-[440px] depth-effect"
             variants={itemVariants}
           >
             <img
-              src="https://drive.google.com/file/d/1mJb_ijwsIcVbykylKQd1mQPvLm0cmegG/view?usp=drive_link"
+              src="https://i.imgur.com/VHIvMD5.jpeg"
               alt="Brayden Swavey headshot"
               className="object-cover w-full h-full rounded-lg shadow-xl"
             />
