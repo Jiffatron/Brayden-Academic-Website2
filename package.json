@@ -6,7 +6,7 @@
   "homepage": "https://jiffatron.github.io/Brayden-Academic-Website2",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp CNAME docs/",
+    "build": "vite build && cp CNAME docs/CNAME",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d docs"
   },
