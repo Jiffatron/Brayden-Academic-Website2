@@ -33,7 +33,7 @@ export const projects: ProjectType[] = [
     image:
       "https://img.ctykit.com/cdn/wa-bellevue/images/tr:w-900/8_16_17_member_the_boeing_company.jpg",
     tags: ["Financial Analysis", "Equity Valuation", "Industry Research"],
-    pdfUrl: "https://drive.google.com/file/d/1mAMPFzCaC-Oc5XHnGcFW7ubHwlyfmpQ4/view?usp=drive_link", 
+    pdfUrl: "https://drive.google.com/file/d/1mAMPFzCaC-Oc5XHnGcFW7ubHwlyfmpQ4/view?usp=sharing", 
     hasPreview: true,
     content: `
       <p class="mb-4">This comprehensive equity research project examines Boeing's financial position following recent industry challenges, including the 737 MAX issues and pandemic impacts on the aviation sector.</p>
