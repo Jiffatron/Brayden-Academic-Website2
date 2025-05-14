@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useNavigate, useLocation } from "react-router-dom";
 
 interface NavbarProps {
   darkMode: boolean;
@@ -11,42 +12,38 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const navigate = useNavigate();
+  const location = useLocation();
 
+  // Scroll-aware navbar show/hide
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      // Determine if scrolled more than 100px
-      if (currentScrollY > 100) {
-        setScrolled(true);
-
-        // Hide on scroll down, show on scroll up
-        if (currentScrollY > lastScrollY) {
-          setVisible(false);
-        } else {
-          setVisible(true);
-        }
-      } else {
-        setScrolled(false);
-        setVisible(true);
-      }
-
+      setScrolled(currentScrollY > 100);
+      setVisible(currentScrollY < lastScrollY || currentScrollY < 100);
       setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
+  // Scroll to section after navigating to homepage
+  const scrollToSection = (id: string) => {
+    const scroll = () => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    };
+
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(scroll, 50); // wait for homepage to mount
+    } else {
+      scroll();
+    }
   };
 
   const navbarVariants = {
@@ -55,9 +52,7 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <motion.nav
         className={`glass-nav px-6 ${scrolled ? "py-2 shadow-lg" : "py-4"}`}
         initial="visible"
@@ -66,33 +61,26 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
         transition={{ duration: 0.3 }}
       >
         <div className="flex justify-between items-center">
-          <a href="#hero" className="text-2xl font-serif font-bold text-primary hover:text-primary/80 transition-colors">
+          <button
+            onClick={() => scrollToSection("hero")}
+            className="text-2xl font-serif font-bold text-primary hover:text-primary/80 transition-colors"
+          >
             BJ
-          </a>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8 items-center">
-            <a href="#about" className="nav-link">
-              About
-            </a>
-            <a href="#research" className="nav-link">
-              Research
-            </a>
-            <a href="#resume" className="nav-link">
-              Resume
-            </a>
-            <a href="#blog" className="nav-link">
-              Blog
-            </a>
-            <a href="#contact" className="nav-link">
-              Contact
-            </a>
+            <button onClick={() => scrollToSection("about")} className="nav-link">About</button>
+            <button onClick={() => scrollToSection("research")} className="nav-link">Research</button>
+            <button onClick={() => scrollToSection("resume")} className="nav-link">Resume</button>
+            <button onClick={() => navigate("/blog")} className="nav-link">Blog</button>
+            <button onClick={() => scrollToSection("contact")} className="nav-link">Contact</button>
             <button
               onClick={toggleDarkMode}
               className="ml-4 text-primary p-2 rounded-full hover:bg-secondary transition-colors hover:rotate-90 duration-300"
               aria-label="Toggle dark mode"
             >
-              <i className={`fas ${darkMode ? 'fa-sun' : 'fa-moon'}`}></i>
+              <i className={`fas ${darkMode ? "fa-sun" : "fa-moon"}`}></i>
             </button>
           </div>
 
@@ -113,21 +101,11 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
           isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
-        <a href="#about" className="nav-link py-2" onClick={closeMobileMenu}>
-          About
-        </a>
-        <a href="#research" className="nav-link py-2" onClick={closeMobileMenu}>
-          Research
-        </a>
-        <a href="#resume" className="nav-link py-2" onClick={closeMobileMenu}>
-          Resume
-        </a>
-        <a href="#blog" className="nav-link py-2" onClick={closeMobileMenu}>
-          Blog
-        </a>
-        <a href="#contact" className="nav-link py-2" onClick={closeMobileMenu}>
-          Contact
-        </a>
+        <button onClick={() => { closeMobileMenu(); scrollToSection("about"); }} className="nav-link py-2">About</button>
+        <button onClick={() => { closeMobileMenu(); scrollToSection("research"); }} className="nav-link py-2">Research</button>
+        <button onClick={() => { closeMobileMenu(); scrollToSection("resume"); }} className="nav-link py-2">Resume</button>
+        <button onClick={() => { closeMobileMenu(); scrollToSection("blog"); }} className="nav-link py-2">Blog</button>
+        <button onClick={() => { closeMobileMenu(); scrollToSection("contact"); }} className="nav-link py-2">Contact</button>
         <button
           onClick={() => {
             toggleDarkMode();
@@ -136,7 +114,7 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
           className="text-primary self-start p-2 rounded-full hover:bg-secondary transition-colors"
           aria-label="Toggle dark mode"
         >
-          <i className={`fas ${darkMode ? 'fa-sun' : 'fa-moon'}`}></i>
+          <i className={`fas ${darkMode ? "fa-sun" : "fa-moon"}`}></i>
         </button>
       </div>
     </header>

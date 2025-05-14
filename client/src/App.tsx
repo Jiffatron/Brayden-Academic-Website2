@@ -1,18 +1,96 @@
 import { useState, useEffect } from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Research from "@/components/Research";
-import ProjectModal from "@/components/ProjectModal";
 import Resume from "@/components/Resume";
 import Blog from "@/components/Blog";
-import BlogPostPage from "@/pages/BlogPostPage";
-import BlogLanding from "@/pages/BlogLanding";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+
+import BlogLanding from "@/pages/BlogLanding";
+import BlogPostPage from "@/pages/BlogPostPage";
+import ProjectModal from "@/components/ProjectModal";
 import { Toaster } from "@/components/ui/toaster";
 import { ProjectType } from "@/lib/data";
+
+function AnimatedRoutes({
+  darkMode,
+  toggleDarkMode,
+  isModalOpen,
+  selectedProject,
+  handleCloseModal,
+  handleProjectClick,
+}: {
+  darkMode: boolean;
+  toggleDarkMode: () => void;
+  isModalOpen: boolean;
+  selectedProject: ProjectType | null;
+  handleCloseModal: () => void;
+  handleProjectClick: (project: ProjectType) => void;
+}) {
+  const location = useLocation();
+
+  return (
+    <>
+      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route
+            path="/"
+            element={
+              <>
+                <section id="hero">
+                  <Hero />
+                </section>
+
+                <section id="about" className="scroll-mt-24">
+                  <About />
+                </section>
+
+                <section id="research" className="scroll-mt-24">
+                  <Research onProjectClick={handleProjectClick} />
+                </section>
+
+                <section id="resume" className="scroll-mt-24">
+                  <Resume />
+                </section>
+
+                <section id="blog" className="scroll-mt-24">
+                  <Blog />
+                </section>
+
+                <section id="contact" className="scroll-mt-24">
+                  <Contact />
+                </section>
+              </>
+            }
+          />
+
+          <Route path="/blog" element={<BlogLanding />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
+        </Routes>
+      </AnimatePresence>
+
+      <Footer />
+
+      {isModalOpen && selectedProject && (
+        <ProjectModal project={selectedProject} onClose={handleCloseModal} />
+      )}
+
+      <Toaster />
+    </>
+  );
+}
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -41,47 +119,23 @@ function App() {
   useEffect(() => {
     if (isModalOpen && selectedProject?.hasPreview) {
       const previewBtn = document.querySelector(".view-preview-btn");
-      if (previewBtn) {
-        previewBtn.addEventListener("click", () => {
-          const container = document.querySelector(".view-preview-btn-container");
-          if (container) {
-            container.dispatchEvent(new Event("click"));
-          }
-        });
-      }
+      previewBtn?.addEventListener("click", () => {
+        document.querySelector(".view-preview-btn-container")?.dispatchEvent(new Event("click"));
+      });
     }
   }, [isModalOpen, selectedProject]);
 
   return (
     <div className={darkMode ? "dark" : "light"}>
       <Router>
-        <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <About />
-                <Research onProjectClick={handleProjectClick} />
-                <Resume />
-                <Blog />
-                <Contact />
-              </>
-            }
-          />
-          <Route path="/blog" element={<BlogLanding />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
-        </Routes>
-
-        <Footer />
-
-        {isModalOpen && selectedProject && (
-          <ProjectModal project={selectedProject} onClose={handleCloseModal} />
-        )}
-
-        <Toaster />
+        <AnimatedRoutes
+          darkMode={darkMode}
+          toggleDarkMode={toggleDarkMode}
+          isModalOpen={isModalOpen}
+          selectedProject={selectedProject}
+          handleCloseModal={handleCloseModal}
+          handleProjectClick={handleProjectClick}
+        />
       </Router>
     </div>
   );

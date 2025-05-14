@@ -1,10 +1,25 @@
 import { blogPosts } from "@/lib/data";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const BlogLanding = () => {
   return (
-    <main className="py-20 px-6 max-w-5xl mx-auto">
-      <h1 className="text-3xl font-serif font-bold mb-10">All Blog Posts</h1>
+    <motion.main
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="py-20 px-6 max-w-5xl mx-auto"
+    >
+      <h1 className="text-3xl font-serif font-bold mb-2">All Blog Posts</h1>
+
+      <Link
+        to="/"
+        className="inline-block mb-10 text-primary text-sm border border-transparent hover:border-primary px-4 py-2 rounded transition"
+      >
+        ← Back to Home
+      </Link>
+
       <div className="grid gap-8">
         {blogPosts.map((post, index) => (
           <div key={index} className="blog-card border-b pb-4">
@@ -20,7 +35,7 @@ const BlogLanding = () => {
           </div>
         ))}
       </div>
-    </main>
+    </motion.main>
   );
 };
 
