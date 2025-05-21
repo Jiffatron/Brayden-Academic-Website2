@@ -22,6 +22,7 @@ import ProjectModal from "@/components/ProjectModal";
 import { Toaster } from "@/components/ui/toaster";
 import { ProjectType } from "@/lib/data";
 
+// Separate component to manage route animations and modal integration
 function AnimatedRoutes({
   darkMode,
   toggleDarkMode,
@@ -75,7 +76,6 @@ function AnimatedRoutes({
               </>
             }
           />
-
           <Route path="/blog" element={<BlogLanding />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
         </Routes>
@@ -109,21 +109,12 @@ function App() {
   };
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((prev) => !prev);
   };
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode);
   }, [darkMode]);
-
-  useEffect(() => {
-    if (isModalOpen && selectedProject?.hasPreview) {
-      const previewBtn = document.querySelector(".view-preview-btn");
-      previewBtn?.addEventListener("click", () => {
-        document.querySelector(".view-preview-btn-container")?.dispatchEvent(new Event("click"));
-      });
-    }
-  }, [isModalOpen, selectedProject]);
 
   return (
     <div className={darkMode ? "dark" : "light"}>

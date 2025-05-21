@@ -26,51 +26,45 @@ export interface BlogPostType {
 // Project data
 export const projects: ProjectType[] = [
   {
-    id: "boeing",
-    title: "Equity Research: Boeing",
-    description:
-      "Comprehensive analysis of Boeing's financial position, market strategy, and future prospects in the aerospace industry. Includes DCF valuation model and competitive positioning assessment.",
-    image:
-      "https://img.ctykit.com/cdn/wa-bellevue/images/tr:w-900/8_16_17_member_the_boeing_company.jpg",
-    tags: ["Financial Analysis", "Equity Valuation", "Industry Research"],
-    pdfUrl: "https://drive.google.com/file/d/1mAMPFzCaC-Oc5XHnGcFW7ubHwlyfmpQ4/view?usp=sharing", 
-    hasPreview: true,
-    content: `
-      <p class="mb-4">This comprehensive equity research project examines Boeing's financial position following recent industry challenges, including the 737 MAX issues and pandemic impacts on the aviation sector.</p>
-      
-      <h3 class="text-xl font-medium mb-3">Key Findings</h3>
-      <ul class="mb-6 space-y-2">
-        <li>• Strong long-term growth potential despite short-term volatility</li>
-        <li>• Defense division providing stability amid commercial aviation fluctuations</li>
-        <li>• Improving free cash flow projection for 2023-2025</li>
-        <li>• Supply chain improvements leading to increased production capacity</li>
-      </ul>
-      
-      <h3 class="text-xl font-medium mb-3">Valuation Summary</h3>
-      <p class="mb-4">Utilizing a DCF model with a WACC of 8.7% and terminal growth rate of 2.5%, the analysis established a fair value range of $215-$240 per share, suggesting the stock was undervalued by approximately 15% at the time of analysis.</p>
-      
-      <h3 class="text-xl font-medium mb-3">Methodologies</h3>
-      <ul class="mb-6 space-y-2">
-        <li>• Discounted Cash Flow (DCF) Analysis</li>
-        <li>• Comparable Company Analysis</li>
-        <li>• Free Cash Flow Valuation</li>
-        <li>• Scenario Analysis (Bull, Base, Bear cases)</li>
-      </ul>
-      
-      <h3 class="text-xl font-medium mb-3 mt-8">Report Preview</h3>
-      <div class="mb-6 preview-placeholder bg-muted p-4 rounded-md flex items-center justify-center h-96">
-        <p class="text-muted-foreground">Please contact me if this preview is not avaliable</p>
-      </div>
-      
-      <div class="flex justify-end gap-4">
-        <button class="px-4 py-2 bg-secondary text-secondary-foreground font-medium rounded hover:bg-secondary/80 transition-colors duration-300 view-preview-btn">
-          View in Browser
-        </button>
-        <a href="#" download class="px-4 py-2 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/80 transition-colors duration-300">
-          Download PDF
-        </a>
-      </div>
-    `,
+  id: "boeing",
+  title: "Equity Research: Boeing",
+  description:
+    "Comprehensive analysis of Boeing's financial position, market strategy, and future prospects in the aerospace industry. Includes DCF valuation model and competitive positioning assessment.",
+  image:
+    "https://img.ctykit.com/cdn/wa-bellevue/images/tr:w-900/8_16_17_member_the_boeing_company.jpg",
+  tags: ["Financial Analysis", "Equity Valuation", "Industry Research"],
+  pdfUrl: "/Boeing_Equity_Research_Report.pdf",
+  hasPreview: true,
+  content: `
+    <p class="mb-4">This comprehensive equity research project examines Boeing's financial position following recent industry challenges, including the 737 MAX issues and pandemic impacts on the aviation sector.</p>
+    
+    <h3 class="text-xl font-medium mb-3">Key Findings</h3>
+    <ul class="mb-6 space-y-2">
+      <li>• Strong long-term growth potential despite short-term volatility</li>
+      <li>• Defense division providing stability amid commercial aviation fluctuations</li>
+      <li>• Improving free cash flow projection for 2023–2025</li>
+      <li>• Supply chain improvements leading to increased production capacity</li>
+    </ul>
+    
+    <h3 class="text-xl font-medium mb-3">Valuation Summary</h3>
+    <p class="mb-4">Utilizing a DCF model with a WACC of 8.7% and terminal growth rate of 2.5%, the analysis established a fair value range of $215–$240 per share, suggesting the stock was undervalued by approximately 15% at the time of analysis.</p>
+    
+    <h3 class="text-xl font-medium mb-3">Methodologies</h3>
+    <ul class="mb-6 space-y-2">
+      <li>• Discounted Cash Flow (DCF) Analysis</li>
+      <li>• Comparable Company Analysis</li>
+      <li>• Free Cash Flow Valuation</li>
+      <li>• Scenario Analysis (Bull, Base, Bear cases)</li>
+    </ul>
+    
+    <h3 class="text-xl font-medium mb-3 mt-8">Report Preview</h3>
+    <div class="mb-6 preview-placeholder bg-muted p-4 rounded-md flex items-center justify-center h-96">
+      <p class="text-muted-foreground">
+        Use the buttons below to view or download the full PDF report.
+      </p>
+    </div>
+  `
+
   },
   {
     id: "mandelbrot-excel",
