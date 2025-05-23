@@ -2,9 +2,11 @@ import { motion } from "framer-motion";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { useRef, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
   const { toast } = useToast();
 
@@ -74,17 +76,35 @@ const Contact = () => {
     setErrors(newErrors);
 
     if (!newErrors.name && !newErrors.email && !newErrors.message) {
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-        duration: 5000,
-      });
+      if (!formRef.current) return;
 
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
+      emailjs
+        .sendForm(
+          "service_4m6ndbl",
+          "template_re2yyvs",
+          formRef.current,
+          "mLeVzTuoMYG62e1zO"
+        )
+        .then(() => {
+          toast({
+            title: "Message sent!",
+            description: "Thanks for reaching out. I'll get back to you soon.",
+            duration: 5000,
+          });
+
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+          });
+        })
+        .catch(() => {
+          toast({
+            title: "Error",
+            description: "Failed to send. Please try again later.",
+            duration: 5000,
+          });
+        });
     }
   };
 
@@ -104,21 +124,13 @@ const Contact = () => {
           className="text-3xl md:text-4xl font-serif font-bold mb-6 relative inline-block"
           variants={itemVariants}
         >
-          Contact -- Under Construction
+          Contact
           <span className="absolute -bottom-2 left-0 w-1/2 h-px bg-primary"></span>
         </motion.h2>
 
-        <motion.p
-          className="text-muted-foreground text-lg mb-12 max-w-2xl"
-          variants={itemVariants}
-        >
-          This page is under construction!! Please email me at Bjudge@ttu.edu or
-          contact me via LinkedIn
-        </motion.p>
-
         <div className="grid md:grid-cols-2 gap-12">
           <motion.div variants={itemVariants}>
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form ref={formRef} className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Name
@@ -131,13 +143,11 @@ const Contact = () => {
                   onChange={handleChange}
                   className={`w-full bg-card border ${
                     errors.name ? "border-destructive" : "border-border"
-                  } rounded-md px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
+                  } rounded-md px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all`}
                   placeholder="Your Name"
                 />
                 {errors.name && (
-                  <p className="mt-1 text-sm text-destructive">
-                    Please enter your name
-                  </p>
+                  <p className="mt-1 text-sm text-destructive">Please enter your name</p>
                 )}
               </div>
 
@@ -153,7 +163,7 @@ const Contact = () => {
                   onChange={handleChange}
                   className={`w-full bg-card border ${
                     errors.email ? "border-destructive" : "border-border"
-                  } rounded-md px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
+                  } rounded-md px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all`}
                   placeholder="your.email@example.com"
                 />
                 {errors.email && (
@@ -175,13 +185,11 @@ const Contact = () => {
                   onChange={handleChange}
                   className={`w-full bg-card border ${
                     errors.message ? "border-destructive" : "border-border"
-                  } rounded-md px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
+                  } rounded-md px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all`}
                   placeholder="Your message here..."
                 />
                 {errors.message && (
-                  <p className="mt-1 text-sm text-destructive">
-                    Please enter a message
-                  </p>
+                  <p className="mt-1 text-sm text-destructive">Please enter a message</p>
                 )}
               </div>
 
@@ -194,86 +202,6 @@ const Contact = () => {
                 Send Message
               </motion.button>
             </form>
-          </motion.div>
-
-          <motion.div
-            className="flex flex-col justify-between"
-            variants={itemVariants}
-          >
-            <div>
-              <h3 className="text-xl font-medium mb-4">Get In Touch</h3>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start">
-                  <div className="text-primary mr-4 mt-1">
-                    <i className="fas fa-envelope"></i>
-                  </div>
-                  <div>
-                    <h4 className="font-medium mb-1">Email</h4>
-                    <div className="flex flex-col space-y-1">
-                      <a
-                        href="mailto:brayden.swavey@email.com"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        Brayden.Swavey@gmail.com
-                      </a>
-                      <a
-                        href="mailto:bjudge@ttu.edu"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        Bjudge@ttu.edu
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="text-primary mr-4 mt-1">
-                    <i className="fas fa-map-marker-alt"></i>
-                  </div>
-                  <div>
-                    <h4 className="font-medium mb-1">Location</h4>
-                    <p className="text-muted-foreground">Sunnyvale, Texas</p>
-                  </div>
-                </div>
-              </div>
-
-              <h3 className="text-xl font-medium mb-4">Connect on Socials</h3>
-              <div className="flex space-x-4">
-                <a
-                  href="https://www.linkedin.com/in/brayden-swavey"
-                  className="text-muted-foreground hover:text-primary text-xl transition-colors"
-                  aria-label="LinkedIn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-                <a
-                  href="https://github.com/Jiffatron"
-                  className="text-muted-foreground hover:text-primary text-xl transition-colors"
-                  aria-label="GitHub"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-github"></i>
-                </a>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-primary text-xl transition-colors"
-                  aria-label="X"
-                >
-                  <i className="fab fa-twitter"></i>
-                </a>
-              </div>
-            </div>
-
-            <div className="mt-12 md:mt-0">
-              <img
-                src="https://images.unsplash.com/photo-1579389083395-4507e98b5e67?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Minimalist office setting"
-                className="rounded shadow-md w-full h-48 object-cover"
-              />
-            </div>
           </motion.div>
         </div>
       </motion.div>
