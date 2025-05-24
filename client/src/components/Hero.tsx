@@ -6,6 +6,13 @@ const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
 
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -33,7 +40,7 @@ const Hero = () => {
     <section
       id="hero"
       ref={sectionRef}
-      className={`min-h-screen flex items-center pt-24 pb-12 px-6 md:px-16 lg:px-24`}
+      className="min-h-screen flex items-center pt-24 pb-12 px-6 md:px-16 lg:px-24"
     >
       <div className="w-full max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <motion.div
@@ -48,37 +55,34 @@ const Hero = () => {
           >
             Brayden<br /><span className="text-primary">Swavey</span>
           </motion.h1>
-          
+
           <motion.h2
             className="text-xl text-muted-foreground font-light mb-6"
             variants={itemVariants}
           >
             Finance Student | Texas Tech University
           </motion.h2>
-          
+
           <motion.p
             className="text-lg md:text-xl mb-8 max-w-xl"
             variants={itemVariants}
           >
             Delving into the quantitative frameworks that drive markets and shape strategic financial decisions
           </motion.p>
-          
-          <motion.div
-            className="flex space-x-6"
-            variants={itemVariants}
-          >
-            <a
-              href="#research"
+
+          <motion.div className="flex space-x-6" variants={itemVariants}>
+            <button
+              onClick={() => scrollToSection("research")}
               className="px-6 py-3 border-2 border-primary text-primary rounded-md hover:bg-primary hover:bg-opacity-10 transition-all duration-300 backdrop-blur-sm"
             >
               View Research
-            </a>
-            <a
-              href="#contact"
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
               className="px-6 py-3 bg-primary text-primary-foreground font-medium rounded-md shadow-lg hover:bg-primary/80 transition-colors duration-300 hover:shadow-primary/25 hover:shadow-xl"
             >
               Get in Touch
-            </a>
+            </button>
           </motion.div>
         </motion.div>
 
@@ -89,7 +93,7 @@ const Hero = () => {
           variants={containerVariants}
         >
           <motion.div
-            className="w-[360px] h-[360px] sm:w-[440px] sm:h-[440px] depth-effect"
+            className="w-[360px] h-[360px] sm:w-[440px] sm:h-[440px] depth-effect relative"
             variants={itemVariants}
           >
             <img

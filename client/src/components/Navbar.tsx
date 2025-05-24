@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
+import StockTicker from "./Stockticker";
 
 interface NavbarProps {
   darkMode: boolean;
@@ -15,7 +16,11 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Scroll-aware navbar show/hide
+  const navbarVariants = {
+    visible: { y: 0 },
+    hidden: { y: "-100%" },
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -31,7 +36,6 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
-  // Scroll to section after navigating to homepage
   const scrollToSection = (id: string) => {
     const scroll = () => {
       const el = document.getElementById(id);
@@ -40,27 +44,22 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
 
     if (location.pathname !== "/") {
       navigate("/");
-      setTimeout(scroll, 50); // wait for homepage to mount
+      setTimeout(scroll, 50);
     } else {
       scroll();
     }
   };
 
-  const navbarVariants = {
-    visible: { y: 0 },
-    hidden: { y: "-100%" },
-  };
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <motion.nav
-        className={`glass-nav px-6 ${scrolled ? "py-2 shadow-lg" : "py-4"}`}
+        className={`glass-nav px-6 pt-2 ${scrolled ? "py-2 shadow-lg" : "py-3"}`}
         initial="visible"
         animate={visible ? "visible" : "hidden"}
         variants={navbarVariants}
         transition={{ duration: 0.3 }}
       >
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between w-full">
           <button
             onClick={() => scrollToSection("hero")}
             className="text-2xl font-serif font-bold text-primary hover:text-primary/80 transition-colors"
@@ -68,7 +67,15 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
             BJ
           </button>
 
-          {/* Desktop Navigation */}
+          <div className="-mt-1 hidden md:flex flex-1 justify-center space-x-3">
+            <StockTicker symbol="^DJI" label="Dow" />
+            <StockTicker symbol="^GSPC" label="S&P" />
+            <StockTicker symbol="^IXIC" label="Nasdaq" />
+            <StockTicker symbol="AAPL" label="AAPL" />
+            <StockTicker symbol="MSFT" label="MSFT" />
+            <StockTicker symbol="AMZN" label="AMZN" />
+          </div>
+
           <div className="hidden md:flex space-x-8 items-center">
             <button onClick={() => scrollToSection("about")} className="nav-link">About</button>
             <button onClick={() => scrollToSection("research")} className="nav-link">Research</button>
@@ -84,7 +91,6 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
             </button>
           </div>
 
-          {/* Mobile Navigation Toggle */}
           <button
             className="md:hidden text-primary p-2 rounded-full hover:bg-secondary transition-colors"
             onClick={toggleMobileMenu}
@@ -95,7 +101,6 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
         </div>
       </motion.nav>
 
-      {/* Mobile Navigation Menu */}
       <div
         className={`md:hidden glass-nav flex flex-col py-4 px-6 space-y-4 transition-all duration-500 ${
           isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -104,7 +109,7 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
         <button onClick={() => { closeMobileMenu(); scrollToSection("about"); }} className="nav-link py-2">About</button>
         <button onClick={() => { closeMobileMenu(); scrollToSection("research"); }} className="nav-link py-2">Research</button>
         <button onClick={() => { closeMobileMenu(); scrollToSection("resume"); }} className="nav-link py-2">Resume</button>
-        <button onClick={() => { closeMobileMenu(); scrollToSection("blog"); }} className="nav-link py-2">Blog</button>
+        <button onClick={() => { closeMobileMenu(); navigate("/blog"); }} className="nav-link py-2">Blog</button>
         <button onClick={() => { closeMobileMenu(); scrollToSection("contact"); }} className="nav-link py-2">Contact</button>
         <button
           onClick={() => {
