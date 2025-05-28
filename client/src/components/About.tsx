@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { useRef } from "react";
+import { Import } from "lucide-react";
+import { ResponsiveTimeline } from "./Timeline"
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -54,11 +56,11 @@ const About = () => {
         <div className="grid md:grid-cols-5 gap-12 items-start">
           <motion.div className="md:col-span-3" variants={itemVariants}>
             <p className="text-lg leading-relaxed mb-6">
-              My name is Brayden Swavey, a senior Finance major at Texas Tech University. I specialize in
-              analyzing both public and private sector financials and am fascinated by the long-term
-              macroeconomic impacts of capital allocation. Recently, I interned at the Municipal
-              Advisory Council of Texas, where I work with school district bond data, fiscal disclosures,
-              and assist in preparing municipal reports for investors and financial institutions.
+              My name is Brayden Swavey, a recent Finance graduate from Texas Tech University.
+               I specialize in analyzing financial data across both public and private sectors, 
+               with a strong interest in the long-term macroeconomic effects of capital allocation. 
+               I am passionate about understanding how money moves through systems, 
+               from municipal budgets to corporate strategy, and how those decisions shape broader economic outcomes.
             </p>
             <div className="mt-8">
               <h3 className="text-xl font-medium mb-4">Core Interests</h3>

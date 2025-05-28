@@ -64,7 +64,7 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
             onClick={() => scrollToSection("hero")}
             className="text-2xl font-serif font-bold text-primary hover:text-primary/80 transition-colors"
           >
-            BJ
+            BS
           </button>
 
           <div className="-mt-1 hidden md:flex flex-1 justify-center space-x-3">

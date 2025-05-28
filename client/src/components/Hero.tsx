@@ -60,7 +60,7 @@ const Hero = () => {
             className="text-xl text-muted-foreground font-light mb-6"
             variants={itemVariants}
           >
-            Finance Student | Texas Tech University
+            Finance Graduate | Texas Tech University
           </motion.h2>
 
           <motion.p
