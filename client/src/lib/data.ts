@@ -184,17 +184,17 @@ What started as a journey into finance has evolved into something much more pers
   {
     slug: "video-game-markets-safe-assets",
     title: "How Video Game Markets Produce Safe Assets",
-    date: "March 10, 2025",
+    date: "May 5, 2025",
     preview: "In Progress",
     content: `
       <p>Not Yet Available</p>
     `,
   },
   {
-    slug: "ikon-pass-skiing-impact",
-    title: "How The Ikon Pass Could Lead to the Destruction of Skiing",
-    date: "April 28, 2025",
-    preview: "In Progress",
+    slug: "how-opportunity-zones-are-so-successful",
+    title: "How Opportunity Zones are so Successful",
+    date: "May 28, 2025",
+    preview: "In Progress -- An unbiased view on how opportunity zones successfully leverage free-market incentives, and leave little to no room for fraud and abuse",
     content: `
       <p>Not Yet Available</p>
     `,

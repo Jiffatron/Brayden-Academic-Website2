@@ -1,6 +1,6 @@
-// Blog.tsx
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { blogPosts } from "@/lib/data";
 import BlogModal from "./BlogModal";
@@ -10,6 +10,7 @@ const Blog = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
   const [activePost, setActivePost] = useState<BlogPostType | null>(null);
+  const navigate = useNavigate();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -65,7 +66,9 @@ const Blog = () => {
               variants={itemVariants}
               whileHover={{ x: 8 }}
             >
-              <div className="text-primary text-sm font-medium mb-2">{post.date}</div>
+              <div className="text-primary text-sm font-medium mb-2">
+                {post.date}
+              </div>
               <h3 className="text-2xl font-serif font-semibold mb-3 group-hover:text-primary transition-colors">
                 {post.title}
               </h3>
@@ -82,13 +85,13 @@ const Blog = () => {
         </motion.div>
 
         <motion.div className="mt-12 text-center" variants={itemVariants}>
-          <a
-            href="#"
+          <button
+            onClick={() => navigate("/blog")}
             className="inline-flex items-center px-6 py-3 border-2 border-primary text-primary rounded hover:bg-primary hover:bg-opacity-10 transition-all duration-300"
           >
             <span>View All Posts</span>
             <i className="fas fa-arrow-right ml-2"></i>
-          </a>
+          </button>
         </motion.div>
 
         {activePost && (
