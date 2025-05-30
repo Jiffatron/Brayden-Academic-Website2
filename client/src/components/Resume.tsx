@@ -83,7 +83,7 @@ const Resume = () => {
             <div className="timeline-item mb-8 pl-4">
               <h4 className="text-xl font-medium">Texas Tech University</h4>
               <p className="text-primary text-sm mb-2">
-                Bachelor of Business Administration in Finance | Expected May 2025
+                Bachelor of Business Administration in Finance | Graduated May 2025
               </p>
               <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• Dean's List Spring 2022, Spring 2024, Fall 2024</li>
