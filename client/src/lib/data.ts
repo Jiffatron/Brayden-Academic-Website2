@@ -68,7 +68,7 @@ export const projects: ProjectType[] = [
   },
   {
     id: "mandelbrot-excel",
-    title: "Mandelbrot Set in Excel -- Work in Progress",
+    title: "Mandelbrot Set in Excel (VBA Done)",
     description:
       "A mathematical and visual exploration of fractal geometry using only Microsoft Excel, showcasing the computational power hidden in spreadsheets.",
     image:
@@ -97,10 +97,40 @@ export const projects: ProjectType[] = [
       <p class="mb-4">This project proves that advanced mathematical concepts and visualizations can be implemented with tools outside traditional programming. It pushed Excel to its limits and turned a purely mathematical pattern into a fully functional spreadsheet visualization.</p>
   
       <div class="flex justify-end">
-        <a href="https://imgur.com/a/W87udOf" class="px-4 py-2 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/80 transition-colors duration-300">Project Not Finished</a>
+        <a href="https://imgur.com/a/W87udOf" class="px-4 py-2 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/80 transition-colors duration-300">MVP Available</a>
       </div>
     `,
   },
+  {
+  id: "BondTracker",
+  title: "Texas Municipal Bond Tracker (In Progress)",
+  description:
+    "A self-initiated financial data tool designed to parse, extract, and visualize key figures from municipal financial statements across Texas school districts.",
+  image: "https://i.imgur.com/eW2Mn3S.png", 
+  tags: ["Public Finance", "AI Integration", "Financial Data Automation"],
+  pdfUrl: "",
+  hasPreview: false,
+  content: `
+    <p class="mb-4">
+      This ongoing project was inspired by my internship at the Municipal Advisory Council of Texas, where I worked directly with investor-facing data from school district bond issuances. The goal of this tracker is to centralize and simplify complex financial disclosures that investors and municipalities rely on.
+    </p>
+
+    <h3 class="text-xl font-medium mb-3">Planned Features</h3>
+    <ul class="mb-6 space-y-2">
+      <li>• Parsing both automated and manually reviewed financial statements</li>
+      <li>• Extraction of critical data points like assessed values, top taxpayers, and fund balances</li>
+      <li>• Integration with Notion for update logging and statement documentation</li>
+      <li>• Interactive dashboard for visualizing school district bond metrics</li>
+      <li>• Potential use of AI for statement summarization and classification</li>
+    </ul>
+
+    <h3 class="text-xl font-medium mb-3">Current Status</h3>
+    <p class="mb-4">
+      The site framework was rapidly built using AI-assisted tools to accelerate development. While it is not yet ready for public use, a preview is available on my main portfolio site in the projects section. A working MVP is expected in the near future as I continue developing parsing logic and refining the UI.
+    </p>
+  `
+}
+
   
 ];
 
