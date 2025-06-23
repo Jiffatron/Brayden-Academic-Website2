@@ -30,7 +30,7 @@ const About = () => {
     },
   };
 
-  const imageUrl = "https://i.imgur.com/AfsugwE.jpeg"; // Image Link 
+  const imageUrl = "https://www.ttu.edu/traditions/images/SEAL.jpg "; // Image Link https://www.ttu.edu/traditions/images/SEAL.jpg 
 
   return ( 
     <section
@@ -67,27 +67,27 @@ const About = () => {
               <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
                 <li className="flex items-center">
                   <i className="fas fa-chart-line text-primary mr-2"></i>
-                  <span>Financial Modeling</span>
+                  <span>Data-Driven Financial Modeling</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-landmark text-primary mr-2"></i>
-                  <span>Investment Analysis</span>
+                  <span>Private & Alternative Investment Analysis</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-brain text-primary mr-2"></i>
-                  <span>Behavioral Finance</span>
+                  <span>Behavioral & Strategic Market Psychology</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-balance-scale text-primary mr-2"></i>
-                  <span>Risk Strategy</span>
+                  <span>Capital Flow & Risk Structuring</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-university text-primary mr-2"></i>
-                  <span>Public Finance</span>
+                  <span>Parsing & Automation of Financial Data</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-code text-primary mr-2"></i>
-                  <span>Markets & AI</span>
+                  <span>Applied AI in Finance & Decision Systems</span>
                 </li>
               </ul>
             </div>

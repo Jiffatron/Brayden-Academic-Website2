@@ -105,7 +105,7 @@ export const projects: ProjectType[] = [
   id: "BondTracker",
   title: "Texas Municipal Bond Tracker (In Progress)",
   description:
-    "A self-initiated financial data tool designed to parse, extract, and visualize key figures from municipal financial statements across Texas school districts.",
+    "A self-initiated financial data tool A modular parsing tool for school district disclosures, currently built on public financials but intended to scale to private-sector documents such as 10-Ks and fund reports. Focused on automation, clarity, and repeatable investor workflows.",
   image: "https://i.imgur.com/eW2Mn3S.png", 
   tags: ["Public Finance", "AI Integration", "Financial Data Automation"],
   pdfUrl: "",
@@ -137,22 +137,22 @@ export const projects: ProjectType[] = [
 // Academic interests data
 export const interests: InterestType[] = [
   {
-    title: "Efficient Market Hypothesis",
+    title: "Parsing Financial Complexity",
     description:
-      "Exploring the validity of EMH in modern markets, with particular focus on information asymmetry and behavioral factors that contribute to market inefficiencies.",
-    icon: "fas fa-balance-scale-right",
+      "Building tools that simplify dense financial disclosures by identifying key investor insights—across public bond filings and private-market documents like 10-Ks and investor reports.",
+    icon: "fas fa-file-alt",
   },
   {
-    title: "Interest Rate Risk",
+    title: "Interest Rate Strategy & Capital Flow",
     description:
-      "Analyzing how fluctuations in interest rates affect various financial instruments and developing strategies to mitigate risk exposure in institutional portfolios.",
-    icon: "fas fa-chart-line",
+      "Exploring how macro rate trends affect both municipal and private capital structures, and how firms adapt risk strategy and portfolio construction in volatile cycles.",
+    icon: "fas fa-chart-area",
   },
   {
-    title: "Public Finance",
+    title: "Applied AI in Financial Systems",
     description:
-      "Investigating the mechanisms of municipal bond markets, fiscal policy impacts, and optimizing public sector capital allocation for maximum social benefit.",
-    icon: "fas fa-landmark",
+      "Leveraging language models and automation frameworks to extract, structure, and deliver investor-relevant insights faster — bridging traditional analysis with modern tooling.",
+    icon: "fas fa-brain",
   },
 ];
 
@@ -201,10 +201,47 @@ What started as a journey into finance has evolved into something much more pers
 </p>
     `,
   },
+    {
+    slug: "how-opportunity-zones-are-so-successful",
+    title: "How Opportunity Zones are so Successful",
+    date: "June 20, 2025",
+    preview: "In Progress -- An unbiased view on how opportunity zones successfully leverage free-market incentives, and leave little to no room for fraud and abuse",
+    content: `
+      <h1>Opportunity Zones: Investment Incentives, Risk, and Reform</h1>
+<h2><em>Working Draft – Final Conclusion Coming Soon</em></h2>
+
+<p>
+The Opportunity Zone (OZ) program, created by the Tax Cuts and Jobs Act of 2017, was designed to encourage long-term investments in economically distressed communities. By offering tax incentives on capital gains, the program incentivizes investors to redirect wealth into underdeveloped areas — ideally stimulating job creation, infrastructure growth, and economic uplift.
+</p>
+
+<p>
+Despite its promising structure, the program has received mixed reviews. Supporters point to billions in capital redirected to underserved areas, while critics highlight a lack of oversight, gentrification risks, and the possibility that many of the developments would have happened regardless of OZ status.
+</p>
+
+<p>
+To fully understand the effectiveness of Opportunity Zones, we must evaluate both the legislative intent and how that intent has played out through real-world investment activity.
+</p>
+
+<!-- Repeat this structure for all your existing article content -->
+
+<h2>CapZone Analytics and Measurement</h2>
+
+<p>
+One of the more advanced data providers in the space, CapZone Analytics, has developed proprietary tools to track Opportunity Zone investments and measure impact — not just by dollars invested, but by the actual socioeconomic improvement in each designated zone.
+</p>
+
+<p>
+Their work is helping to bring greater transparency and accountability to a program that, until recently, lacked standardized performance metrics. This effort is crucial for determining which OZ projects are truly aligned with public benefit versus those that simply exploit the tax structure.
+</p>
+
+<h2><em>[Full conclusion and updates to be added soon.]</em></h2>
+
+    `,
+  },
   {
     slug: "rethinking-modern-portfolio-theory",
     title: "Rethinking Modern Portfolio Theory",
-    date: "April 3, 2023",
+    date: "TBD",
     preview:
       "A critical examination of MPT's assumptions in today's market environment. How can investors adapt traditional portfolio construction techniques to account for changing correlations and non-normal return distributions?",
     content: `
@@ -214,20 +251,11 @@ What started as a journey into finance has evolved into something much more pers
   {
     slug: "video-game-markets-safe-assets",
     title: "How Video Game Markets Produce Safe Assets",
-    date: "May 5, 2025",
+    date: "TBD",
     preview: "In Progress",
     content: `
       <p>Not Yet Available</p>
     `,
-  },
-  {
-    slug: "how-opportunity-zones-are-so-successful",
-    title: "How Opportunity Zones are so Successful",
-    date: "May 28, 2025",
-    preview: "In Progress -- An unbiased view on how opportunity zones successfully leverage free-market incentives, and leave little to no room for fraud and abuse",
-    content: `
-      <p>Not Yet Available</p>
-    `,
-  },
+  }
 ];
 

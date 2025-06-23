@@ -58,10 +58,10 @@ const Research = ({ onProjectClick }: ResearchProps) => {
           className="text-muted-foreground text-base mb-12 max-w-3xl"
           variants={itemVariants}
         >
-          A showcase of my ongoing research and applied projects at the intersection of
-          financial analysis, investment strategy, and macroeconomic theory. These efforts
-          reflect a deep curiosity for how financial systems operate, evolve, and influence
-          both individual decision-making and broader market behaviors.
+         A showcase of my research and applied projects focused on building systems that make financial data clearer, faster, and more actionable.
+         These efforts blend financial analysis, parsing automation, and macro-strategic thinking — drawing from both public-sector 
+         datasets and private-market frameworks. Each project is an attempt to reduce complexity and enhance decision-making at the 
+         intersection of markets, technology, and capital.
         </motion.p>
 
         <motion.div
@@ -120,10 +120,10 @@ const Research = ({ onProjectClick }: ResearchProps) => {
           className="text-muted-foreground text-base mb-8 max-w-3xl"
           variants={itemVariants}
         >
-          My academic pursuits emphasize real-world application of theoretical finance, focusing
-          on topics like risk management, market psychology, public finance, and portfolio strategy.
-          I aim to bridge conceptual models with pragmatic insights that influence high-stakes decisions
-          in both public and private sectors.
+          My work explores the intersection of market psychology, data systems, and capital strategy — blending foundational 
+          theory with applied modeling. While rooted in academic finance, my focus has shifted toward building tools and frameworks 
+          that enhance investment decisions across both public disclosures and private-market reporting.
+          I aim to bridge conceptual models with real-world execution — turning financial insights into actionable, scalable systems.
         </motion.p>
 
         <motion.div
