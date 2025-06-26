@@ -292,10 +292,7 @@ export const blogPosts: BlogPostType[] = [
 <h2>What Are Opportunity Zones?</h2>
 <p>Opportunity Zones (OZs) are federally designated census tracts, typically low-income or economically distressed areas—where investors can receive substantial tax benefits by reinvesting capital gains. Established under the Tax Cuts and Jobs Act of 2017, the program aims to spur long-term private investment in underserved communities through Qualified Opportunity Funds (QOFs). A QOF is an investment vehicle organized as a corporation or partnership that holds at least 90% of its assets in qualified OZ property. The longer the investment is held, the greater the tax advantage gets—culminating in completely tax-free appreciation after 10 years.</p>
 
-<p>
-  <!-- Your text content continues here -->
-  This tool shows current federally certified Opportunity Zones...
-</p>
+
 
 <h2>Why Did Other Programs with the Same Goal Fail?</h2>
 <p>Consider the Historical Underutilized Business Zone (HUBZones), a program run by the U.S. Small Business Administration (SBA). The goal was to stimulate economic development and employment growth in distressed areas by giving small businesses preferential access to federal contracts. To qualify, businesses had to meet several requirements:</p>
