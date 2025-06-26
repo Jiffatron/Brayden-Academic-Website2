@@ -237,7 +237,11 @@ Please change the parent <Route path="${y}"> to <Route path="${y==="/"?"*":`${y}
 </p>
 
 <h2>What Are Opportunity Zones?</h2>
-<p>Opportunity Zones (OZs) are federally designated census tracts, typically low-income or economically distressed areas—where investors can receive substantial tax benefits by reinvesting capital gains. Established under the Tax Cuts and Jobs Act of 2017, the program aims to spur long-term private investment in underserved communities through Qualified Opportunity Funds (QOFs). A QOF is an investment vehicle organized as a corporation or partnership that holds at least 90% of its assets in qualified OZ property. The longer the investment is held, the greater the tax advantage gets—culminating in completely tax-free appreciation after 10 years.</p>
+<p>Opportunity Zones (OZs) are federally designated census tracts, typically low-income or economically distressed areas, where investors can receive substantial 
+tax benefits by reinvesting capital gains. Established under the Tax Cuts and Jobs Act of 2017, the program aims to spur long-term private investment in 
+underserved communities through Qualified Opportunity Funds (QOFs). A QOF is an investment vehicle organized as a corporation or partnership that holds at 
+least 90% of its assets in qualified OZ property. The longer the investment is held, the greater the tax advantage gets, culminating in completely tax-free 
+appreciation after 10 years.</p>
 
 
 
