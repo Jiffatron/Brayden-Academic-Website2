@@ -207,7 +207,7 @@ Please change the parent <Route path="${y}"> to <Route path="${y==="/"?"*":`${y}
 <h2 class="text-2xl font-semibold mt-10">Conclusion: The Mirror Within</h2>
 <p>Perhaps I haven’t uncovered answers so much as I have uncovered a lens. One that reveals the systems we build are just the very reflections of the systems within us. The deeper into finance I get, the more it becomes abundantly clear: to understand markets, we first must understand ourselves. And like all meaningful understandings, this one does not end. It evolves. It adapts. Just like the universe. Just like the market. Just like us.</p>
 
-        `},{slug:"Why Opportunity Zones Succeed: Where Other Programs Failed",title:"Why Opportunity Zones Succeed: Where Other Programs Failed",date:"June 20, 2025",preview:"An unbiased view on how Opportunity Zones leverage free-market incentives and minimize fraud and abuse",content:`
+        `},{slug:"opportunity-zone-success",title:"Why Opportunity Zones Succeed: Where Other Programs Failed",date:"June 20, 2025",preview:"An unbiased view on how Opportunity Zones leverage free-market incentives and minimize fraud and abuse",content:`
         <!-- ───────────  OPPORTUNITY ZONES ARTICLE  ─────────── -->
 <!-- ─────────  OPPORTUNITY ZONES ARTICLE (FULL TEXT)  ───────── -->
 <p class="text-center text-gray-250 italic mt-4 text-xlg">
