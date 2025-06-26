@@ -256,7 +256,7 @@ export const blogPosts: BlogPostType[] = [
         `
   },
     {
-    slug: "Why Opportunity Zones Succeed: Where Other Programs Failed",
+    slug: "opportunity-zone-success",
     title: "Why Opportunity Zones Succeed: Where Other Programs Failed",
     date: "June 20, 2025",
     preview: "An unbiased view on how Opportunity Zones leverage free-market incentives and minimize fraud and abuse",
