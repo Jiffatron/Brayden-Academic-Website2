@@ -44,48 +44,50 @@ function AnimatedRoutes({
     <>
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route
-            path="/"
-            element={
-              <>
-                <section id="hero">
-                  <Hero />
-                </section>
+      <main className="max-w-[1920px] w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route
+              path="/"
+              element={
+                <>
+                  <section id="hero">
+                    <Hero />
+                  </section>
 
-                <section id="about" className="scroll-mt-24">
-                  <About />
-                </section>
+                  <section id="about" className="scroll-mt-24">
+                    <About />
+                  </section>
 
-                <section id="research" className="scroll-mt-24">
-                  <Research onProjectClick={handleProjectClick} />
-                </section>
+                  <section id="research" className="scroll-mt-24">
+                    <Research onProjectClick={handleProjectClick} />
+                  </section>
 
-                <section id="resume" className="scroll-mt-24">
-                  <Resume />
-                </section>
+                  <section id="resume" className="scroll-mt-24">
+                    <Resume />
+                  </section>
 
-                <section id="blog" className="scroll-mt-24">
-                  <Blog />
-                </section>
+                  <section id="blog" className="scroll-mt-24">
+                    <Blog />
+                  </section>
 
-                <section id="contact" className="scroll-mt-24">
-                  <Contact />
-                </section>
-              </>
-            }
-          />
-          <Route path="/blog" element={<BlogLanding />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
-        </Routes>
-      </AnimatePresence>
+                  <section id="contact" className="scroll-mt-24">
+                    <Contact />
+                  </section>
+                </>
+              }
+            />
+            <Route path="/blog" element={<BlogLanding />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
+          </Routes>
+        </AnimatePresence>
 
-      <Footer />
+        <Footer />
 
-      {isModalOpen && selectedProject && (
-        <ProjectModal project={selectedProject} onClose={handleCloseModal} />
-      )}
+        {isModalOpen && selectedProject && (
+          <ProjectModal project={selectedProject} onClose={handleCloseModal} />
+        )}
+      </main>
 
       <Toaster />
     </>

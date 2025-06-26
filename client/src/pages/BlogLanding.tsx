@@ -9,13 +9,13 @@ const BlogLanding = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="py-20 px-6 max-w-5xl mx-auto"
+      className="py-20 px-6 max-w-6xl mx-auto"
     >
       <h1 className="text-3xl font-serif font-bold mb-2">All Blog Posts</h1>
 
       <Link
         to="/"
-        className="inline-block mb-10 text-primary text-sm border border-transparent hover:border-primary px-4 py-2 rounded transition"
+        className="inline-block mb-10 text-primary text-md border border-transparent hover:border-primary px-4 py-2 rounded transition"
       >
         ← Back to Home
       </Link>
