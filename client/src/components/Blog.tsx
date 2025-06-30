@@ -48,11 +48,10 @@ const Blog = () => {
         variants={containerVariants}
       >
         <motion.h2
-          className="text-3xl md:text-4xl font-serif font-bold mb-12 relative inline-block"
+          className="section-title"
           variants={itemVariants}
         >
           Blog
-          <span className="absolute -bottom-2 left-0 w-1/2 h-px bg-primary"></span>
         </motion.h2>
 
         <motion.div

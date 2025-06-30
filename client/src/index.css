@@ -111,8 +111,65 @@
     @apply opacity-100 transition-opacity duration-700 ease-in-out;
   }
 
+  /* Standardized Section Headers */
+  .section-title {
+    @apply text-3xl md:text-4xl font-serif font-bold mb-12 relative inline-block;
+  }
+
+  .section-title::after {
+    @apply content-[''] absolute -bottom-2 left-0 w-1/2 h-px bg-primary;
+  }
+
+  /* Standardized Section Text */
+  .section-text {
+    @apply text-lg leading-relaxed;
+  }
+
+  .section-description {
+    @apply text-lg leading-relaxed mb-12 max-w-3xl;
+  }
+
+  /* Python Code Block Styling */
+  .python-code-block {
+    @apply bg-gray-900 text-green-400 p-6 rounded-lg overflow-x-auto font-mono text-sm leading-relaxed shadow-lg border border-gray-700;
+  }
+
+  .python-code-block pre {
+    @apply m-0 whitespace-pre-wrap;
+  }
+
+  .python-code-block .keyword {
+    @apply text-blue-600 dark:text-blue-400 font-semibold;
+  }
+
+  .python-code-block .string {
+    @apply text-red-600 dark:text-yellow-300;
+  }
+
+  .python-code-block .comment {
+    @apply text-green-600 dark:text-gray-500 italic;
+  }
+
+  .python-code-block .function {
+    @apply text-yellow-600 dark:text-purple-400;
+  }
+
+  .python-code-block .number {
+    @apply text-purple-600 dark:text-orange-400;
+  }
+
+  /* Expandable Image Styling */
+  .expandable-image-container {
+    @apply relative rounded-lg overflow-hidden shadow-md cursor-pointer;
+  }
+
+  .expandable-image-container:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease-out;
+  }
+
   .navy-dark-section {
-    @apply bg-[hsl(var(--navy-dark))];
+    @apply bg-secondary/30 dark:bg-[hsl(var(--navy-dark))];
   }
 
   .nav-link {
@@ -133,11 +190,167 @@
   }
 
   .glass-card {
-    @apply bg-card/60 backdrop-blur-md border border-white/10 rounded-lg shadow-lg;
+    @apply bg-card/60 backdrop-blur-md border border-border/20 rounded-lg shadow-lg;
   }
-  
+
   .glass-nav {
     @apply bg-background/70 backdrop-blur-lg border-b border-primary/10 shadow-sm;
+  }
+
+  /* Mobile Touch Fixes */
+  @media (max-width: 768px) {
+    * {
+      touch-action: manipulation;
+    }
+
+    button, a, [role="button"] {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      min-height: 44px; /* Minimum touch target size */
+      min-width: 44px;
+    }
+
+    .glass-nav {
+      pointer-events: auto;
+    }
+
+    /* Ensure mobile menu doesn't interfere when closed */
+    .mobile-menu-closed {
+      pointer-events: none !important;
+      visibility: hidden;
+    }
+  }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    /* Disable transform animations */
+    .fade-in,
+    .slide-in,
+    .scale-in {
+      animation: none !important;
+      transform: none !important;
+    }
+
+    /* Disable hover effects that use transform */
+    .project-card:hover,
+    .blog-card:hover {
+      transform: none !important;
+    }
+  }
+
+  /* Performance optimizations for animations */
+  .animate-gpu {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  }
+
+  /* Smooth animations for users who prefer motion */
+  @media (prefers-reduced-motion: no-preference) {
+    .smooth-animation {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  /* Scroll reveal animations for Monte Carlo images */
+  .scroll-reveal-element {
+    transform: translateZ(0); /* GPU acceleration */
+    will-change: transform, opacity;
+  }
+
+  .monte-carlo-images {
+    perspective: 1000px; /* Add depth for 3D transforms */
+  }
+
+  .monte-carlo-images .expandable-image {
+    transition: transform 1.0s cubic-bezier(0.25, 0.1, 0.25, 1);
+    cursor: pointer;
+  }
+
+  .monte-carlo-images .expandable-image:hover {
+    transform: scale(1.02) translateZ(10px);
+  }
+
+  /* Much slower, more luxurious expansion animation for Monte Carlo images */
+  .monte-carlo-images .expandable-image img {
+    transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1),
+                box-shadow 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .monte-carlo-images .expandable-image:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Enhanced project card animations */
+  .project-card {
+    transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1),
+                box-shadow 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .project-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Image modal animations */
+  .image-modal img {
+    transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  /* Refined expandable image animations */
+  .expandable-image {
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+
+  .expandable-image img {
+    transition: transform 1.0s cubic-bezier(0.25, 0.1, 0.25, 1),
+                filter 1.0s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: transform;
+  }
+
+  .expandable-image:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+
+  /* Smooth scroll behavior for better UX */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Giscus Comments Styling */
+  .giscus-comments {
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+
+  .giscus-container {
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  /* Ensure Giscus iframe respects our theme */
+  .giscus-frame {
+    border-radius: 0.5rem;
+    border: 1px solid hsl(var(--border));
+  }
+
+  /* Dark mode adjustments for Giscus */
+  .dark .giscus-frame {
+    border-color: hsl(var(--border));
   }
 
   /* 3D/Depth Effects */

@@ -45,9 +45,8 @@ const Resume = () => {
           className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12"
           variants={itemVariants}
         >
-          <h2 className="text-3xl md:text-4xl font-serif font-bold relative inline-block">
+          <h2 className="section-title">
             Resume
-            <span className="absolute -bottom-2 left-0 w-1/2 h-px bg-primary"></span>
           </h2>
           <div className="mt-4 md:mt-0 flex space-x-3">
             <a

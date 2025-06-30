@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
 import StockTicker from "./Stockticker";
+import { navigateAndScroll } from "@/utils/navigation";
 
 interface NavbarProps {
   darkMode: boolean;
@@ -37,18 +38,10 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const scrollToSection = (id: string) => {
-    const scroll = () => {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    };
-
-    if (location.pathname !== "/") {
-      navigate("/");
-      setTimeout(scroll, 50);
-    } else {
-      scroll();
-    }
+    navigateAndScroll(navigate, id, location.pathname);
   };
+
+
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
@@ -61,7 +54,13 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
       >
         <div className="flex items-center justify-between w-full">
           <button
-            onClick={() => scrollToSection("hero")}
+            onClick={() => {
+              if (location.pathname !== "/") {
+                navigate("/");
+              } else {
+                scrollToSection("hero");
+              }
+            }}
             className="text-2xl font-serif font-bold text-primary hover:text-primary/80 transition-colors"
           >
             BS
@@ -77,8 +76,8 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
           </div>
 
           <div className="hidden md:flex space-x-8 items-center">
-            <button onClick={() => scrollToSection("about")} className="nav-link">About</button>
-            <button onClick={() => scrollToSection("research")} className="nav-link">Research</button>
+            <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="nav-link">Home</button>
+            <button onClick={() => navigate("/projects")} className="nav-link">Projects</button>
             <button onClick={() => scrollToSection("resume")} className="nav-link">Resume</button>
             <button onClick={() => navigate("/blog")} className="nav-link">Blog</button>
             <button onClick={() => scrollToSection("contact")} className="nav-link">Contact</button>
@@ -103,11 +102,11 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
 
       <div
         className={`md:hidden glass-nav flex flex-col py-4 px-6 space-y-4 transition-all duration-500 ${
-          isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          isMobileMenuOpen ? "opacity-100" : "opacity-0 mobile-menu-closed"
         }`}
       >
-        <button onClick={() => { closeMobileMenu(); scrollToSection("about"); }} className="nav-link py-2">About</button>
-        <button onClick={() => { closeMobileMenu(); scrollToSection("research"); }} className="nav-link py-2">Research</button>
+        <button onClick={() => { closeMobileMenu(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="nav-link py-2">Home</button>
+        <button onClick={() => { closeMobileMenu(); navigate("/projects"); }} className="nav-link py-2">Projects</button>
         <button onClick={() => { closeMobileMenu(); scrollToSection("resume"); }} className="nav-link py-2">Resume</button>
         <button onClick={() => { closeMobileMenu(); navigate("/blog"); }} className="nav-link py-2">Blog</button>
         <button onClick={() => { closeMobileMenu(); scrollToSection("contact"); }} className="nav-link py-2">Contact</button>

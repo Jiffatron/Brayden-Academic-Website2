@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useAdaptiveIntersection } from "@/hooks/useAdaptiveIntersection";
 import { useRef } from "react";
+import ParallaxContainer from "./ParallaxContainer";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
+  const { isIntersecting: isVisible, animationDuration } = useAdaptiveIntersection(sectionRef, { threshold: 0.1 });
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -18,8 +19,8 @@ const Hero = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: animationDuration * 0.3, // Adaptive stagger timing
+        delayChildren: animationDuration * 0.5,
       },
     },
   };
@@ -30,8 +31,8 @@ const Hero = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
-        ease: "easeOut",
+        duration: animationDuration, // Use adaptive duration
+        ease: [0.25, 0.1, 0.25, 1], // Custom easing for premium feel
       },
     },
   };
@@ -72,10 +73,10 @@ const Hero = () => {
 
           <motion.div className="flex space-x-6" variants={itemVariants}>
             <button
-              onClick={() => scrollToSection("research")}
+              onClick={() => scrollToSection("projects")}
               className="px-6 py-3 border-2 border-primary text-primary rounded-md hover:bg-primary hover:bg-opacity-10 transition-all duration-300 backdrop-blur-sm"
             >
-              View Research
+              View Projects
             </button>
             <button
               onClick={() => scrollToSection("contact")}
@@ -92,17 +93,23 @@ const Hero = () => {
           animate={isVisible ? "visible" : "hidden"}
           variants={containerVariants}
         >
-          <motion.div
-            className="w-[360px] h-[360px] sm:w-[440px] sm:h-[440px] depth-effect relative"
-            variants={itemVariants}
-          >
-            <img
-              src="https://i.imgur.com/VHIvMD5.jpeg"
-              alt="Brayden Swavey headshot"
-              className="object-cover w-full h-full rounded-lg shadow-xl"
-            />
-            <div className="absolute inset-0 bg-primary/10 mix-blend-overlay rounded-lg"></div>
-          </motion.div>
+          <ParallaxContainer speed={0.3} className="flex justify-center md:justify-end">
+            <motion.div
+              className="w-[360px] h-[360px] sm:w-[440px] sm:h-[440px] depth-effect relative"
+              variants={itemVariants}
+              whileHover={{
+                scale: 1.02,
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+            >
+              <img
+                src="/brayden-profile.jpg"
+                alt="Brayden Swavey headshot"
+                className="object-cover w-full h-full rounded-lg shadow-xl transition-shadow duration-300 hover:shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-primary/10 mix-blend-overlay rounded-lg"></div>
+            </motion.div>
+          </ParallaxContainer>
         </motion.div>
       </div>
     </section>

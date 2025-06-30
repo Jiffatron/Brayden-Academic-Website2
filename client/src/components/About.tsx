@@ -30,7 +30,7 @@ const About = () => {
     },
   };
 
-  const imageUrl = "https://www.ttu.edu/traditions/images/SEAL.jpg "; // Image Link https://www.ttu.edu/traditions/images/SEAL.jpg 
+  const imageUrl = "https://www.depts.ttu.edu/parentrelations/images/TTUSeal.jpg"; // Image Link https://www.ttu.edu/traditions/images/SEAL.jpg 
 
   return ( 
     <section
@@ -38,7 +38,7 @@ const About = () => {
       ref={sectionRef}
       className="py-24 px-6 md:px-16 lg:px-24 navy-dark-section relative"
     >
-      <div className="absolute left-0 top-0 w-full h-20 bg-gradient-to-b from-background to-[hsl(var(--navy-dark))]"></div>
+      <div className="absolute left-0 top-0 w-full h-20 bg-gradient-to-b from-background to-secondary/30 dark:to-[hsl(var(--navy-dark))]"></div>
       <motion.div
         className="w-full max-w-7xl mx-auto"
         initial="hidden"
@@ -46,16 +46,15 @@ const About = () => {
         variants={containerVariants}
       >
         <motion.h2
-          className="text-3xl md:text-4xl font-serif font-bold mb-12 relative inline-block"
+          className="section-title"
           variants={itemVariants}
         >
           About Me
-          <span className="absolute -bottom-2 left-0 w-1/2 h-px bg-primary"></span>
         </motion.h2>
 
         <div className="grid md:grid-cols-5 gap-12 items-start">
           <motion.div className="md:col-span-3" variants={itemVariants}>
-            <p className="text-lg leading-relaxed mb-6">
+            <p className="section-text mb-6">
               My name is Brayden Swavey, a recent Finance graduate from Texas Tech University.
                I specialize in analyzing financial data across both public and private sectors, 
                with a strong interest in the long-term macroeconomic effects of capital allocation. 

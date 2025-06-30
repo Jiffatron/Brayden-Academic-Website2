@@ -128,11 +128,10 @@ const Contact = () => {
         variants={containerVariants}
       >
         <motion.h2
-          className="text-3xl md:text-4xl font-serif font-bold mb-6 relative inline-block"
+          className="section-title"
           variants={itemVariants}
         >
           Contact
-          <span className="absolute -bottom-2 left-0 w-1/2 h-px bg-primary"></span>
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-12">

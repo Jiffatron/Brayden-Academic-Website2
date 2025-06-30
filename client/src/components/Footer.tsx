@@ -38,16 +38,23 @@ const Footer = () => {
           transition={{ delay: 0.3 }}
         >
           <button
-            onClick={() => scrollToSection("about")}
+            onClick={() => {
+              if (location.pathname !== "/") {
+                navigate("/");
+                setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+              } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
             className="text-muted-foreground hover:text-primary text-sm transition-colors"
           >
-            About
+            Home
           </button>
           <button
-            onClick={() => scrollToSection("research")}
+            onClick={() => navigate("/projects")}
             className="text-muted-foreground hover:text-primary text-sm transition-colors"
           >
-            Research
+            Projects
           </button>
           <button
             onClick={() => scrollToSection("resume")}

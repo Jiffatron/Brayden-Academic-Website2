@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useAdaptiveIntersection } from "@/hooks/useAdaptiveIntersection";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { projects, interests, ProjectType } from "@/lib/data";
+import {
+  containerVariants,
+  itemVariants,
+  cardHoverVariants
+} from "@/lib/animations";
+import ScrollReveal from "./ScrollReveal";
 
 interface ResearchProps {
   onProjectClick: (project: ProjectType) => void;
@@ -9,34 +16,13 @@ interface ResearchProps {
 
 const Research = ({ onProjectClick }: ResearchProps) => {
   const sectionRef = useRef<HTMLElement>(null);
-  const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
+  const { isIntersecting: isVisible, animationDuration } = useAdaptiveIntersection(sectionRef, { threshold: 0.1 });
+  const navigate = useNavigate();
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
+  // Using centralized animation variants for consistency
 
   return (
     <section
-      id="research"
       ref={sectionRef}
       className="py-24 px-6 md:px-16 lg:px-24"
     >
@@ -47,15 +33,14 @@ const Research = ({ onProjectClick }: ResearchProps) => {
         variants={containerVariants}
       >
         <motion.h2
-          className="text-3xl md:text-4xl font-serif font-bold mb-6 relative inline-block"
+          className="section-title"
           variants={itemVariants}
         >
-          Research & Projects
-          <span className="absolute -bottom-2 left-0 w-1/2 h-px bg-primary"></span>
+          Projects
         </motion.h2>
 
         <motion.p
-          className="text-muted-foreground text-base mb-12 max-w-3xl"
+          className="section-description"
           variants={itemVariants}
         >
          A showcase of my research and applied projects focused on building systems that make financial data clearer, faster, and more actionable.
@@ -68,12 +53,15 @@ const Research = ({ onProjectClick }: ResearchProps) => {
           className="grid md:grid-cols-2 gap-8 mb-16"
           variants={containerVariants}
         >
-          {projects.map((project) => (
+          {projects
+            .sort((a, b) => a.position - b.position)
+            .slice(0, 4)
+            .map((project) => (
             <motion.div
               key={project.id}
-              className="bg-card rounded-lg overflow-hidden shadow-md project-card"
+              className="bg-card rounded-lg overflow-hidden shadow-md project-card animate-gpu"
               variants={itemVariants}
-              whileHover={{ y: -5 }}
+              whileHover={cardHoverVariants.hover}
             >
               <img
                 src={project.image}
@@ -97,27 +85,46 @@ const Research = ({ onProjectClick }: ResearchProps) => {
                     </span>
                   ))}
                 </div>
-                <button
-                  className="text-primary flex items-center text-sm hover:text-primary/80 transition-colors"
-                  onClick={() => onProjectClick(project)}
-                >
-                  <span>View Details</span>
-                  <i className="fas fa-arrow-right ml-2"></i>
-                </button>
+                <div className="flex gap-3">
+                  <button
+                    className="text-primary flex items-center text-sm hover:text-primary/80 transition-colors"
+                    onClick={() => navigate(`/projects/${project.id}`)}
+                  >
+                    <span>View Project</span>
+                    <i className="fas fa-external-link-alt ml-2"></i>
+                  </button>
+                  <button
+                    className="text-primary flex items-center text-sm hover:text-primary/80 transition-colors"
+                    onClick={() => onProjectClick(project)}
+                  >
+                    <span>Quick View</span>
+                    <i className="fas fa-eye ml-2"></i>
+                  </button>
+                </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        <motion.h3
-          className="text-2xl font-serif font-semibold mb-6"
+        <motion.div className="mb-16 text-center" variants={itemVariants}>
+          <button
+            onClick={() => navigate("/projects")}
+            className="inline-flex items-center px-6 py-3 border-2 border-primary text-primary rounded hover:bg-primary hover:bg-opacity-10 transition-all duration-300"
+          >
+            <span>View All Projects</span>
+            <i className="fas fa-arrow-right ml-2"></i>
+          </button>
+        </motion.div>
+
+        <motion.h2
+          className="section-title"
           variants={itemVariants}
         >
           Academic Interests
-        </motion.h3>
+        </motion.h2>
 
         <motion.p
-          className="text-muted-foreground text-base mb-8 max-w-3xl"
+          className="section-text mb-8 max-w-3xl"
           variants={itemVariants}
         >
           My work explores the intersection of market psychology, data systems, and capital strategy — blending foundational 

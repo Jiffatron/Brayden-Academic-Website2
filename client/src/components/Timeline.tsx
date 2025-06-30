@@ -53,14 +53,14 @@ const TimelineCard = ({
         transition={{ duration: 0.5, delay: index * 0.1 }}
         className="relative z-10 flex flex-col items-center"
       >
-        <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-teal-500 text-white shadow-lg shadow-cyan-400/20 hover:scale-110 transition-transform">
+        <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-lg shadow-primary/20 hover:scale-110 transition-transform">
           {getIcon(icon)}
         </div>
-        <div className="mb-2 text-xs font-medium text-cyan-300">{date}</div>
-        <div className="w-full max-w-[150px] rounded-lg bg-[#1e293b]/60 p-3 text-center shadow-md backdrop-blur-sm hover:bg-[#1e293b]/80 transition-all">
-          <h3 className="mb-1 text-sm font-bold text-white">{title}</h3>
-          <div className="mb-1 text-xs font-medium text-cyan-100">{organization}</div>
-          <p className="text-xs text-cyan-100/70">{description}</p>
+        <div className="mb-2 text-xs font-medium text-primary">{date}</div>
+        <div className="w-full max-w-[150px] rounded-lg bg-card/80 border border-border/20 p-3 text-center shadow-md backdrop-blur-sm hover:bg-card/90 transition-all">
+          <h3 className="mb-1 text-sm font-bold text-card-foreground">{title}</h3>
+          <div className="mb-1 text-xs font-medium text-muted-foreground">{organization}</div>
+          <p className="text-xs text-muted-foreground/70">{description}</p>
         </div>
       </motion.div>
     </div>
@@ -78,11 +78,11 @@ const TimelineCard = ({
         </div>
         <div className="absolute top-7 h-full w-0.5 bg-gradient-to-b from-cyan-400/40 to-cyan-400/10" />
       </div>
-      <div className="flex-1 rounded-lg bg-[#1e293b]/60 p-3 shadow-md backdrop-blur-sm">
-        <div className="mb-1 text-xs font-medium text-cyan-300">{date}</div>
-        <h3 className="mb-1 text-sm font-bold text-white">{title}</h3>
-        <div className="mb-1 text-xs font-medium text-cyan-100">{organization}</div>
-        <p className="text-xs text-cyan-100/70">{description}</p>
+      <div className="flex-1 rounded-lg bg-card/80 border border-border/20 p-3 shadow-md backdrop-blur-sm">
+        <div className="mb-1 text-xs font-medium text-primary">{date}</div>
+        <h3 className="mb-1 text-sm font-bold text-card-foreground">{title}</h3>
+        <div className="mb-1 text-xs font-medium text-muted-foreground">{organization}</div>
+        <p className="text-xs text-muted-foreground/70">{description}</p>
       </div>
     </motion.div>
   )

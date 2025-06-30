@@ -53,7 +53,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
         tabIndex={-1}
       >
         <motion.div
-          className="absolute inset-0 bg-[hsl(var(--navy-dark))] bg-opacity-75 backdrop-blur-md"
+          className="absolute inset-0 bg-background/80 dark:bg-[hsl(var(--navy-dark))] bg-opacity-75 backdrop-blur-md"
           initial="hidden"
           animate="visible"
           exit="hidden"
