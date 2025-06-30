@@ -103,7 +103,7 @@ const Hero = () => {
               }}
             >
               <img
-                src="/brayden-profile.jpg"
+                src="/Hero.jpg"
                 alt="Brayden Swavey headshot"
                 className="object-cover w-full h-full rounded-lg shadow-xl transition-shadow duration-300 hover:shadow-2xl"
               />
