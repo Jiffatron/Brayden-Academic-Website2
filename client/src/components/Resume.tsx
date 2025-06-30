@@ -50,7 +50,7 @@ const Resume = () => {
           </h2>
           <div className="mt-4 md:mt-0 flex space-x-3">
             <a
-              href="https://drive.google.com/file/d/1Jn0lkLRk77hGRXMWY0d_duP2vbKU44u_/view?usp=sharing"
+              href="https://drive.google.com/file/d/1RW-EmDIzh__aCEmPE1dBn5wmtjFxOx7b/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 border-2 border-primary text-primary rounded flex items-center hover:bg-primary hover:bg-opacity-10 transition-all duration-300"
@@ -59,7 +59,7 @@ const Resume = () => {
               <span>View PDF</span>
             </a>
             <a
-              href="https://drive.google.com/file/d/1Jn0lkLRk77hGRXMWY0d_duP2vbKU44u_/view?usp=sharing"
+              href="https://drive.google.com/file/d/1RW-EmDIzh__aCEmPE1dBn5wmtjFxOx7b/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 bg-primary text-primary-foreground rounded flex items-center hover:bg-primary/80 transition-all duration-300"

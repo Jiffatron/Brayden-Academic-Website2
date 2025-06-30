@@ -219,6 +219,37 @@
       pointer-events: none !important;
       visibility: hidden;
     }
+
+    /* Fix for invisible blocking elements */
+    .fixed, .absolute {
+      pointer-events: none;
+    }
+
+    /* Re-enable pointer events for interactive elements */
+    .fixed button, .fixed a, .fixed [role="button"],
+    .absolute button, .absolute a, .absolute [role="button"] {
+      pointer-events: auto;
+    }
+
+    /* Ensure navbar is clickable */
+    nav, .navbar, [role="navigation"] {
+      pointer-events: auto !important;
+    }
+
+    /* Ensure main content is clickable */
+    main, .main-content, article, section {
+      pointer-events: auto !important;
+    }
+
+    /* Fix for any overlay issues */
+    .backdrop-blur-sm, .backdrop-blur-md, .backdrop-blur-lg {
+      pointer-events: none;
+    }
+
+    /* Re-enable for modal content */
+    .modal-content, .dialog-content {
+      pointer-events: auto;
+    }
   }
 
   /* Respect user's motion preferences */
