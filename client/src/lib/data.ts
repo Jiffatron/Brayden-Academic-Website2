@@ -621,13 +621,18 @@ plt.<span class="function">show</span>()                                        
 export const interests = [
   {
     icon: "fas fa-chart-line",
-    title: "Financial Modeling & Risk Management",
+    title: "Financial Risk & Modeling",
     description: "Developing quantitative models to assess and manage financial risks across various asset classes."
   },
   {
     icon: "fas fa-calculator",
-    title: "Quantitative Analysis & Statistics",
+    title: "Quantitative Analysis",
     description: "Applying statistical methods and mathematical models to analyze financial data and market trends."
+  },
+  {
+    icon: "fas fa-coins",
+    title: "Options Pricing & Derivatives",
+    description: "Analyzing complex financial instruments and developing pricing models for derivative securities."
   },
   {
     icon: "fas fa-brain",
@@ -643,11 +648,6 @@ export const interests = [
     icon: "fas fa-dice",
     title: "Monte Carlo Simulations",
     description: "Using probabilistic modeling to simulate various market scenarios and assess investment outcomes."
-  },
-  {
-    icon: "fas fa-coins",
-    title: "Options Pricing & Derivatives",
-    description: "Analyzing complex financial instruments and developing pricing models for derivative securities."
   }
 ];
 

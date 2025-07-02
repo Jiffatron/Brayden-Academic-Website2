@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { useRef } from "react";
-import { Import } from "lucide-react";
-import { ResponsiveTimeline } from "./Timeline"
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -36,7 +34,7 @@ const About = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="py-24 px-6 md:px-16 lg:px-24 navy-dark-section relative"
+      className="mobile-section mobile-container md:px-16 lg:px-24 navy-dark-section relative"
     >
       <div className="absolute left-0 top-0 w-full h-20 bg-gradient-to-b from-background to-secondary/30 dark:to-[hsl(var(--navy-dark))]"></div>
       <motion.div
@@ -52,13 +50,14 @@ const About = () => {
           About Me
         </motion.h2>
 
-        <div className="grid md:grid-cols-5 gap-12 items-start">
+        {/* Desktop About Layout - Original */}
+        <div className="hidden md:grid md:grid-cols-5 gap-12 items-start">
           <motion.div className="md:col-span-3" variants={itemVariants}>
             <p className="section-text mb-6">
               My name is Brayden Swavey, a recent Finance graduate from Texas Tech University.
-               I specialize in analyzing financial data across both public and private sectors, 
-               with a strong interest in the long-term macroeconomic effects of capital allocation. 
-               I am passionate about understanding how money moves through systems, 
+               I specialize in analyzing financial data across both public and private sectors,
+               with a strong interest in the long-term macroeconomic effects of capital allocation.
+               I am passionate about understanding how money moves through systems,
                from municipal budgets to corporate strategy, and how those decisions shape broader economic outcomes.
             </p>
             <div className="mt-8">
@@ -100,6 +99,25 @@ const About = () => {
                 className="relative z-10 rounded shadow-lg w-full object-cover"
               />
             </div>
+          </motion.div>
+        </div>
+
+        {/* Mobile About Layout - Streamlined */}
+        <div className="md:hidden grid grid-cols-1 gap-8 items-center">
+          <motion.div className="order-1" variants={itemVariants}>
+            <div className="relative max-w-xs mx-auto">
+              <img
+                src={imageUrl}
+                alt="Portrait of Brayden Swavey"
+                className="rounded-2xl shadow-xl w-full object-cover aspect-square"
+              />
+            </div>
+          </motion.div>
+          <motion.div className="order-2" variants={itemVariants}>
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed text-center">
+              Finance graduate specializing in financial data analysis and capital allocation.
+            </p>
+
           </motion.div>
         </div>
       </motion.div>

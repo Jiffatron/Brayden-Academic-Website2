@@ -39,7 +39,7 @@ const Blog = () => {
     <section
       id="blog"
       ref={sectionRef}
-      className="py-24 px-6 md:px-16 lg:px-24"
+      className="mobile-section mobile-container md:px-16 lg:px-24"
     >
       <motion.div
         className="w-full max-w-7xl mx-auto"
@@ -54,8 +54,9 @@ const Blog = () => {
           Blog
         </motion.h2>
 
+        {/* Desktop Blog Layout - Original */}
         <motion.div
-          className="grid md:grid-cols-2 gap-8"
+          className="hidden md:grid md:grid-cols-2 gap-8"
           variants={containerVariants}
         >
           {blogPosts.map((post, index) => (
@@ -79,6 +80,33 @@ const Blog = () => {
                 <span>Read More</span>
                 <i className="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
               </button>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Mobile Blog Layout - Visual Cards */}
+        <motion.div
+          className="md:hidden grid grid-cols-1 gap-6"
+          variants={containerVariants}
+        >
+          {blogPosts.map((post, index) => (
+            <motion.div
+              key={index}
+              className="group bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+              variants={itemVariants}
+              whileHover={{ y: -4 }}
+              onClick={() => setActivePost(post)}
+            >
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-primary text-xs font-medium bg-primary/10 px-2 py-1 rounded-full">
+                  {post.date}
+                </span>
+                <i className="fas fa-arrow-right text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all"></i>
+              </div>
+              <h3 className="text-xl font-serif font-semibold mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                {post.title}
+              </h3>
+              <p className="text-muted-foreground text-sm line-clamp-3">{post.preview}</p>
             </motion.div>
           ))}
         </motion.div>

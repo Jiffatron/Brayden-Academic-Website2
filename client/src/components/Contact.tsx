@@ -119,7 +119,7 @@ const Contact = () => {
     <section
       id="contact"
       ref={sectionRef}
-      className="py-24 px-6 md:px-16 lg:px-24 navy-dark-section"
+      className="mobile-section mobile-container md:px-16 lg:px-24 navy-dark-section pb-24 md:pb-12"
     >
       <motion.div
         className="w-full max-w-7xl mx-auto"

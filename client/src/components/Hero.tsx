@@ -41,7 +41,7 @@ const Hero = () => {
     <section
       id="hero"
       ref={sectionRef}
-      className="min-h-screen flex items-center pt-24 pb-12 px-6 md:px-16 lg:px-24"
+      className="min-h-screen flex items-center pt-24 pb-20 mobile-container md:px-16 lg:px-24"
     >
       <div className="w-full max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <motion.div
@@ -51,7 +51,7 @@ const Hero = () => {
           variants={containerVariants}
         >
           <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-4"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-6"
             variants={itemVariants}
           >
             Brayden<br /><span className="text-primary">Swavey</span>

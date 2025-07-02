@@ -8,7 +8,7 @@ import {
   itemVariants,
   cardHoverVariants
 } from "@/lib/animations";
-import ScrollReveal from "./ScrollReveal";
+
 
 interface ResearchProps {
   onProjectClick: (project: ProjectType) => void;
@@ -24,7 +24,7 @@ const Research = ({ onProjectClick }: ResearchProps) => {
   return (
     <section
       ref={sectionRef}
-      className="py-24 px-6 md:px-16 lg:px-24"
+      className="mobile-section mobile-container md:px-16 lg:px-24"
     >
       <motion.div
         className="w-full max-w-7xl mx-auto"
@@ -39,18 +39,28 @@ const Research = ({ onProjectClick }: ResearchProps) => {
           Projects
         </motion.h2>
 
+        {/* Desktop Description */}
         <motion.p
-          className="section-description"
+          className="hidden md:block section-description"
           variants={itemVariants}
         >
          A showcase of my research and applied projects focused on building systems that make financial data clearer, faster, and more actionable.
-         These efforts blend financial analysis, parsing automation, and macro-strategic thinking — drawing from both public-sector 
-         datasets and private-market frameworks. Each project is an attempt to reduce complexity and enhance decision-making at the 
+         These efforts blend financial analysis, parsing automation, and macro-strategic thinking — drawing from both public-sector
+         datasets and private-market frameworks. Each project is an attempt to reduce complexity and enhance decision-making at the
          intersection of markets, technology, and capital.
         </motion.p>
 
+        {/* Mobile Description */}
+        <motion.p
+          className="md:hidden text-lg text-muted-foreground mb-8 text-center max-w-2xl mx-auto"
+          variants={itemVariants}
+        >
+         Building systems that make financial data clearer and more actionable.
+        </motion.p>
+
+        {/* Desktop Project Cards - Original Style */}
         <motion.div
-          className="grid md:grid-cols-2 gap-8 mb-16"
+          className="hidden md:grid md:grid-cols-2 gap-8 mb-16"
           variants={containerVariants}
         >
           {projects
@@ -106,6 +116,52 @@ const Research = ({ onProjectClick }: ResearchProps) => {
           ))}
         </motion.div>
 
+        {/* Mobile Project Cards - Visual Style */}
+        <motion.div
+          className="md:hidden grid grid-cols-1 gap-6 mb-12"
+          variants={containerVariants}
+        >
+          {projects
+            .sort((a, b) => a.position - b.position)
+            .slice(0, 4)
+            .map((project) => (
+            <motion.div
+              key={project.id}
+              className="bg-card rounded-2xl overflow-hidden shadow-lg project-card animate-gpu cursor-pointer"
+              variants={itemVariants}
+              whileHover={cardHoverVariants.hover}
+              onClick={() => onProjectClick(project)}
+            >
+              <div className="relative">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-56 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-xl font-serif font-bold text-white mb-1">
+                    {project.title}
+                  </h3>
+                  <p className="text-white/90 text-sm line-clamp-2">
+                    {project.description.split('.')[0]}.
+                  </p>
+                </div>
+              </div>
+              <div className="p-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
+                    {project.tags[0]}
+                  </span>
+                  <button className="text-muted-foreground hover:text-primary transition-colors">
+                    <i className="fas fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
         <motion.div className="mb-16 text-center" variants={itemVariants}>
           <button
             onClick={() => navigate("/projects")}
@@ -133,8 +189,9 @@ const Research = ({ onProjectClick }: ResearchProps) => {
           I aim to bridge conceptual models with real-world execution — turning financial insights into actionable, scalable systems.
         </motion.p>
 
+        {/* Desktop Interests - All 6 */}
         <motion.div
-          className="grid md:grid-cols-3 gap-6"
+          className="hidden md:grid md:grid-cols-3 gap-6"
           variants={containerVariants}
         >
           {interests.map((interest, index) => (
@@ -151,6 +208,26 @@ const Research = ({ onProjectClick }: ResearchProps) => {
               <p className="text-muted-foreground text-sm">
                 {interest.description}
               </p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Mobile Interests - Only 3, Compact Design */}
+        <motion.div
+          className="md:hidden grid grid-cols-1 gap-4 max-w-sm mx-auto"
+          variants={containerVariants}
+        >
+          {interests.slice(0, 3).map((interest, index) => (
+            <motion.div
+              key={index}
+              className="bg-card p-4 rounded-lg shadow-md flex items-center space-x-4"
+              variants={itemVariants}
+              whileHover={{ y: -2 }}
+            >
+              <div className="text-primary text-2xl flex-shrink-0">
+                <i className={interest.icon}></i>
+              </div>
+              <h4 className="text-base font-medium">{interest.title}</h4>
             </motion.div>
           ))}
         </motion.div>

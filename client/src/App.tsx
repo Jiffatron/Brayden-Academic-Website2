@@ -1,6 +1,6 @@
 import { useState, useEffect, Suspense, lazy } from "react";
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
@@ -21,6 +21,7 @@ import SEOHead from "@/components/SEOHead";
 import SEOTester from "@/components/SEOTester";
 import ViewCountAdmin from "@/components/ViewCountAdmin";
 import HomepageTableOfContents from "@/components/HomepageTableOfContents";
+import MobileBottomNav from "@/components/MobileBottomNav";
 import { FEATURES } from "@/config/features";
 
 // Lazy load heavy components for better performance
@@ -60,12 +61,12 @@ function AnimatedRoutes({
     const path = location.pathname;
     const hash = location.hash;
 
-    // Handle hash routing for GitHub Pages
+    // Handle clean URLs
     if (hash === '#/blog' || path === '/blog') {
       return {
         title: "Blog - Brayden Swavey | Financial Analysis & Programming Insights",
         description: "Insights on financial analysis, programming, and market research. Read about Monte Carlo simulations, investment strategies, technical analysis, and Python development.",
-        url: "https://braydenswavey.com/#/blog",
+        url: "https://braydenswavey.com/blog",
         type: "website" as const,
         keywords: "financial blog, Monte Carlo simulation, investment analysis, Python programming, market research, technical analysis"
       };
@@ -202,6 +203,7 @@ function AnimatedRoutes({
         )}
       </main>
 
+      <MobileBottomNav />
       <Toaster />
       {FEATURES.seoTester && <SEOTester />}
       {FEATURES.adminPortal && <ViewCountAdmin />}
