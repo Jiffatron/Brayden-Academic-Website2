@@ -297,6 +297,31 @@
       pointer-events: auto;
     }
 
+    /* Ensure project cards are clickable */
+    .project-card, .mobile-project-card {
+      pointer-events: auto !important;
+    }
+
+    /* Prevent layout shifts on mobile project cards */
+    .mobile-project-card {
+      contain: layout style;
+      will-change: transform;
+    }
+
+    /* Stable image containers */
+    .project-image-container {
+      aspect-ratio: 16/9;
+      background-color: rgba(var(--muted-foreground), 0.1);
+    }
+
+    /* Prevent content jumping during image load */
+    .project-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     /* Mobile-specific improvements - only apply on mobile */
     .mobile-project-card {
       margin-bottom: 1.5rem;

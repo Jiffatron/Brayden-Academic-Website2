@@ -191,7 +191,7 @@ const Resume = () => {
 
         {/* Mobile Resume Layout - Card-Based, Touch-Friendly */}
         <motion.div
-          className="md:hidden space-y-6 pb-32"
+          className="md:hidden space-y-6 pb-4"
           variants={itemVariants}
         >
           {/* Mobile Education Card */}

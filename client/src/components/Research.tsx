@@ -127,17 +127,33 @@ const Research = ({ onProjectClick }: ResearchProps) => {
             .map((project) => (
             <motion.div
               key={project.id}
-              className="bg-card rounded-2xl overflow-hidden shadow-lg project-card animate-gpu cursor-pointer"
+              className="bg-card rounded-2xl overflow-hidden shadow-lg project-card mobile-project-card animate-gpu relative"
               variants={itemVariants}
               whileHover={cardHoverVariants.hover}
-              onClick={() => onProjectClick(project)}
             >
+              {/* Invisible button covering entire card */}
+              <button
+                className="absolute inset-0 w-full h-full z-10 cursor-pointer"
+                onClick={() => {
+                  console.log('Mobile card clicked:', project.id);
+                  navigate(`/projects/${project.id}`);
+                }}
+                aria-label={`View ${project.title} project`}
+              />
+
               <div className="relative">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-56 object-cover"
-                />
+                <div className="w-full h-56 bg-muted-foreground/10 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-56 object-cover transition-opacity duration-300"
+                    style={{
+                      minHeight: '224px',
+                      maxHeight: '224px'
+                    }}
+                    loading="lazy"
+                  />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
                   <h3 className="text-xl font-serif font-bold text-white mb-1">
@@ -153,9 +169,9 @@ const Research = ({ onProjectClick }: ResearchProps) => {
                   <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
                     {project.tags[0]}
                   </span>
-                  <button className="text-muted-foreground hover:text-primary transition-colors">
+                  <div className="text-muted-foreground">
                     <i className="fas fa-arrow-right"></i>
-                  </button>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -191,13 +207,13 @@ const Research = ({ onProjectClick }: ResearchProps) => {
 
         {/* Desktop Interests - All 6 */}
         <motion.div
-          className="hidden md:grid md:grid-cols-3 gap-6"
+          className="hidden md:grid md:grid-cols-3 gap-6 mb-16"
           variants={containerVariants}
         >
           {interests.map((interest, index) => (
             <motion.div
               key={index}
-              className="bg-card p-6 rounded-lg shadow-md project-card"
+              className="bg-card p-5 rounded-lg shadow-md project-card"
               variants={itemVariants}
               whileHover={{ y: -5 }}
             >

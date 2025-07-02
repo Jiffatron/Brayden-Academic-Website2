@@ -39,7 +39,7 @@ const Blog = () => {
     <section
       id="blog"
       ref={sectionRef}
-      className="mobile-section mobile-container md:px-16 lg:px-24"
+      className="pt-2 pb-12 md:pt-16 md:pb-16 mobile-container md:px-16 lg:px-24"
     >
       <motion.div
         className="w-full max-w-7xl mx-auto"
