@@ -411,6 +411,23 @@
     .mobile-content-bottom {
       padding-bottom: calc(80px + env(safe-area-inset-bottom) + 2rem);
     }
+
+    /* Hero image improvements - prevent glossy/wet appearance */
+    .hero-image {
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
+
+    /* Remove any glossy effects from shadows */
+    .natural-shadow {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .natural-shadow:hover {
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
   }
 
   /* Smaller mobile devices */

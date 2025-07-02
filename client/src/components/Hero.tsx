@@ -93,21 +93,28 @@ const Hero = () => {
           animate={isVisible ? "visible" : "hidden"}
           variants={containerVariants}
         >
-          <ParallaxContainer speed={0.3} className="flex justify-center md:justify-end">
+          <ParallaxContainer speed={0.3} className="order-1 md:order-2 flex justify-start">
             <motion.div
-              className="w-[360px] h-[360px] sm:w-[440px] sm:h-[440px] depth-effect relative"
+              className="relative max-w-[360px] sm:max-w-[440px] depth-effect"
               variants={itemVariants}
               whileHover={{
                 scale: 1.02,
                 transition: { duration: 0.3, ease: "easeOut" }
               }}
             >
-              <img
-                src="/Hero.jpg"
-                alt="Brayden Swavey headshot"
-                className="object-cover w-full h-full rounded-lg shadow-xl transition-shadow duration-300 hover:shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-primary/10 mix-blend-overlay rounded-lg"></div>
+              <div className="relative overflow-hidden rounded-lg">
+                <img
+                  src="/Photo2edit.jpg"
+                  alt="Brayden Swavey headshot"
+                  className="w-full h-auto object-contain rounded-lg hero-image natural-shadow transition-all duration-300"
+                  style={{
+                    aspectRatio: 'auto',
+                    maxHeight: '440x'
+                  }}
+                />
+                {/* Subtle overlay for depth without glossy effect */}
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-transparent via-transparent to-black/5 pointer-events-none"></div>
+              </div>
             </motion.div>
           </ParallaxContainer>
         </motion.div>
