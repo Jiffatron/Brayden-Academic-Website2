@@ -33,7 +33,7 @@ const Resume = () => {
     <section
       id="resume"
       ref={sectionRef}
-      className="mobile-section mobile-container md:px-16 lg:px-24 navy-dark-section"
+      className="pt-8 pb-0 md:pt-16 md:pb-16 mobile-container md:px-16 lg:px-24 navy-dark-section"
     >
       <motion.div
         className="w-full max-w-7xl mx-auto"
@@ -191,7 +191,7 @@ const Resume = () => {
 
         {/* Mobile Resume Layout - Card-Based, Touch-Friendly */}
         <motion.div
-          className="md:hidden space-y-6 pb-4"
+          className="md:hidden space-y-6 pb-0"
           variants={itemVariants}
         >
           {/* Mobile Education Card */}

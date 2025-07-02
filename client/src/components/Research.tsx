@@ -127,19 +127,14 @@ const Research = ({ onProjectClick }: ResearchProps) => {
             .map((project) => (
             <motion.div
               key={project.id}
-              className="bg-card rounded-2xl overflow-hidden shadow-lg project-card mobile-project-card animate-gpu relative"
+              className="bg-card rounded-2xl overflow-hidden shadow-lg project-card mobile-project-card animate-gpu relative cursor-pointer"
               variants={itemVariants}
               whileHover={cardHoverVariants.hover}
+              onClick={() => {
+                console.log('Mobile card clicked:', project.id);
+                navigate(`/projects/${project.id}`);
+              }}
             >
-              {/* Invisible button covering entire card */}
-              <button
-                className="absolute inset-0 w-full h-full z-10 cursor-pointer"
-                onClick={() => {
-                  console.log('Mobile card clicked:', project.id);
-                  navigate(`/projects/${project.id}`);
-                }}
-                aria-label={`View ${project.title} project`}
-              />
 
               <div className="relative">
                 <div className="w-full h-56 bg-muted-foreground/10 overflow-hidden">
