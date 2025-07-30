@@ -55,10 +55,10 @@ const About = () => {
           <motion.div className="md:col-span-3" variants={itemVariants}>
             <p className="section-text mb-6">
               My name is Brayden Swavey, a recent Finance graduate from Texas Tech University.
-               I specialize in analyzing financial data across both public and private sectors,
-               with a strong interest in the long-term macroeconomic effects of capital allocation.
+               My focus lies in analyzing financial data across both public and private sectors,
+               with a keen interest in the long-term macroeconomic effects on capital allocation.
                I am passionate about understanding how money moves through systems,
-               from municipal budgets to corporate strategy, and how those decisions shape broader economic outcomes.
+               from municipal budgets to corporate strategy, and how those decisions shape withinn economic enviornments.
             </p>
             <div className="mt-8">
               <h3 className="text-xl font-medium mb-4">Core Interests</h3>
@@ -69,11 +69,11 @@ const About = () => {
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-landmark text-primary mr-2"></i>
-                  <span>Private & Alternative Investment Analysis</span>
+                  <span>Private Equity & Investment Analysis</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-brain text-primary mr-2"></i>
-                  <span>Behavioral & Strategic Market Psychology</span>
+                  <span>Behavioral Market Psychology</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-balance-scale text-primary mr-2"></i>
@@ -85,7 +85,7 @@ const About = () => {
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-code text-primary mr-2"></i>
-                  <span>Applied AI in Finance & Decision Systems</span>
+                  <span>Applied AI in Finance</span>
                 </li>
               </ul>
             </div>

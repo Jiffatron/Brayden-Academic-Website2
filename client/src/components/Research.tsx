@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useAdaptiveIntersection } from "@/hooks/useAdaptiveIntersection";
-import { useRef } from "react";
+import { useSliderAnimation } from "@/hooks/useSliderAnimation";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { projects, interests, ProjectType } from "@/lib/data";
 import {
@@ -16,10 +17,34 @@ interface ResearchProps {
 
 const Research = ({ onProjectClick }: ResearchProps) => {
   const sectionRef = useRef<HTMLElement>(null);
-  const { isIntersecting: isVisible, animationDuration } = useAdaptiveIntersection(sectionRef, { threshold: 0.1 });
+  const { isIntersecting: isVisible } = useAdaptiveIntersection(sectionRef, { threshold: 0.1 });
+  const { sliderVariants, cardVariants, startAnimation, endAnimation, isAnimating } = useSliderAnimation();
   const navigate = useNavigate();
 
-  // Using centralized animation variants for consistency
+  // Simple slider state - just 0 or 1
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Hardcode the two sets of projects
+  const allProjects = projects.sort((a, b) => a.position - b.position);
+  const firstFourProjects = allProjects.slice(0, 4); // positions 1,2,3,4
+  const lastFourProjects = allProjects.slice(4, 8);  // positions 5,6,7,8
+
+  // Get current projects based on slide
+  const getCurrentProjects = () => {
+    return currentSlide === 0 ? firstFourProjects : lastFourProjects;
+  };
+
+  const nextSlide = () => {
+    if (isAnimating) return; // Prevent rapid clicking during animation
+    startAnimation();
+    setCurrentSlide(currentSlide === 0 ? 1 : 0);
+  };
+
+  const prevSlide = () => {
+    if (isAnimating) return; // Prevent rapid clicking during animation
+    startAnimation();
+    setCurrentSlide(currentSlide === 0 ? 1 : 0);
+  };
 
   return (
     <section
@@ -45,9 +70,8 @@ const Research = ({ onProjectClick }: ResearchProps) => {
           variants={itemVariants}
         >
          A showcase of my research and applied projects focused on building systems that make financial data clearer, faster, and more actionable.
-         These efforts blend financial analysis, parsing automation, and macro-strategic thinking — drawing from both public-sector
-         datasets and private-market frameworks. Each project is an attempt to reduce complexity and enhance decision-making at the
-         intersection of markets, technology, and capital.
+         These efforts blend financial analysis, automation, and macro-strategic thinking, drawing from both public-sector and
+         private-market datasets. Each project is my attempt to reduce complexity and enhance practical edge with the hopes of creating market value.
         </motion.p>
 
         {/* Mobile Description */}
@@ -58,72 +82,131 @@ const Research = ({ onProjectClick }: ResearchProps) => {
          Building systems that make financial data clearer and more actionable.
         </motion.p>
 
-        {/* Desktop Project Cards - Original Style */}
+        {/* Desktop Project Slider */}
         <motion.div
-          className="hidden md:grid md:grid-cols-2 gap-8 mb-16"
+          className="hidden md:block mb-16"
           variants={containerVariants}
         >
-          {projects
-            .sort((a, b) => a.position - b.position)
-            .slice(0, 4)
-            .map((project) => (
-            <motion.div
-              key={project.id}
-              className="bg-card rounded-lg overflow-hidden shadow-md project-card animate-gpu"
-              variants={itemVariants}
-              whileHover={cardHoverVariants.hover}
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-serif font-semibold mb-3">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  {project.description}
-                </p>
-                <div className="flex gap-2 mb-4 flex-wrap">
-                  {project.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-secondary rounded-full text-xs text-primary"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-3">
-                  <button
-                    className="text-primary flex items-center text-sm hover:text-primary/80 transition-colors"
-                    onClick={() => navigate(`/projects/${project.id}`)}
-                  >
-                    <span>View Project</span>
-                    <i className="fas fa-external-link-alt ml-2"></i>
-                  </button>
-                  <button
-                    className="text-primary flex items-center text-sm hover:text-primary/80 transition-colors"
-                    onClick={() => onProjectClick(project)}
-                  >
-                    <span>Quick View</span>
-                    <i className="fas fa-eye ml-2"></i>
-                  </button>
-                </div>
+          {/* Slider Navigation */}
+          <div className="flex justify-between items-center mb-6">
+            <div className="flex items-center space-x-3">
+              <span className="text-sm text-muted-foreground">
+                {currentSlide + 1} of 2
+              </span>
+              <div className="flex space-x-2">
+                <button
+                  onClick={() => setCurrentSlide(0)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === 0
+                      ? 'bg-primary scale-110'
+                      : 'bg-primary/30 hover:bg-primary/60'
+                  }`}
+                />
+                <button
+                  onClick={() => setCurrentSlide(1)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === 1
+                      ? 'bg-primary scale-110'
+                      : 'bg-primary/30 hover:bg-primary/60'
+                  }`}
+                />
               </div>
+            </div>
+            <div className="flex space-x-3">
+              <button
+                onClick={prevSlide}
+                className="w-10 h-10 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center justify-center"
+              >
+                <i className="fas fa-chevron-left"></i>
+              </button>
+              <button
+                onClick={nextSlide}
+                className="w-10 h-10 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center justify-center"
+              >
+                <i className="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          {/* Slider Content */}
+          <div className="overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                className="grid grid-cols-2 gap-8"
+                key={currentSlide}
+                variants={sliderVariants}
+                initial="initial"
+                animate="enter"
+                exit="exit"
+                onAnimationComplete={endAnimation}
+              >
+                {getCurrentProjects().map((project, index) => (
+                  <motion.div
+                    key={project.id}
+                    className="bg-card rounded-lg overflow-hidden shadow-md project-card-slider"
+                    variants={cardVariants}
+                    initial="initial"
+                    animate="animate"
+                    whileHover="hover"
+                    transition={{
+                      duration: 0.2,
+                      delay: index * 0.05,
+                      ease: [0.4, 0, 0.2, 1]
+                    }}
+                  >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-xl font-serif font-semibold mb-3">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-4">
+                      {project.description}
+                    </p>
+                    <div className="flex gap-2 mb-4 flex-wrap">
+                      {project.tags.map((tag, index) => (
+                        <span
+                          key={index}
+                          className="px-3 py-1 bg-secondary rounded-full text-xs text-primary"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex gap-3">
+                      <button
+                        className="text-primary flex items-center text-sm hover:text-primary/80 transition-colors"
+                        onClick={() => navigate(`/projects/${project.id}`)}
+                      >
+                        <span>View Project</span>
+                        <i className="fas fa-external-link-alt ml-2"></i>
+                      </button>
+                      <button
+                        className="text-primary flex items-center text-sm hover:text-primary/80 transition-colors"
+                        onClick={() => onProjectClick(project)}
+                      >
+                        <span>Quick View</span>
+                        <i className="fas fa-eye ml-2"></i>
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
+            </AnimatePresence>
+          </div>
         </motion.div>
 
-        {/* Mobile Project Cards - Visual Style */}
+        {/* Mobile Project Cards - Visual Style (Show All 8) */}
         <motion.div
           className="md:hidden grid grid-cols-1 gap-6 mb-12"
           variants={containerVariants}
         >
           {projects
             .sort((a, b) => a.position - b.position)
-            .slice(0, 4)
             .map((project) => (
             <motion.div
               key={project.id}
@@ -194,10 +277,10 @@ const Research = ({ onProjectClick }: ResearchProps) => {
           className="section-text mb-8 max-w-3xl"
           variants={itemVariants}
         >
-          My work explores the intersection of market psychology, data systems, and capital strategy — blending foundational 
-          theory with applied modeling. While rooted in academic finance, my focus has shifted toward building tools and frameworks 
-          that enhance investment decisions across both public disclosures and private-market reporting.
-          I aim to bridge conceptual models with real-world execution — turning financial insights into actionable, scalable systems.
+          My work attempts to explore the convergence of market psychology, and capital strategy, blending  
+         theory with applied modeling. While I am rooted in academic finance, my focus has recently shifted toward building tools and frameworks 
+         that enhance my set of skills to assist with investment decisions in both public and private markets.
+          I aim to bridge conceptual models with actual execution, turning financial insights into value.
         </motion.p>
 
         {/* Desktop Interests - All 6 */}

@@ -8,9 +8,13 @@
  * npm install sharp (for image processing)
  */
 
-const sharp = require('sharp');
-const fs = require('fs');
-const path = require('path');
+import sharp from 'sharp';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Favicon sizes needed for comprehensive browser support
 const faviconSizes = [
@@ -22,23 +26,22 @@ const faviconSizes = [
   { size: 512, name: 'android-chrome-512x512.png' }, // Android
 ];
 
-// Create a simple "BS" logo programmatically
-async function createBSLogo() {
-  const logoSvg = `
-    <svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-          <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
-        </linearGradient>
-      </defs>
-      <rect width="512" height="512" rx="80" fill="url(#grad)"/>
-      <text x="256" y="320" font-family="serif" font-size="240" font-weight="bold" 
-            text-anchor="middle" fill="white">BS</text>
-    </svg>
-  `;
-  
-  return Buffer.from(logoSvg);
+// Load the Photo2edit.jpg image as the logo source
+async function loadLogoImage() {
+  const logoPath = path.join(__dirname, '../public/Photo2edit.jpg');
+
+  if (!fs.existsSync(logoPath)) {
+    throw new Error('Photo2edit.jpg not found in public directory');
+  }
+
+  // Process the image to make it square and suitable for favicon
+  return await sharp(logoPath)
+    .resize(512, 512, {
+      fit: 'cover',
+      position: 'center'
+    })
+    .png()
+    .toBuffer();
 }
 
 // Generate all favicon sizes
@@ -52,8 +55,8 @@ async function generateFavicons() {
       fs.mkdirSync(publicDir, { recursive: true });
     }
 
-    // Create the base logo
-    const logoBuffer = await createBSLogo();
+    // Load the Photo2edit.jpg image as the base logo
+    const logoBuffer = await loadLogoImage();
     
     // Generate each favicon size
     for (const { size, name } of faviconSizes) {
@@ -110,8 +113,7 @@ async function generateFavicons() {
 }
 
 // Run the script
-if (require.main === module) {
-  generateFavicons();
-}
+console.log('🚀 Starting favicon generation...');
+generateFavicons();
 
-module.exports = { generateFavicons };
+export { generateFavicons };

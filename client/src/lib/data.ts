@@ -30,7 +30,7 @@ export const projects: ProjectType[] = [
   id: "boeing",
   title: "Equity Research: Boeing",
   description:
-    "Comprehensive analysis of Boeing's financial position, market strategy, and future prospects in the aerospace industry. Includes DCF valuation model and competitive positioning assessment.",
+    "Comprehensive analysis of Boeing's financial position, market strategy, and future prospects in the aerospace industry. Includes a FCF valuation model and competitive peer assessment.",
   image:
     "https://img.ctykit.com/cdn/wa-bellevue/images/tr:w-900/8_16_17_member_the_boeing_company.jpg",
   tags: ["Financial Analysis", "Equity Valuation", "Industry Research"],
@@ -38,22 +38,21 @@ export const projects: ProjectType[] = [
   hasPreview: true,
   position: 4,
   content: `
-    <p class="mb-4">This comprehensive equity research project examines Boeing's financial position following recent industry challenges, including the 737 MAX issues and pandemic impacts on the aviation sector.</p>
+    <p class="mb-4">This comprehensive equity research project examines Boeing's financial position following recent industry challenges, including the 737 MAX issues and pandemic impacts on the aviation sector at large.</p>
     
     <h3 class="text-xl font-medium mb-3">Key Findings</h3>
     <ul class="mb-6 space-y-2">
       <li>• Strong long-term growth potential despite short-term volatility</li>
       <li>• Defense division providing stability amid commercial aviation fluctuations</li>
-      <li>• Improving free cash flow projection for 2023–2025</li>
-      <li>• Supply chain improvements leading to increased production capacity</li>
+      <li>• Actively improving free cash flow projection for 2023–2025</li>
+      <li>• Supply chain bottleneck improvements leading to increased production capacity</li>
     </ul>
     
     <h3 class="text-xl font-medium mb-3">Valuation Summary</h3>
-    <p class="mb-4">Utilizing a DCF model with a WACC of 8.7% and terminal growth rate of 2.5%, the analysis established a fair value range of $215–$240 per share, suggesting the stock was undervalued by approximately 15% at the time of analysis.</p>
+    <p class="mb-4">Utilizing a calculated DCF model with a WACC of 8.7% and terminal growth rate of 2.5%, my analysis established a fair value range of $73 per share, suggesting the stock was overvalued by approximately 257.74% at the time of analysis.</p>
     
     <h3 class="text-xl font-medium mb-3">Methodologies</h3>
     <ul class="mb-6 space-y-2">
-      <li>• Discounted Cash Flow (DCF) Analysis</li>
       <li>• Comparable Company Analysis</li>
       <li>• Free Cash Flow Valuation</li>
       <li>• Scenario Analysis (Bull, Base, Bear cases)</li>
@@ -78,11 +77,11 @@ export const projects: ProjectType[] = [
     id: "mandelbrot-excel",
     title: "Mandelbrot Set in Excel (VBA Done)",
     description:
-      "A mathematical and visual exploration of fractal geometry using only Microsoft Excel, showcasing the computational power hidden in spreadsheets.",
+      "A mathematical and visual exploration of fractal geometry using only Microsoft Excel, showcasing the raw power of using spreadsheets.",
     image:
       "https://i.imgur.com/kLamLkF.png",
     tags: ["Fractals", "Excel", "Complex Numbers", "Visualization"],
-    position: 3,
+    position: 5,
     content: `
       <p class="mb-4">This project demonstrates the generation of the Mandelbrot set—a complex fractal pattern—entirely within Microsoft Excel. Built during my free time as an experimental dive into visual mathematics, it blends the iterative formula Z = Z² + C with Excel’s conditional formatting and complex number logic.</p>
   
@@ -92,18 +91,18 @@ export const projects: ProjectType[] = [
         <li>• Utilized <code>IMPRODUCT</code>, <code>IMSUM</code>, and <code>IMABS</code> for core logic</li>
         <li>• Escaping iterations capped at 50 for performance</li>
         <li>• Dynamic color gradient based on divergence speed</li>
-        <li>• Custom zoom settings for deeper fractal layers</li>
+        <li>• Custom zoom settings for best resoultion</li>
       </ul>
   
       <h3 class="text-xl font-medium mb-3">What I Learned</h3>
       <ul class="mb-6 space-y-2">
-        <li>• Iterative math in a non-programmatic environment</li>
-        <li>• Creative problem-solving under Excel’s formula constraints</li>
+        <li>• Iterative math in a non programming environment</li>
+        <li>• Creative problem-solving under Excel’s many formula constraints</li>
         <li>• How fractals reveal patterns within infinite complexity</li>
       </ul>
   
       <h3 class="text-xl font-medium mb-3">Why It Matters</h3>
-      <p class="mb-4">This project proves that advanced mathematical concepts and visualizations can be implemented with tools outside traditional programming. It pushed Excel to its limits and turned a purely mathematical pattern into a fully functional spreadsheet visualization.</p>
+      <p class="mb-4">This project proves that advanced mathematical concepts and visualizations can be implemented with tools outside traditional programming. It is pushing Excel to its limits and is turning a purely mathematical pattern into a fully functional spreadsheet visualization.</p>
   
       <div class="flex justify-end">
         <a href="https://imgur.com/a/W87udOf" class="px-4 py-2 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/80 transition-colors duration-300">MVP Available</a>
@@ -119,30 +118,30 @@ export const projects: ProjectType[] = [
   tags: ["Public Finance", "AI Integration", "Financial Data Automation"],
   pdfUrl: "",
   hasPreview: false,
-  position: 2,
+  position: 3,
   content: `
     <p class="mb-4">
-      This ongoing project was inspired by my internship at the Municipal Advisory Council of Texas, where I worked directly with investor-facing data from school district bond issuances. The goal of this tracker is to centralize and simplify complex financial disclosures that investors and municipalities rely on.
+      This ongoing project was inspired by my internship at the Municipal Advisory Council of Texas, where I worked directly with investor-facing data from school district bond issuances. The goal of this tracker is to centralize and simplify complex financial disclosures that investors and municipalities rely on that affect county constituents.
     </p>
 
     <h3 class="text-xl font-medium mb-3">Planned Features</h3>
     <ul class="mb-6 space-y-2">
       <li>• Parsing both automated and manually reviewed financial statements</li>
-      <li>• Extraction of critical data points like assessed values, top taxpayers, and fund balances</li>
+      <li>• Extraction of critical data points like assessed values, top taxpayers, and total fund balances</li>
       <li>• Integration with Notion for update logging and statement documentation</li>
       <li>• Interactive dashboard for visualizing school district bond metrics</li>
-      <li>• Potential use of AI for statement summarization and classification</li>
+      <li>• Potential use of AI for statement summarization and classification given parsing constraints</li>
     </ul>
 
     <h3 class="text-xl font-medium mb-3">Current Status</h3>
     <p class="mb-4">
-      The site framework was rapidly built using AI-assisted tools to accelerate development. While it is not yet ready for public use, a working MVP is now available for preview. I continue developing parsing logic and refining the UI for enhanced functionality.
+      The site framework was rapidly built using AI-assisted tools to accelerate development. While it is not yet ready for public use, a working MVP is now available for preview. I continue developing parsing logic and refining the UI for enhanced functionality while tying it to my foundational knowledge of finance.
     </p>
 
     <div class="mb-6">
       <h4 class="text-lg font-medium mb-3">Live MVP Demo</h4>
       <p class="mb-4">
-        Experience the current version of the Texas Municipal Bond Tracker with live data parsing and visualization features.
+        Experience the current version of the Texas Municipal Bond Tracker with soon to be live data parsing and visualization features.
       </p>
       <div class="flex gap-4">
         <a href="https://jiffatron.github.io/TexasBondTracker/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/80 transition-colors duration-300 inline-flex items-center gap-2">
@@ -162,7 +161,7 @@ id: "PythonMonteCarloBasic",
   tags: ["Python", "Monte Carlo Simulation", "Financial Modeling", "Statistical Analysis"],
   pdfUrl: "",
   hasPreview: false,
-  position: 1,
+  position: 2,
   content: `
     <h3 id="abstract" class="text-xl font-medium mb-4">Part 1: Foundation & Abstract</h3>
 
@@ -614,7 +613,53 @@ plt.<span class="function">show</span>()                                        
 
     <!-- GISCUS_COMMENTS_PLACEHOLDER -->
   `
-  }
+  },
+  {
+    id: "CryptoArbitrageTrader",
+    title: "Crypto Arbitrage Trader",
+    description: "I am currently working on a crypto arbitrage trading bot. This bot will be able to trade on multiple exchanges with multiple pairs, that can dynamically be adjusted in contingency to my risk profile. Examples include but are not limited to estimated Slippage, Gas Fees, Honeypot Detection, Spread Thresholds, and more.",
+    image: "/images/Solana-1260x787.png",
+    tags: ["Crypto", "Arbitrage", "Risk Management"],
+    pdfUrl: "",
+    hasPreview: true,
+    position: 1,
+    content: `
+      <p class="mb-4">Crypto Arbitrage Trader Automation - An automated trading bot that searches for price discrepancies between different exchanges and pairs, and executes trades based on several predefined risk factors</p>
+      
+      <h3 class="text-xl font-medium mb-3">Key Features</h3>
+      <ul class="mb-6 space-y-2">
+        <li>• Component 1: Mainly Trades SOL/USDC, ETH/USDC, and RAY/SOL</li>
+        <li>• Component 2: Dynamically adjusts trading stratagies based on market conditions and wallet activities</li>
+        <li>• Component 3: Features highly technical logging into JSON files that later can be analyzed using Excel</li>
+        <li>• Component 4: Notably uses Slippage Control, Liquidity Threshold Filters, Execution Delay Timers, Simulated Preliminary Exectution, Rate-Limit Awareness, and many more features</li>
+        <li>• Component 4: Some functions and risk parameters are not shown to maintain the integrity of the bot and its performance</li>
+      </ul>
+      <p class="mb-6" align="center">
+        <i>*This project is currently in progress. Future updates will include more information on the bot's performance and risk management strategies*</i>
+      </p>
+    `
+  },
+
+  //{
+    //id: "test4",
+    //title: "Test Project 4",
+    //description: "Final test project completing the set of 8 total projects, ensuring the slider handles maximum capacity effectively.",
+    //image: "https://via.placeholder.com/400x200/EF4444/FFFFFF?text=Test+Project+4",
+    //tags: ["Final", "Complete", "Testing"],
+    //pdfUrl: "",
+    //hasPreview: false,
+    //position: 6,
+    //content: `
+      //<p class="mb-4">This is Test Project 4 - the final test project in our slider demonstration.</p>
+      
+     // <h3 class="text-xl font-medium mb-3">Completion Features</h3>
+      //<ul class="mb-6 space-y-2">
+        //<li>• Full slider capacity testing</li>
+        //<li>• Edge case handling</li>
+        //<li>• Performance optimization</li>
+      //</ul>
+    //`
+  //}
 ];
 
 // Academic interests data
@@ -622,7 +667,7 @@ export const interests = [
   {
     icon: "fas fa-chart-line",
     title: "Financial Risk & Modeling",
-    description: "Developing quantitative models to assess and manage financial risks across various asset classes."
+    description: "Developing quantitative models to assess and manage financial risks across multiple asset classes."
   },
   {
     icon: "fas fa-calculator",
@@ -632,12 +677,12 @@ export const interests = [
   {
     icon: "fas fa-coins",
     title: "Options Pricing & Derivatives",
-    description: "Analyzing complex financial instruments and developing pricing models for derivative securities."
+    description: "Analyzing complex financial instruments and developing improved pricing models for derivative securities."
   },
   {
     icon: "fas fa-brain",
     title: "Machine Learning in Finance",
-    description: "Leveraging AI and machine learning algorithms for predictive modeling and automated trading strategies."
+    description: "Leveraging AI and machine learning algorithms for predictive modeling."
   },
   {
     icon: "fas fa-robot",
@@ -657,7 +702,7 @@ export const blogPosts = [
     slug: "human-psychology-of-finance",
     title: "A Deep Dive into the Human Psychology of Finance",
     date: "April 7, 2025",
-    preview: "A reflective look at how emotion, perception, and cognitive bias drive financial behavior — revealing that markets are as much psychological landscapes as they are numerical systems.",
+    preview: "A look at how emotion, perception, and cognitive bias drive financial behavior, revealing that markets are as much psychological landscapes as they are numerical systems.",
     content: `
 <p class="text-left italic mt-8 mb-2 text-base sm:text-lg text-muted-foreground">
   Estimated reading time:
@@ -889,7 +934,7 @@ appreciation after 10 years.</p>
     title: "Rethinking Modern Portfolio Theory",
     date: "TBD",
     preview:
-      "A critical examination of MPT's assumptions in today's market environment. How can investors adapt traditional portfolio construction techniques to account for changing correlations and non-normal return distributions?",
+      "An examination of MPT's assumptions in today's market environment. How can investors adapt traditional portfolio construction techniques to account for changing correlations and non-normal return distributions?",
     content: `
       <p>Not Yet Available</p>
     `,

@@ -50,7 +50,7 @@ const Resume = () => {
           </h2>
           <div className="mt-4 md:mt-0 flex flex-col gap-3 sm:flex-row sm:space-x-3 sm:gap-0">
             <a
-              href="https://drive.google.com/file/d/1RW-EmDIzh__aCEmPE1dBn5wmtjFxOx7b/view?usp=sharing"
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-4 min-h-[56px] border-2 border-primary text-primary rounded-lg flex items-center justify-center hover:bg-primary hover:bg-opacity-10 transition-all duration-300 text-lg font-medium"
@@ -59,9 +59,8 @@ const Resume = () => {
               <span>View PDF</span>
             </a>
             <a
-              href="https://drive.google.com/file/d/1RW-EmDIzh__aCEmPE1dBn5wmtjFxOx7b/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/resume.pdf"
+              download="Brayden_Resume.pdf"
               className="px-6 py-4 min-h-[56px] bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:bg-primary/80 transition-all duration-300 text-lg font-medium"
             >
               <i className="fas fa-download mr-3 text-lg"></i>
