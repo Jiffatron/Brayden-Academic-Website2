@@ -1,6 +1,7 @@
 import { projects } from "@/lib/data";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import ProjectTimeline from "@/components/ProjectTimeline";
 
 const ProjectsLanding = () => {
   const navigate = useNavigate();
@@ -49,6 +50,19 @@ const ProjectsLanding = () => {
         >
           ← Back to Home
         </Link>
+
+        {/* Project Timeline */}
+        <ProjectTimeline />
+
+        {/* Project Grid Section */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold mb-4">
+            All Projects
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Explore detailed breakdowns of each project with interactive content and downloadable resources.
+          </p>
+        </div>
 
         <motion.div
           className="grid md:grid-cols-2 gap-8"

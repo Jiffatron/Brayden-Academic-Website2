@@ -54,41 +54,47 @@ const About = () => {
         <div className="hidden md:grid md:grid-cols-5 gap-12 items-start">
           <motion.div className="md:col-span-3" variants={itemVariants}>
             <p className="section-text mb-6">
-              My name is Brayden Swavey, a recent Finance graduate from Texas Tech University.
-               My focus lies in analyzing financial data across both public and private sectors,
-               with a keen interest in the long-term macroeconomic effects on capital allocation.
-               I am passionate about understanding how money moves through systems,
-               from municipal budgets to corporate strategy, and how those decisions shape withinn economic enviornments.
+              I’m Brayden Swavey, a recent Finance graduate from Texas Tech. I study how money moves through 
+              different systems because it tells a story most people do not see. From the decisions buried in 
+              a municipal budget to the strategies that shape a corporation’s next move, my work explores those 
+              stories and makes them clear enough for someone else to follow. </p>
+
+            <p className="section-text mb-6">
+             This portfolio is a curated look at the way I approach finance and problem solving. Each project is
+             part of a broader effort to connect ideas across markets, technologies, and analytical methods. Whether
+             it is building a public market dashboard, modeling risk, or exploring market microstructure, the goal is 
+             the same. I aim to turn complexity into clear and actionable insights.
             </p>
             <div className="mt-8">
               <h3 className="text-xl font-medium mb-4">Core Interests</h3>
               <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
                 <li className="flex items-center">
                   <i className="fas fa-chart-line text-primary mr-2"></i>
-                  <span>Data-Driven Financial Modeling</span>
+                  <span>Financial Modeling and Scenario Analysis</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-landmark text-primary mr-2"></i>
-                  <span>Private Equity & Investment Analysis</span>
+                  <span>Public and Private Market Strategy</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-brain text-primary mr-2"></i>
-                  <span>Behavioral Market Psychology</span>
+                  <span>Behavioral and Market Psychology</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-balance-scale text-primary mr-2"></i>
-                  <span>Capital Flow & Risk Structuring</span>
+                  <span>Capital Allocation and Risk Management</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-university text-primary mr-2"></i>
-                  <span>Parsing & Automation of Financial Data</span>
+                  <span>Data Automation for Financial Transparency</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-code text-primary mr-2"></i>
-                  <span>Applied AI in Finance</span>
+                  <span>Applied Technology and AI in Finance</span>
                 </li>
               </ul>
             </div>
+
           </motion.div>
           <motion.div className="md:col-span-2" variants={itemVariants}>
             <div className="relative">

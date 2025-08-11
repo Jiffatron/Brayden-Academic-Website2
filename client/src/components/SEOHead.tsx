@@ -1,5 +1,10 @@
 import { Helmet } from 'react-helmet-async';
 
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
 interface SEOHeadProps {
   title?: string;
   description?: string;
@@ -12,6 +17,7 @@ interface SEOHeadProps {
   modifiedTime?: string;
   section?: string;
   tags?: string[];
+  breadcrumbs?: BreadcrumbItem[];
 }
 
 /**
@@ -19,8 +25,8 @@ interface SEOHeadProps {
  * Includes Open Graph, Twitter Cards, and structured data
  */
 const SEOHead: React.FC<SEOHeadProps> = ({
-  title = "Brayden Swavey - Financial Analyst & Developer Portfolio",
-  description = "Financial analyst and developer specializing in Monte Carlo simulations, bond tracking, equity research, and data-driven investment tools. Explore my projects in Python, Excel modeling, and financial analysis.",
+  title = "Brayden Swavey – Finance, Markets & Modeling",
+  description = "Exploring markets through data. From Monte Carlo simulations to bond trackers and equity research, I design tools that turn financial complexity into clear insights.",
   keywords = "Brayden Swavey, financial analyst, developer, Monte Carlo simulation, bond tracking, equity research, Python, financial modeling, portfolio, investment analysis",
   image = "https://braydenswavey.com/brayden-profile.jpg",
   url = "https://braydenswavey.com",
@@ -29,7 +35,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   publishedTime,
   modifiedTime,
   section,
-  tags = []
+  tags = [],
+  breadcrumbs = []
 }) => {
   // Construct full URL if relative path provided
   const fullUrl = url.startsWith('http') ? url : `https://braydenswavey.com${url}`;
@@ -155,6 +162,22 @@ const SEOHead: React.FC<SEOHeadProps> = ({
           }
         })}
       </script>
+
+      {/* Breadcrumb Structured Data */}
+      {breadcrumbs.length > 0 && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": breadcrumbs.map((item, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "name": item.name,
+              "item": item.url
+            }))
+          })}
+        </script>
+      )}
     </Helmet>
   );
 };

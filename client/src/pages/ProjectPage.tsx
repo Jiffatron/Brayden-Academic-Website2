@@ -9,6 +9,7 @@ import TableOfContents from "@/components/TableOfContents";
 import ScrollReveal from "@/components/ScrollReveal";
 import ParallaxContainer from "@/components/ParallaxContainer";
 import GiscusComments from "@/components/GiscusComments";
+import TimelineNavigation from "@/components/TimelineNavigation";
 import { useSessionTracking, useDownloadTracking, useCodeTracking } from "@/hooks/useFirebaseTracking";
 
 const ProjectPage = () => {
@@ -21,6 +22,13 @@ const ProjectPage = () => {
   useSessionTracking(project?.id);
   const { trackDownloadClick } = useDownloadTracking(project?.id);
   const { trackCopyClick } = useCodeTracking(project?.id);
+
+  // Normalized flagship tags per page (render in this exact order)
+  const FLAGSHIP_TAGS: Record<string, AllowedTag[]> = {
+    "bond-dashboard": ["Data", "Visualization", "Risk"],
+    "market-microstructure": ["Microstructure", "Automation", "Risk"],
+    "risk-engine": ["Risk", "Visualization", "Research"],
+  };
 
   // Define table of contents sections for each project
   const tocSections = {
@@ -381,6 +389,11 @@ const ProjectPage = () => {
             </div>
           </div>
         )}
+
+        {/* Timeline Navigation */}
+        <div className="max-w-4xl mx-auto">
+          <TimelineNavigation projectId={project.id} />
+        </div>
 
         {/* Comments Section */}
         <div className="max-w-4xl mx-auto">

@@ -69,9 +69,11 @@ const Research = ({ onProjectClick }: ResearchProps) => {
           className="hidden md:block section-description"
           variants={itemVariants}
         >
-         A showcase of my research and applied projects focused on building systems that make financial data clearer, faster, and more actionable.
-         These efforts blend financial analysis, automation, and macro-strategic thinking, drawing from both public-sector and
-         private-market datasets. Each project is my attempt to reduce complexity and enhance practical edge with the hopes of creating market value.
+         A collection of my research and applied projects focused on building systems
+          that make financial data clear, fast, and useful. These efforts combine 
+          financial analysis, automation, and strategic thinking, drawing from both 
+          public sector and private market datasets. Each project is my way of taking 
+          something complex and turning it into a tool or insight that can create real market value.
         </motion.p>
 
         {/* Mobile Description */}
@@ -277,10 +279,13 @@ const Research = ({ onProjectClick }: ResearchProps) => {
           className="section-text mb-8 max-w-3xl"
           variants={itemVariants}
         >
-          My work attempts to explore the convergence of market psychology, and capital strategy, blending  
-         theory with applied modeling. While I am rooted in academic finance, my focus has recently shifted toward building tools and frameworks 
-         that enhance my set of skills to assist with investment decisions in both public and private markets.
-          I aim to bridge conceptual models with actual execution, turning financial insights into value.
+          I’m interested in where market psychology meets capital strategy, 
+          nd I like finding ways to bring theory into something you can 
+          actually use. I started with an academic foundation in finance,
+           but lately I’ve been more focused on building tools and frameworks 
+           that make me better at making investment decisions in both public 
+           and private markets. For me, the real challenge is taking an idea or 
+           model and pushing it far enough that it works in practice and creates real value.
         </motion.p>
 
         {/* Desktop Interests - All 6 */}

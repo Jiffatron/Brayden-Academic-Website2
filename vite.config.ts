@@ -31,6 +31,11 @@ export default defineConfig({
       "@assets": path.resolve(__dirname, "attached_assets"),
     },
   },
+  server: {
+    allowedHosts: [
+      "professional-referred-code-polyhonic.trycloudflare.com"
+    ]
+  },
   root: path.resolve(__dirname, "client"),
   build: {
     outDir: path.resolve(__dirname, "docs"),

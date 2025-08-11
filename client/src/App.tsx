@@ -4,8 +4,9 @@ import {
   Routes,
   Route,
   useLocation,
+  Navigate,
 } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -64,19 +65,51 @@ function AnimatedRoutes({
     // Handle clean URLs
     if (hash === '#/blog' || path === '/blog') {
       return {
-        title: "Blog - Brayden Swavey | Financial Analysis & Programming Insights",
-        description: "Insights on financial analysis, programming, and market research. Read about Monte Carlo simulations, investment strategies, technical analysis, and Python development.",
+        title: "Blog - Brayden Swavey | Financial Analysis & Market Insights",
+        description: "Deep dives into financial analysis, market research, and quantitative modeling. Explore Monte Carlo methods, investment strategies, and data-driven insights.",
         url: "https://braydenswavey.com/blog",
         type: "website" as const,
-        keywords: "financial blog, Monte Carlo simulation, investment analysis, Python programming, market research, technical analysis"
+        keywords: "financial blog, Monte Carlo simulation, investment analysis, Python programming, market research, technical analysis",
+        breadcrumbs: [
+          { name: "Home", url: "https://braydenswavey.com/" },
+          { name: "Blog", url: "https://braydenswavey.com/blog" }
+        ]
       };
-    } else if (hash.startsWith('#/projects') || path.startsWith('/projects')) {
+    } else if (hash === '#/projects' || path === '/projects') {
       return {
-        title: "Projects Portfolio - Brayden Swavey | Financial Analysis & Development",
-        description: "Explore my portfolio of financial analysis projects including Monte Carlo simulations, bond tracking systems, equity research, and Excel modeling tools. Python, VBA, and financial modeling expertise.",
-        url: "https://braydenswavey.com/#/projects",
+        title: "Projects - Brayden Swavey | Financial Modeling & Analysis Tools",
+        description: "Portfolio of financial analysis projects: Monte Carlo simulations, bond tracking systems, equity research, and market microstructure models.",
+        url: "https://braydenswavey.com/projects",
         type: "website" as const,
-        keywords: "financial projects, Monte Carlo simulation, bond tracking, equity research, Excel modeling, Python projects, VBA development"
+        keywords: "financial projects, Monte Carlo simulation, bond tracking, equity research, Excel modeling, Python projects, VBA development",
+        breadcrumbs: [
+          { name: "Home", url: "https://braydenswavey.com/" },
+          { name: "Projects", url: "https://braydenswavey.com/projects" }
+        ]
+      };
+    } else if (hash === '#/resume' || path === '/resume') {
+      return {
+        title: "Resume - Brayden Swavey | Finance Professional & Developer",
+        description: "Professional background in finance and development. Experience in quantitative analysis, financial modeling, and data-driven investment tools.",
+        url: "https://braydenswavey.com/resume",
+        type: "website" as const,
+        keywords: "resume, finance professional, quantitative analysis, financial modeling, developer, investment tools",
+        breadcrumbs: [
+          { name: "Home", url: "https://braydenswavey.com/" },
+          { name: "Resume", url: "https://braydenswavey.com/resume" }
+        ]
+      };
+    } else if (hash === '#/contact' || path === '/contact') {
+      return {
+        title: "Contact - Brayden Swavey | Get In Touch",
+        description: "Connect with me for opportunities in finance, quantitative analysis, or development projects. Let's discuss financial modeling and market analysis.",
+        url: "https://braydenswavey.com/contact",
+        type: "website" as const,
+        keywords: "contact, finance opportunities, quantitative analysis, financial modeling, collaboration",
+        breadcrumbs: [
+          { name: "Home", url: "https://braydenswavey.com/" },
+          { name: "Contact", url: "https://braydenswavey.com/contact" }
+        ]
       };
     } else if (hash === '#/contact' || path === '/contact') {
       return {
@@ -100,9 +133,30 @@ function AnimatedRoutes({
     } else if (hash.startsWith('#/projects/') || path.startsWith('/projects/')) {
       // Individual project page
       const projectId = (hash || path).split('/').pop();
+
+      // Flagship SEO mapping
+      const SEO_MAP: Record<string, { title: string; description: string }> = {
+        "bond-dashboard": {
+          title: "Public Market Dashboard | issuer data and a simple risk tile",
+          description: "Issuer data with a clear view and a simple risk tile.",
+        },
+        "market-microstructure": {
+          title: "Market Microstructure Model | latency, depth, routing",
+          description: "A sandbox that measures how latency, depth, and routing affect execution.",
+        },
+        "risk-engine": {
+          title: "Risk Modeling Engine | scenario scoring",
+          description: "A small library that turns scenarios into a single score.",
+        },
+      };
+
+      const fallbackTitle = `${projectId?.replace(/([A-Z])/g, ' $1').trim()} - Project Details | Brayden Swavey`;
+      const fallbackDescription = "Detailed breakdown of financial analysis project including methodology, implementation, and results. Explore the technical approach and insights gained.";
+      const seo = (projectId && SEO_MAP[projectId]) || { title: fallbackTitle, description: fallbackDescription };
+
       return {
-        title: `${projectId?.replace(/([A-Z])/g, ' $1').trim()} - Project Details | Brayden Swavey`,
-        description: "Detailed breakdown of financial analysis project including methodology, implementation, and results. Explore the technical approach and insights gained.",
+        title: seo.title,
+        description: seo.description,
         url: `https://braydenswavey.com${hash || path}`,
         type: "article" as const,
         section: "Projects",
@@ -112,8 +166,8 @@ function AnimatedRoutes({
 
     // Default homepage
     return {
-      title: "Brayden Swavey - Financial Analyst & Developer Portfolio",
-      description: "Financial analyst and developer specializing in Monte Carlo simulations, bond tracking, equity research, and data-driven investment tools. Explore my projects in Python, Excel modeling, and financial analysis.",
+      title: "Brayden Swavey – Finance, Markets & Modeling",
+      description: "Exploring markets through data. From Monte Carlo simulations to bond trackers and equity research, I design tools that turn financial complexity into clear insights.",
       url: "https://braydenswavey.com/",
       type: "website" as const,
       keywords: "Brayden Swavey, financial analyst, developer, Monte Carlo simulation, bond tracking, equity research, Python, financial modeling, portfolio"
@@ -137,7 +191,7 @@ function AnimatedRoutes({
                     <Hero />
                   </section>
 
-                  <section id="about" className="scroll-mt-24">
+                  <section id="about" className="scroll-mt-24 mb-32">
                     <About />
                   </section>
 
@@ -183,12 +237,46 @@ function AnimatedRoutes({
                 </Suspense>
               }
             />
+            {/* 301 Redirects for old project URLs */}
+            <Route path="/projects/BondTracker" element={<Navigate to="/projects/bond-dashboard" replace />} />
+            <Route path="/projects/RiskModelingEngine" element={<Navigate to="/projects/risk-engine" replace />} />
+            <Route path="/projects/MarketMicrostructureModel" element={<Navigate to="/projects/market-microstructure" replace />} />
+            <Route path="/projects/ComplexSystemsVisualizationExcel" element={<Navigate to="/projects/mandelbrot-excel" replace />} />
+            <Route path="/projects/human-psychology-of-finance" element={<Navigate to="/blog/human-psychology-of-finance" replace />} />
             <Route
               path="/projects/:id"
               element={
                 <Suspense fallback={<LoadingSpinner />}>
                   <ProjectPage />
                 </Suspense>
+              }
+            />
+            <Route
+              path="/resume"
+              element={
+                <motion.main
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="py-20 px-6 max-w-6xl mx-auto"
+                >
+                  <Resume />
+                </motion.main>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <motion.main
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="py-20 px-6 max-w-6xl mx-auto"
+                >
+                  <Contact />
+                </motion.main>
               }
             />
           </Routes>

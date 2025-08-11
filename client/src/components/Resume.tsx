@@ -150,7 +150,7 @@ const Resume = () => {
               <div>
                 <h4 className="font-medium mb-3">Soft Skills</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Clear written and verbal communication (client outreach + audit clarification)</li>
+                  <li>• Clear written and verbal communication (client outreach + audit resolution)</li>
                   <li>• Small-team leadership (Mint Moving + inventory strategy)</li>
                   <li>• Initiative-driven — launched and scaled solo business operations</li>
                   <li>• Adaptable across industries (public finance, eCommerce, logistics)</li>

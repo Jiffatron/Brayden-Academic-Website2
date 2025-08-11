@@ -68,7 +68,7 @@ const Hero = () => {
             className="text-lg md:text-xl mb-8 max-w-xl"
             variants={itemVariants}
           >
-            Diving into the frameworks that drive markets and shape strategic financial decisions
+            Exploring the ideas, systems, and patterns that drive markets and guide financial decisions
           </motion.p>
 
           <motion.div className="flex space-x-6" variants={itemVariants}>

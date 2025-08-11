@@ -730,4 +730,30 @@
   .timestamp {
     @apply text-xs text-muted-foreground/70 pt-4 text-center;
   }
+
+  /* Timeline Scrollbar Styling */
+  .timeline-scrollbar::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .timeline-scrollbar::-webkit-scrollbar-track {
+    background: #d1d1d1;
+    border-radius: 3px;
+  }
+
+  .timeline-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #888 0%, #666 50%, #888 100%);
+    border-radius: 3px;
+    border: 1px solid #fff;
+  }
+
+  .timeline-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #666 0%, #444 50%, #666 100%);
+  }
+
+  /* Firefox scrollbar styling */
+  .timeline-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #d1d1d1;
+  }
 }

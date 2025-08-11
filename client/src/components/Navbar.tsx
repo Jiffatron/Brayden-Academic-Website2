@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import StockTicker from "./Stockticker";
 import { navigateAndScroll } from "@/utils/navigation";
 
@@ -76,11 +76,11 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
           </div>
 
           <div className="hidden md:flex space-x-8 items-center">
-            <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="nav-link">Home</button>
-            <button onClick={() => navigate("/projects")} className="nav-link">Projects</button>
-            <button onClick={() => scrollToSection("resume")} className="nav-link">Resume</button>
-            <button onClick={() => navigate("/blog")} className="nav-link">Blog</button>
-            <button onClick={() => scrollToSection("contact")} className="nav-link">Contact</button>
+            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/projects" className="nav-link">Projects</Link>
+            <Link to="/resume" className="nav-link">Resume</Link>
+            <Link to="/blog" className="nav-link">Blog</Link>
+            <Link to="/contact" className="nav-link">Contact</Link>
             <button
               onClick={toggleDarkMode}
               className="ml-4 text-primary p-2 rounded-full hover:bg-secondary transition-colors hover:rotate-90 duration-300"
@@ -105,11 +105,11 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
           isMobileMenuOpen ? "opacity-100" : "opacity-0 mobile-menu-closed"
         }`}
       >
-        <button onClick={() => { closeMobileMenu(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="nav-link py-2">Home</button>
-        <button onClick={() => { closeMobileMenu(); navigate("/projects"); }} className="nav-link py-2">Projects</button>
-        <button onClick={() => { closeMobileMenu(); scrollToSection("resume"); }} className="nav-link py-2">Resume</button>
-        <button onClick={() => { closeMobileMenu(); navigate("/blog"); }} className="nav-link py-2">Blog</button>
-        <button onClick={() => { closeMobileMenu(); scrollToSection("contact"); }} className="nav-link py-2">Contact</button>
+        <Link to="/" onClick={closeMobileMenu} className="nav-link py-2">Home</Link>
+        <Link to="/projects" onClick={closeMobileMenu} className="nav-link py-2">Projects</Link>
+        <Link to="/resume" onClick={closeMobileMenu} className="nav-link py-2">Resume</Link>
+        <Link to="/blog" onClick={closeMobileMenu} className="nav-link py-2">Blog</Link>
+        <Link to="/contact" onClick={closeMobileMenu} className="nav-link py-2">Contact</Link>
         <button
           onClick={() => {
             toggleDarkMode();

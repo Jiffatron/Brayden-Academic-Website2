@@ -8,7 +8,16 @@ export interface ProjectType {
   pdfUrl?: string;
   hasPreview?: boolean;
   position: number; // For ordering projects in displays
+  blurb?: string; // Short header blurb for flagship pages
 }
+
+// SEO-friendly slug redirects (301 redirects for old URLs)
+export const PROJECT_REDIRECTS: Record<string, string> = {
+  "BondTracker": "bond-dashboard",
+  "RiskModelingEngine": "risk-engine",
+  "MarketMicrostructureModel": "market-microstructure",
+  "ComplexSystemsVisualizationExcel": "mandelbrot-excel"
+};
 
 export interface InterestType {
   title: string;
@@ -27,82 +36,87 @@ export interface BlogPostType {
 // Project data
 export const projects: ProjectType[] = [
   {
-  id: "boeing",
-  title: "Equity Research: Boeing",
-  description:
-    "Comprehensive analysis of Boeing's financial position, market strategy, and future prospects in the aerospace industry. Includes a FCF valuation model and competitive peer assessment.",
-  image:
-    "https://img.ctykit.com/cdn/wa-bellevue/images/tr:w-900/8_16_17_member_the_boeing_company.jpg",
-  tags: ["Financial Analysis", "Equity Valuation", "Industry Research"],
-  pdfUrl: "/Boeing_Equity_Research_Report.pdf",
-  hasPreview: true,
-  position: 4,
-  content: `
-    <p class="mb-4">This comprehensive equity research project examines Boeing's financial position following recent industry challenges, including the 737 MAX issues and pandemic impacts on the aviation sector at large.</p>
-    
-    <h3 class="text-xl font-medium mb-3">Key Findings</h3>
-    <ul class="mb-6 space-y-2">
-      <li>• Strong long-term growth potential despite short-term volatility</li>
-      <li>• Defense division providing stability amid commercial aviation fluctuations</li>
-      <li>• Actively improving free cash flow projection for 2023–2025</li>
-      <li>• Supply chain bottleneck improvements leading to increased production capacity</li>
-    </ul>
-    
-    <h3 class="text-xl font-medium mb-3">Valuation Summary</h3>
-    <p class="mb-4">Utilizing a calculated DCF model with a WACC of 8.7% and terminal growth rate of 2.5%, my analysis established a fair value range of $73 per share, suggesting the stock was overvalued by approximately 257.74% at the time of analysis.</p>
-    
-    <h3 class="text-xl font-medium mb-3">Methodologies</h3>
-    <ul class="mb-6 space-y-2">
-      <li>• Comparable Company Analysis</li>
-      <li>• Free Cash Flow Valuation</li>
-      <li>• Scenario Analysis (Bull, Base, Bear cases)</li>
-    </ul>
-    
-    <h3 class="text-xl font-medium mb-3 mt-8">Report Preview</h3>
-    <div class="mb-6 rounded-md overflow-hidden shadow-lg w-full">
-      <iframe
-        src="/Boeing_Equity_Research_Report.pdf"
-        className="w-full h-[400px] md:h-[500px] lg:h-[600px] border border-primary/20 rounded-lg"
-        title="Boeing Equity Research Report Preview"
-        style="width: 100%; min-height: 400px; aspect-ratio: 16/10;">
-        <p class="text-muted-foreground p-4">
-          Your browser does not support PDF preview. Please use the download button below to view the full report.
-        </p>
-      </iframe>
-    </div>
-  `
+    id: "boeing",
+    title: "Equity Research: Boeing",
+    description:
+      "Comprehensive analysis of Boeing's financial position, market strategy, and outlook in the aerospace industry. Includes a free cash flow valuation model, peer comparisons, and scenario-based projections.",
+    image:
+      "https://img.ctykit.com/cdn/wa-bellevue/images/tr:w-900/8_16_17_member_the_boeing_company.jpg",
+    tags: ["Financial Analysis", "Equity Valuation", "Industry Research"],
+    pdfUrl: "/Boeing_Equity_Research_Report.pdf",
+    hasPreview: true,
+    position: 4,
+content: `
+      <p class="mb-4">
+        This equity research project examines Boeing's financial position and strategic direction following recent challenges, including the 737 MAX grounding and pandemic-related impacts on global aviation. The report assesses the company’s recovery prospects, operational performance, and competitive position in the aerospace sector.
+      </p>
+      
+      <h3 class="text-xl font-medium mb-3">Key Findings</h3>
+      <ul class="mb-6 space-y-2">
+        <li>• Long-term growth potential supported by strong order backlog despite near-term volatility</li>
+        <li>• Defense division providing stability during commercial aviation downturns</li>
+        <li>• Free cash flow projections improving for the 2023–2025 period</li>
+        <li>• Supply chain recovery expected to increase production capacity</li>
+      </ul>
+      
+      <h3 class="text-xl font-medium mb-3">Valuation Summary</h3>
+      <p class="mb-4">
+        Using a discounted cash flow model with a weighted average cost of capital of 8.7% and a terminal growth rate of 2.5%, my analysis estimated a fair value of $73 per share. At the time of the report, this indicated the stock was overvalued by approximately 257.74%.
+      </p>
+      
+      <h3 class="text-xl font-medium mb-3">Methodologies</h3>
+      <ul class="mb-6 space-y-2">
+        <li>• Comparable Company Analysis</li>
+        <li>• Free Cash Flow Valuation</li>
+        <li>• Scenario Analysis for bull, base, and bear cases</li>
+      </ul>
+      
+      <h3 class="text-xl font-medium mb-3 mt-8">Report Preview</h3>
+      <div class="mb-6 rounded-md overflow-hidden shadow-lg w-full">
+        <iframe
+          src="/Boeing_Equity_Research_Report.pdf"
+          className="w-full h-[400px] md:h-[500px] lg:h-[600px] border border-primary/20 rounded-lg"
+          title="Boeing Equity Research Report Preview"
+          style="width: 100%; min-height: 400px; aspect-ratio: 16/10;">
+          <p class="text-muted-foreground p-4">
+            Your browser does not support PDF preview. Please use the download button below to view the full report.
+          </p>
+        </iframe>
+      </div>
+    `,
+
 
   },
   {
     id: "mandelbrot-excel",
-    title: "Mandelbrot Set in Excel (VBA Done)",
+    title: "Mandelbrot set visualization in Excel to explore iterative complexity.",
     description:
-      "A mathematical and visual exploration of fractal geometry using only Microsoft Excel, showcasing the raw power of using spreadsheets.",
+      "Built entirely in Excel, this project visualizes the Mandelbrot set and its infinite fractal patterns. While primarily a math-and-visualization exercise, it informed my approach to rendering heatmaps and distributions in financial contexts, particularly within the Risk Modeling Engine. It also showcases my ability to push familiar tools beyond conventional use cases.",
     image:
       "https://i.imgur.com/kLamLkF.png",
     tags: ["Fractals", "Excel", "Complex Numbers", "Visualization"],
     position: 5,
-    content: `
-      <p class="mb-4">This project demonstrates the generation of the Mandelbrot set—a complex fractal pattern—entirely within Microsoft Excel. Built during my free time as an experimental dive into visual mathematics, it blends the iterative formula Z = Z² + C with Excel’s conditional formatting and complex number logic.</p>
+content: `
+      <p class="mb-4">This project demonstrates the generation of the Mandelbrot set, a complex fractal pattern, entirely within Microsoft Excel. Built as part of my <strong>Finance Lab</strong> ecosystem, it began as a personal exploration into visual mathematics but evolved into a foundation for how I render probability heatmaps and distribution visualizations in my <em>Risk Modeling Engine</em>.</p>
   
       <h3 class="text-xl font-medium mb-3">Technical Breakdown</h3>
-      <p class="mb-4">The spreadsheet uses Excel's complex number functions to iterate over a grid of complex values. Each cell represents a point on the complex plane and determines escape time (number of iterations until divergence), which is then visualized using conditional formatting.</p>
+      <p class="mb-4">The spreadsheet uses Excel's complex number functions to iterate over a grid of complex values. Each cell represents a point on the complex plane and determines escape time, measured as the number of iterations until divergence. This is visualized using conditional formatting. The process mirrors iterative behaviors in finance, such as compounding and risk projection.</p>
       <ul class="mb-6 space-y-2">
-        <li>• Utilized <code>IMPRODUCT</code>, <code>IMSUM</code>, and <code>IMABS</code> for core logic</li>
-        <li>• Escaping iterations capped at 50 for performance</li>
+        <li>• Utilized <code>IMPRODUCT</code>, <code>IMSUM</code>, and <code>IMABS</code> for iterative logic</li>
+        <li>• Escape iterations capped at 50 for performance optimization</li>
         <li>• Dynamic color gradient based on divergence speed</li>
-        <li>• Custom zoom settings for best resoultion</li>
+        <li>• Custom zoom and scaling for maximum visual clarity</li>
       </ul>
   
       <h3 class="text-xl font-medium mb-3">What I Learned</h3>
       <ul class="mb-6 space-y-2">
-        <li>• Iterative math in a non programming environment</li>
-        <li>• Creative problem-solving under Excel’s many formula constraints</li>
-        <li>• How fractals reveal patterns within infinite complexity</li>
+        <li>• How to model iterative math in a non-programming environment</li>
+        <li>• Creative problem-solving within Excel’s formula constraints</li>
+        <li>• Practical parallels between fractal complexity and financial market modeling</li>
       </ul>
   
       <h3 class="text-xl font-medium mb-3">Why It Matters</h3>
-      <p class="mb-4">This project proves that advanced mathematical concepts and visualizations can be implemented with tools outside traditional programming. It is pushing Excel to its limits and is turning a purely mathematical pattern into a fully functional spreadsheet visualization.</p>
+      <p class="mb-4">This project shows that advanced mathematical concepts can be expressed in unconventional tools. By linking it to my financial risk work, it turns what might be a niche visualization into a transferable skill, using familiar software to communicate complex ideas effectively.</p>
   
       <div class="flex justify-end">
         <a href="https://imgur.com/a/W87udOf" class="px-4 py-2 bg-primary text-primary-foreground font-medium rounded hover:bg-primary/80 transition-colors duration-300">MVP Available</a>
@@ -110,58 +124,66 @@ export const projects: ProjectType[] = [
     `,
   },
   {
-  id: "BondTracker",
-  title: "Texas Municipal Bond Tracker (In Progress)",
-  description:
-    "A self-initiated financial data tool A modular parsing tool for school district disclosures, currently built on public financials but intended to scale to private-sector documents such as 10-Ks and fund reports. Focused on automation, clarity, and repeatable investor workflows.",
-  image: "https://i.imgur.com/eW2Mn3S.png",
-  tags: ["Public Finance", "AI Integration", "Financial Data Automation"],
-  pdfUrl: "",
-  hasPreview: false,
-  position: 3,
-  content: `
-    <p class="mb-4">
-      This ongoing project was inspired by my internship at the Municipal Advisory Council of Texas, where I worked directly with investor-facing data from school district bond issuances. The goal of this tracker is to centralize and simplify complex financial disclosures that investors and municipalities rely on that affect county constituents.
-    </p>
-
-    <h3 class="text-xl font-medium mb-3">Planned Features</h3>
-    <ul class="mb-6 space-y-2">
-      <li>• Parsing both automated and manually reviewed financial statements</li>
-      <li>• Extraction of critical data points like assessed values, top taxpayers, and total fund balances</li>
-      <li>• Integration with Notion for update logging and statement documentation</li>
-      <li>• Interactive dashboard for visualizing school district bond metrics</li>
-      <li>• Potential use of AI for statement summarization and classification given parsing constraints</li>
-    </ul>
-
-    <h3 class="text-xl font-medium mb-3">Current Status</h3>
-    <p class="mb-4">
-      The site framework was rapidly built using AI-assisted tools to accelerate development. While it is not yet ready for public use, a working MVP is now available for preview. I continue developing parsing logic and refining the UI for enhanced functionality while tying it to my foundational knowledge of finance.
-    </p>
-
-    <div class="mb-6">
-      <h4 class="text-lg font-medium mb-3">Live MVP Demo</h4>
+    id: "bond-dashboard",
+    title: "Public Market Dashboard",
+    description:
+      "Visualizing municipal bond data to make financial disclosures clearer for investors and local constituents. Designed to centralize complex public finance information into an accessible and transparent format.",
+    image: "https://i.imgur.com/eW2Mn3S.png",
+    tags: ["Public Finance", "AI Integration", "Financial Data Automation"],
+    pdfUrl: "",
+    hasPreview: false,
+    position: 3,
+content: `
       <p class="mb-4">
-        Experience the current version of the Texas Municipal Bond Tracker with soon to be live data parsing and visualization features.
+        This ongoing project was inspired by my internship at the Municipal Advisory Council of Texas, where I worked directly with investor-facing data from school district bond issuances. The goal is to centralize and simplify complex financial disclosures that both investors and municipalities rely on, making it easier for the public to understand how county and district-level finances affect them.
       </p>
-      <div class="flex gap-4">
-        <a href="https://jiffatron.github.io/TexasBondTracker/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/80 transition-colors duration-300 inline-flex items-center gap-2">
-          <i class="fas fa-external-link-alt"></i>
-          View Live MVP
-        </a>
+
+      <h3 class="text-xl font-medium mb-3">Planned Features</h3>
+      <ul class="mb-6 space-y-2">
+        <li>• Parsing a combination of automated and manually reviewed financial statements</li>
+        <li>• Extraction of key metrics including assessed property values, top taxpayers, and total fund balances</li>
+        <li>• Integration with Notion for update logging and source statement documentation</li>
+        <li>• Interactive dashboard for visualizing municipal bond metrics over time</li>
+        <li>• Potential use of AI for statement summarization and classification where parsing constraints exist</li>
+      </ul>
+
+      <h3 class="text-xl font-medium mb-3">Current Status</h3>
+      <p class="mb-4">
+        The initial site framework was quickly built using AI-assisted tools to accelerate development. While it is not yet public-ready, an MVP is available for preview. I am currently refining the data parsing logic, improving the UI, and building connections to other projects in my portfolio such as my Risk Modeling Engine.
+      </p>
+
+      <div class="mb-6">
+        <h4 class="text-lg font-medium mb-3">Live MVP Demo</h4>
+        <p class="mb-4">
+          Experience the current version of the Texas Municipal Bond Tracker with early-stage data parsing and visualization features.
+        </p>
+        <div class="flex gap-4">
+          <a href="https://jiffatron.github.io/TexasBondTracker/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/80 transition-colors duration-300 inline-flex items-center gap-2">
+            <i class="fas fa-external-link-alt"></i>
+            View Live MVP
+          </a>
+        </div>
       </div>
-    </div>
-  `
-},
-{
-id: "PythonMonteCarloBasic",
-  title: "Simulating Market Uncertainty: A Pythonic Approach to Monte Carlo Stock Models",
-  description:
-    "Demonstrating statistical convergence and volatility forecasting using Geometric Brownian Motion and Python",
-  image: "/images/projects/Basic Simulation (50 paths).png",
-  tags: ["Python", "Monte Carlo Simulation", "Financial Modeling", "Statistical Analysis"],
-  pdfUrl: "",
-  hasPreview: false,
-  position: 2,
+
+      <div class="mt-12 pt-8 border-t border-border">
+        <h3 class="text-xl font-medium mb-3">How this connects</h3>
+        <p class="text-muted-foreground">
+          The risk tile uses my <a href="/projects/risk-engine" class="text-primary hover:underline">Risk Modeling Engine</a> and the alert text is shaped by findings from my <a href="/projects/market-microstructure" class="text-primary hover:underline">Market Microstructure work</a>.
+        </p>
+      </div>
+    `,
+
+  },
+  {
+    id: "risk-engine",
+    title: "Risk Modeling Engine",
+    description:
+      "A lightweight simulation engine that runs probabilistic models to estimate outcome ranges under varying inputs, including interest rate changes, revenue fluctuations, and liquidity constraints. Designed to be modular so it can integrate directly into other projects such as the Public Market Dashboard for scenario-based insights. The visualization approach is influenced by earlier work in complex systems mapping.",
+    image: "/images/projects/Basic Simulation (50 paths).png",
+    tags: ["Python", "Monte Carlo Simulation", "Financial Modeling", "Statistical Analysis"],
+    pdfUrl: "",
+    hasPreview: false,
+    position: 2,
   content: `
     <h3 id="abstract" class="text-xl font-medium mb-4">Part 1: Foundation & Abstract</h3>
 
@@ -612,32 +634,56 @@ plt.<span class="function">show</span>()                                        
     </div>
 
     <!-- GISCUS_COMMENTS_PLACEHOLDER -->
+
+    <div class="mt-12 pt-8 border-t border-border">
+      <h3 class="text-xl font-medium mb-3">How this connects</h3>
+      <p class="text-muted-foreground">
+        The zero to one hundred score appears as a tile inside the <a href="/projects/bond-dashboard" class="text-primary hover:underline">Public Market Dashboard</a> and is tuned with microstructure findings.
+      </p>
+    </div>
   `
   },
   {
-    id: "CryptoArbitrageTrader",
-    title: "Crypto Arbitrage Trader",
-    description: "I am currently working on a crypto arbitrage trading bot. This bot will be able to trade on multiple exchanges with multiple pairs, that can dynamically be adjusted in contingency to my risk profile. Examples include but are not limited to estimated Slippage, Gas Fees, Honeypot Detection, Spread Thresholds, and more.",
+    id: "market-microstructure",
+    title: "Market Microstructure Model",
+    description:
+      "Originally a SOL arbitrage prototype, this project evolved into a sandbox for studying how latency, depth, and routing decisions impact trade profitability. While the primary focus is on crypto DEXs, the principles apply to any fragmented market. Execution guardrails and alert thresholds developed here now inform the risk and alert logic in my Public Market Dashboard.",
     image: "/images/Solana-1260x787.png",
     tags: ["Crypto", "Arbitrage", "Risk Management"],
     pdfUrl: "",
     hasPreview: true,
     position: 1,
-    content: `
-      <p class="mb-4">Crypto Arbitrage Trader Automation - An automated trading bot that searches for price discrepancies between different exchanges and pairs, and executes trades based on several predefined risk factors</p>
+content: `
+      <p class="mb-4">
+        This automated trading bot was designed to identify and act on price discrepancies between exchanges and trading pairs. It operates based on a series of predefined risk controls and execution parameters. Beyond the crypto-specific context, it serves as a market microstructure research tool, providing lessons on latency management and execution reliability that extend to traditional finance systems.
+      </p>
       
       <h3 class="text-xl font-medium mb-3">Key Features</h3>
       <ul class="mb-6 space-y-2">
-        <li>• Component 1: Mainly Trades SOL/USDC, ETH/USDC, and RAY/SOL</li>
-        <li>• Component 2: Dynamically adjusts trading stratagies based on market conditions and wallet activities</li>
-        <li>• Component 3: Features highly technical logging into JSON files that later can be analyzed using Excel</li>
-        <li>• Component 4: Notably uses Slippage Control, Liquidity Threshold Filters, Execution Delay Timers, Simulated Preliminary Exectution, Rate-Limit Awareness, and many more features</li>
-        <li>• Component 4: Some functions and risk parameters are not shown to maintain the integrity of the bot and its performance</li>
+        <li>• Trades primarily in SOL/USDC, ETH/USDC, and RAY/SOL markets</li>
+        <li>• Dynamically adjusts trading strategies based on real-time market conditions and wallet activity</li>
+        <li>• Detailed trade and performance logging to JSON for later analysis in Excel or other tools</li>
+        <li>• Risk controls include slippage limits, liquidity threshold filters, execution delay timers, simulated preliminary execution, and rate-limit awareness</li>
+        <li>• Certain proprietary functions and parameters are intentionally withheld to maintain bot integrity</li>
       </ul>
-      <p class="mb-6" align="center">
-        <i>*This project is currently in progress. Future updates will include more information on the bot's performance and risk management strategies*</i>
+
+      <h3 class="text-xl font-medium mb-3">Why It Matters</h3>
+      <p class="mb-4">
+        The latency and execution insights from this project now inform the alert logic in my Public Market Dashboard. This creates a link between high-speed trading environments and investor-facing transparency tools, showing that lessons learned in one market type can strengthen another.
       </p>
-    `
+
+      <p class="mb-6" align="center">
+        <i>*This project is in active development. Future updates will include performance data and expanded risk analysis.*</i>
+      </p>
+
+      <div class="mt-12 pt-8 border-t border-border">
+        <h3 class="text-xl font-medium mb-3">How this connects</h3>
+        <p class="text-muted-foreground">
+          Latency rules and liquidity checks from this work shape the alert thresholds in my <a href="/projects/bond-dashboard" class="text-primary hover:underline">Public Market Dashboard</a>.
+        </p>
+      </div>
+    `,
+
   },
 
   //{
@@ -666,35 +712,36 @@ plt.<span class="function">show</span>()                                        
 export const interests = [
   {
     icon: "fas fa-chart-line",
-    title: "Financial Risk & Modeling",
-    description: "Developing quantitative models to assess and manage financial risks across multiple asset classes."
+    title: "Financial Risk and Modeling",
+    description: "Building models that turn complex risk factors into clear, actionable insights for multiple asset classes."
   },
   {
     icon: "fas fa-calculator",
     title: "Quantitative Analysis",
-    description: "Applying statistical methods and mathematical models to analyze financial data and market trends."
+    description: "Using statistical methods and data-driven models to uncover patterns in markets and test investment ideas."
   },
   {
     icon: "fas fa-coins",
-    title: "Options Pricing & Derivatives",
-    description: "Analyzing complex financial instruments and developing improved pricing models for derivative securities."
+    title: "Options Pricing and Derivatives",
+    description: "Exploring the mechanics of derivatives and refining pricing models to improve decision making."
   },
   {
     icon: "fas fa-brain",
     title: "Machine Learning in Finance",
-    description: "Leveraging AI and machine learning algorithms for predictive modeling."
+    description: "Applying AI techniques to spot trends, forecast outcomes, and strengthen investment strategies."
   },
   {
     icon: "fas fa-robot",
     title: "Algorithmic Trading Strategies",
-    description: "Designing and implementing automated trading systems based on quantitative research and backtesting."
+    description: "Designing automated systems that execute trades based on tested quantitative research."
   },
   {
     icon: "fas fa-dice",
     title: "Monte Carlo Simulations",
-    description: "Using probabilistic modeling to simulate various market scenarios and assess investment outcomes."
+    description: "Using probabilistic simulations to explore scenarios, test assumptions, and measure potential outcomes."
   }
 ];
+
 
 // Blog posts data
 export const blogPosts = [
@@ -931,12 +978,67 @@ appreciation after 10 years.</p>
   },
   {
     slug: "rethinking-modern-portfolio-theory",
-    title: "Rethinking Modern Portfolio Theory",
-    date: "TBD",
+    title: "The Buy Now Pay Later Epidemic",
+    date: "August 10, 2025",
     preview:
-      "An examination of MPT's assumptions in today's market environment. How can investors adapt traditional portfolio construction techniques to account for changing correlations and non-normal return distributions?",
+      "BNPL now covers non-essentials like Botox and concerts, hiding loopholes and risks that could hit far more than the people using it.",
     content: `
-      <p>Not Yet Available</p>
+        <!-- ───────────  BUY NOW PAY LATER ARTICLE  ─────────── -->
+<p class="text-center text-gray-250 italic mt-4 text-xlg">
+  <em>How BNPL is reshaping consumer debt and risk</em>
+</p>
+
+<p class="text-left italic mt-8 mb-2 text-base sm:text-lg text-muted-foreground">
+  Estimated reading time:
+  <span class="not-italic text-primary font-medium text-base sm:text-lg">2–4 minutes</span>
+</p>
+
+<article>
+  <h2>
+  BNPL: Cheap Payments, Expensive Risks</h1>
+  </h2>
+  <p>You can now split the cost of Botox and concert tickets into ‘4 easy payments’. While on the surface this may feel harmless, the bigger risk lies underneath.</p>
+
+  <h2>The Rise of BNPL</h2>
+  <p>The term BNPL (Buy Now, Pay Later) has made headlines recently as borrowers continue to lower their financing thresholds. Splitting non-essential purchases
+   like concert tickets into a few payments at 0% APR seems like a killer deal. Beneath the surface, lenders are manufacturing this bad deal to appeal to audiences
+    already struggling with income.</p>
+
+  <p>To name a few Klarna, Affirm, and Afterpay hold the largest market share and all practice these predatory payment schemes. They thrive on two main things: 
+  no universal credit reporting, and understated default consequences.</p>
+
+  <h2>The Micro Risk</h2>
+  <p>For starters, these big-name lenders abuse a loophole where they are bypassing traditional credit lending. Instead, they require access to a checking account
+   through your bank, or an online account like PayPal or Cashapp, bypassing credit checks. They are literally scanning your bank account to make sure you have 
+   a positive balance. So much so, they can instantly pull funds the moment your paycheck hits. This also underscores stacking loans across multiple different apps, 
+   meaning a borrower can take these small loans across unregulated industries and spread themselves thin, all without the lender knowing.</p>
+
+  <h2>The Macro Risk</h2>
+  <p>This is subprime lending in disguise. The “0% interest” is normally funded by merchant fees and are sometimes upsold to longer-term loans, sustainable only
+   in high-spending, low-default environments. While defaults remain manageable for now, very quickly a jump in defaults and/or higher funding costs can lead to 
+   a balance sheet problem overnight. Not only are borrowers at risk, but the lenders are at risk as well. Although these firms have been relatively sustainable 
+   since the post-covid era, this is due to funding costs, lack of reporting, and their unsecured nature. Borrowers stretching themselves thin, and lenders capitalizing
+    off ambiguity that is almost certain to backfire.</p>
+
+  <h2>The Lesser of 2008</h2>
+  <p>It’s the subprime mortgage crisis of 2008 on a lesser scale: the same growth-at-all-costs model, the same ignorance of risk, the same eventual reckoning. If BNPL 
+  continues to permeate the market for non-essential goods, eventually the bubble pops, taking even uninvolved parties along with it.</p>
+
+  <h2>The Regulatory Loophole</h2>
+  <p>The BNPL epidemic stems from a loophole in current regulations. Often these BNPL’s do not exceed 4 months, which bypasses the Truth in Lending Act (TILA) disclosure
+   requirements. They are marketed as “0% interest”, which is technically true, as the merchants typically cover fee that acts as a pseudo safety net that disappears 
+   when defaults rise. For longer plans, an APR in excess of 36% is common. Lastly, Most are classified as instalment agreements, which are legally different from traditional revolving credit, avoiding reporting, fees, and rules.</p>
+
+  <h2>The Path to Reform</h2>
+  <p>The only safety net is regulation, and it’s coming slowly, with legislation lagging. To name a few: full inclusion under TILA (Truth in Lending Act), mandatory
+   credit bureau reporting (Some is already taking place), standardized affordability checks, late fee and penalty caps, clear separation of marketing and lending.</p>
+
+  <p>In large part these would not kill the BNPL that is plaguing low-income individuals, but it would shift away from this grow at all costs subprime lending, to a more 
+  traditional credit line.</p>
+
+  <h2>The High-Wire Act</h2>
+  <p>BNPL is not just a payment option, it’s a high-wire act with absolutely no net. Right now, the music is still playing. The question becomes who is left standing when it stops.</p>
+</article>
     `,
   },
   {

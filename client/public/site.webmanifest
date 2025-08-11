@@ -1,7 +1,7 @@
 {
   "name": "Brayden Swavey Portfolio",
   "short_name": "BS Portfolio",
-  "description": "Financial analyst and developer portfolio showcasing projects in Monte Carlo simulation, bond tracking, and equity research.",
+  "description": "Exploring markets through data. Portfolio showcasing Monte Carlo simulations, bond trackers, and equity research tools.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
