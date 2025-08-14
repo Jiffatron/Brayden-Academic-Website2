@@ -280,7 +280,7 @@ const Research = ({ onProjectClick }: ResearchProps) => {
           variants={itemVariants}
         >
           I’m interested in where market psychology meets capital strategy, 
-          nd I like finding ways to bring theory into something you can 
+          and I like finding ways to bring theory into something you can 
           actually use. I started with an academic foundation in finance,
            but lately I’ve been more focused on building tools and frameworks 
            that make me better at making investment decisions in both public 
