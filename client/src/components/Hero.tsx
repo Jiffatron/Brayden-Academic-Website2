@@ -104,7 +104,7 @@ const Hero = () => {
             >
               <div className="relative overflow-hidden rounded-lg">
                 <img
-                  src="/Photo2edit.jpg"
+                  src="/WebsitePicture1.jpeg"
                   alt="Brayden Swavey headshot"
                   className="w-full h-auto object-contain rounded-lg hero-image natural-shadow transition-all duration-300"
                   style={{

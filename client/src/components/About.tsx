@@ -1,10 +1,169 @@
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
+
+  // Carousel configuration - easily customizable
+  const carouselConfig = {
+    images: [
+      "/WebsitePicture2.jpeg",
+      "/WebsitePicture3.jpeg",
+      "/WebsitePicture4.jpeg",
+      // Add more images here - just copy and paste the format above:
+      // "/WebsitePicture5.jpeg",
+      // "/WebsitePicture6.jpeg",
+      // "/WebsitePicture7.jpeg",
+      // "/AnotherImage.jpeg",
+      // "/YetAnotherImage.jpeg",
+    ],
+    autoRotateInterval: 8000, // milliseconds - how long each image shows
+    transitionDuration: 1200, // milliseconds - how smooth the transitions are
+    desktop: {
+      containerWidth: 400, // px
+      containerHeight: 500, // px
+      centerImageWidth: 320, // px
+      sideImageWidth: 240, // px
+      sideImageOffset: 60 // px from center
+    },
+    mobile: {
+      containerWidth: 300, // px
+      containerHeight: 400, // px
+      centerImageWidth: 260, // px
+      sideImageWidth: 180, // px
+      sideImageOffset: 40 // px from center
+    }
+  };
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-rotate images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % carouselConfig.images.length);
+    }, carouselConfig.autoRotateInterval);
+    return () => clearInterval(interval);
+  }, [carouselConfig.images.length, carouselConfig.autoRotateInterval]);
+
+
+
+  // Native image carousel - responsive
+  const CardCarousel = () => {
+    // Indices for left, center, right images
+    const leftIdx = (currentImageIndex - 1 + carouselConfig.images.length) % carouselConfig.images.length;
+    const centerIdx = currentImageIndex;
+    const rightIdx = (currentImageIndex + 1) % carouselConfig.images.length;
+
+    return (
+      <>
+        {/* Desktop carousel */}
+        <div
+          className="hidden md:block relative mx-auto"
+          style={{
+            width: `${carouselConfig.desktop.containerWidth}px`,
+            height: `${carouselConfig.desktop.containerHeight}px`
+          }}
+        >
+          {/* Left image - partially visible */}
+          <img
+            src={carouselConfig.images[leftIdx]}
+            alt={`Portrait ${leftIdx + 1}`}
+            className="absolute left-0 top-1/2 -translate-y-1/2"
+            style={{
+              zIndex: 10,
+              width: `${carouselConfig.desktop.sideImageWidth}px`,
+              height: `${carouselConfig.desktop.containerHeight}px`,
+              objectFit: 'contain',
+              transition: `all ${carouselConfig.transitionDuration}ms cubic-bezier(0.4, 0, 0.2, 1)`,
+              borderRadius: "32px", // More rounded corners (try 24px–40px for a softer look)
+            }}
+          />
+          {/* Center image - fully visible */}
+          <img
+            src={carouselConfig.images[centerIdx]}
+            alt={`Portrait ${centerIdx + 1}`}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            style={{
+              zIndex: 20,
+              width: `${carouselConfig.desktop.centerImageWidth}px`,
+              height: `${carouselConfig.desktop.containerHeight}px`,
+              objectFit: 'contain',
+              transition: `all ${carouselConfig.transitionDuration}ms cubic-bezier(0.4, 0, 0.2, 1)`,
+              borderRadius: '8px' // Matches Hero WebsitePicture1 (rounded-lg)
+            }}
+          />
+          {/* Right image - partially visible */}
+          <img
+            src={carouselConfig.images[rightIdx]}
+            alt={`Portrait ${rightIdx + 1}`}
+            className="absolute right-0 top-1/2 -translate-y-1/2"
+            style={{
+              zIndex: 10,
+              width: `${carouselConfig.desktop.sideImageWidth}px`,
+              height: `${carouselConfig.desktop.containerHeight}px`,
+              objectFit: 'contain',
+              transition: `all ${carouselConfig.transitionDuration}ms cubic-bezier(0.4, 0, 0.2, 1)`,
+              borderRadius: '8px' // Matches Hero WebsitePicture1 (rounded-lg)
+            }}
+          />
+        </div>
+
+        {/* Mobile carousel */}
+        <div
+          className="md:hidden relative mx-auto"
+          style={{
+            width: `${carouselConfig.mobile.containerWidth}px`,
+            height: `${carouselConfig.mobile.containerHeight}px`
+          }}
+        >
+          {/* Left image - partially visible */}
+          <img
+            src={carouselConfig.images[leftIdx]}
+            alt={`Portrait ${leftIdx + 1}`}
+            className="absolute left-0 top-1/2 -translate-y-1/2"
+            style={{
+              zIndex: 10,
+              width: `${carouselConfig.mobile.sideImageWidth}px`,
+              height: `${carouselConfig.mobile.containerHeight}px`,
+              objectFit: 'contain',
+              transition: `all ${carouselConfig.transitionDuration}ms cubic-bezier(0.4, 0, 0.2, 1)`,
+              borderRadius: '8px' // Matches Hero WebsitePicture1 (rounded-lg)
+            }}
+          />
+          {/* Center image - fully visible */}
+          <img
+            src={carouselConfig.images[centerIdx]}
+            alt={`Portrait ${centerIdx + 1}`}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            style={{
+              zIndex: 20,
+              width: `${carouselConfig.mobile.centerImageWidth}px`,
+              height: `${carouselConfig.mobile.containerHeight}px`,
+              objectFit: 'contain',
+              transition: `all ${carouselConfig.transitionDuration}ms cubic-bezier(0.4, 0, 0.2, 1)`,
+              borderRadius: '8px' // Matches Hero WebsitePicture1 (rounded-lg)
+            }}
+          />
+          {/* Right image - partially visible */}
+          <img
+            src={carouselConfig.images[rightIdx]}
+            alt={`Portrait ${rightIdx + 1}`}
+            className="absolute right-0 top-1/2 -translate-y-1/2"
+            style={{
+              zIndex: 10,
+              width: `${carouselConfig.mobile.sideImageWidth}px`,
+              height: `${carouselConfig.mobile.containerHeight}px`,
+              objectFit: 'contain',
+              transition: `all ${carouselConfig.transitionDuration}ms cubic-bezier(0.4, 0, 0.2, 1)`,
+              borderRadius: '8px' // Matches Hero WebsitePicture1 (rounded-lg)
+            }}
+          />
+        </div>
+      </>
+    );
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -27,8 +186,6 @@ const About = () => {
       },
     },
   };
-
-  const imageUrl = "https://www.depts.ttu.edu/parentrelations/images/TTUSeal.jpg"; // Image Link https://www.ttu.edu/traditions/images/SEAL.jpg 
 
   return ( 
     <section
@@ -97,27 +254,14 @@ const About = () => {
 
           </motion.div>
           <motion.div className="md:col-span-2" variants={itemVariants}>
-            <div className="relative">
-              <div className="absolute -left-4 -top-4 w-full h-full border-2 border-primary z-0"></div>
-              <img
-                src={imageUrl}
-                alt="Portrait of Brayden Swavey"
-                className="relative z-10 rounded shadow-lg w-full object-cover"
-              />
-            </div>
+            <CardCarousel />
           </motion.div>
         </div>
 
         {/* Mobile About Layout - Streamlined */}
         <div className="md:hidden grid grid-cols-1 gap-8 items-center">
           <motion.div className="order-1" variants={itemVariants}>
-            <div className="relative max-w-xs mx-auto">
-              <img
-                src={imageUrl}
-                alt="Portrait of Brayden Swavey"
-                className="rounded-2xl shadow-xl w-full object-cover aspect-square"
-              />
-            </div>
+            <CardCarousel />
           </motion.div>
           <motion.div className="order-2" variants={itemVariants}>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed text-center">
