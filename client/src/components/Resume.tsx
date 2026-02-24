@@ -50,7 +50,7 @@ const Resume = () => {
           </h2>
           <div className="mt-4 md:mt-0 flex flex-col gap-3 sm:flex-row sm:space-x-3 sm:gap-0">
             <a
-              href="/resume.pdf"
+              href="/Brayden_Swavey_Resume_Feb_2026.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-4 min-h-[56px] border-2 border-primary text-primary rounded-lg flex items-center justify-center hover:bg-primary hover:bg-opacity-10 transition-all duration-300 text-lg font-medium"
@@ -59,8 +59,8 @@ const Resume = () => {
               <span>View PDF</span>
             </a>
             <a
-              href="/resume.pdf"
-              download="Brayden_Resume.pdf"
+              href="/Brayden_Swavey_Resume_Feb_2026.pdf"
+              download="Brayden_Swavey_Resume.pdf"
               className="px-6 py-4 min-h-[56px] bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:bg-primary/80 transition-all duration-300 text-lg font-medium"
             >
               <i className="fas fa-download mr-3 text-lg"></i>
@@ -96,6 +96,18 @@ const Resume = () => {
             <h3 className="text-2xl font-serif font-semibold mb-6 text-primary">
               Experience
             </h3>
+
+            <div className="timeline-item mb-8 pl-4">
+              <h4 className="text-xl font-medium">Goldman Sachs</h4>
+              <p className="text-primary text-sm mb-2">
+                 Operations Analsyt | Feb 2026 - Present
+              </p>
+              <ul className="text-sm text-muted-foreground space-y-2">
+                <li>Global Banking & Markets / Structured Finance & Lending - Private Equity Operations Via Russel Tobin/Magnit</li>
+              </ul>
+            </div>
+
+
             <div className="timeline-item mb-8 pl-4">
               <h4 className="text-xl font-medium">Municipal Advisory Council of Texas</h4>
               <p className="text-primary text-sm mb-2">
@@ -174,7 +186,20 @@ const Resume = () => {
           {/* Desktop Certifications Section */}
           <div className="cv-section pl-8">
             <h3 className="text-2xl font-serif font-semibold mb-6 text-primary">
-              Certifications & Coursework
+             Certifications
+            </h3>
+            <div className="pl-4">
+              <div className="mt-4 text-sm text-muted-foreground">
+                <p>• SIE Exam in Progress</p>
+                <p>• (BMC) Bloomberg Market Concepts</p>
+              </div>
+            </div>
+          </div>
+          <br></br>
+          {/* Desktop CourseworkSection */}
+          <div className="cv-section pl-8">
+            <h3 className="text-2xl font-serif font-semibold mb-6 text-primary">
+             Coursework
             </h3>
             <div className="pl-4">
               <div className="mt-4 text-sm text-muted-foreground">

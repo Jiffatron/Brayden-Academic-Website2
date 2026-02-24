@@ -1,6 +1,5 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useAdaptiveIntersection } from "@/hooks/useAdaptiveIntersection";
-import { useSliderAnimation } from "@/hooks/useSliderAnimation";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { projects, interests, ProjectType } from "@/lib/data";
@@ -17,34 +16,31 @@ interface ResearchProps {
 
 const Research = ({ onProjectClick }: ResearchProps) => {
   const sectionRef = useRef<HTMLElement>(null);
-  const { isIntersecting: isVisible } = useAdaptiveIntersection(sectionRef, { threshold: 0.1 });
-  const { sliderVariants, cardVariants, startAnimation, endAnimation, isAnimating } = useSliderAnimation();
+  const { isIntersecting: isVisible, animationDuration } = useAdaptiveIntersection(sectionRef, { threshold: 0.1 });
   const navigate = useNavigate();
-
+  
   // Simple slider state - just 0 or 1
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  
   // Hardcode the two sets of projects
   const allProjects = projects.sort((a, b) => a.position - b.position);
   const firstFourProjects = allProjects.slice(0, 4); // positions 1,2,3,4
   const lastFourProjects = allProjects.slice(4, 8);  // positions 5,6,7,8
-
+  
   // Get current projects based on slide
   const getCurrentProjects = () => {
     return currentSlide === 0 ? firstFourProjects : lastFourProjects;
   };
-
+  
   const nextSlide = () => {
-    if (isAnimating) return; // Prevent rapid clicking during animation
-    startAnimation();
     setCurrentSlide(currentSlide === 0 ? 1 : 0);
   };
 
   const prevSlide = () => {
-    if (isAnimating) return; // Prevent rapid clicking during animation
-    startAnimation();
     setCurrentSlide(currentSlide === 0 ? 1 : 0);
   };
+
+  // Using centralized animation variants for consistency
 
   return (
     <section
@@ -69,11 +65,10 @@ const Research = ({ onProjectClick }: ResearchProps) => {
           className="hidden md:block section-description"
           variants={itemVariants}
         >
-         A collection of my research and applied projects focused on building systems
-          that make financial data clear, fast, and useful. These efforts combine 
-          financial analysis, automation, and strategic thinking, drawing from both 
-          public sector and private market datasets. Each project is my way of taking 
-          something complex and turning it into a tool or insight that can create real market value.
+         A showcase of my research and applied projects focused on building systems that make financial data clearer, faster, and more actionable.
+         These efforts blend financial analysis, parsing automation, and macro-strategic thinking — drawing from both public-sector
+         datasets and private-market frameworks. Each project is an attempt to reduce complexity and enhance decision-making at the
+         intersection of markets, technology, and capital.
         </motion.p>
 
         {/* Mobile Description */}
@@ -132,30 +127,21 @@ const Research = ({ onProjectClick }: ResearchProps) => {
 
           {/* Slider Content */}
           <div className="overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.div
-                className="grid grid-cols-2 gap-8"
-                key={currentSlide}
-                variants={sliderVariants}
-                initial="initial"
-                animate="enter"
-                exit="exit"
-                onAnimationComplete={endAnimation}
-              >
-                {getCurrentProjects().map((project, index) => (
-                  <motion.div
-                    key={project.id}
-                    className="bg-card rounded-lg overflow-hidden shadow-md project-card-slider"
-                    variants={cardVariants}
-                    initial="initial"
-                    animate="animate"
-                    whileHover="hover"
-                    transition={{
-                      duration: 0.2,
-                      delay: index * 0.05,
-                      ease: [0.4, 0, 0.2, 1]
-                    }}
-                  >
+            <motion.div
+              className="grid grid-cols-2 gap-8"
+              key={currentSlide}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.3 }}
+            >
+              {getCurrentProjects().map((project) => (
+                <motion.div
+                  key={project.id}
+                  className="bg-card rounded-lg overflow-hidden shadow-md project-card animate-gpu"
+                  variants={itemVariants}
+                  whileHover={cardHoverVariants.hover}
+                >
                   <img
                     src={project.image}
                     alt={project.title}
@@ -198,7 +184,6 @@ const Research = ({ onProjectClick }: ResearchProps) => {
                 </motion.div>
               ))}
             </motion.div>
-            </AnimatePresence>
           </div>
         </motion.div>
 
@@ -279,13 +264,10 @@ const Research = ({ onProjectClick }: ResearchProps) => {
           className="section-text mb-8 max-w-3xl"
           variants={itemVariants}
         >
-          I’m interested in where market psychology meets capital strategy, 
-          and I like finding ways to bring theory into something you can 
-          actually use. I started with an academic foundation in finance,
-           but lately I’ve been more focused on building tools and frameworks 
-           that make me better at making investment decisions in both public 
-           and private markets. For me, the real challenge is taking an idea or 
-           model and pushing it far enough that it works in practice and creates real value.
+          My work explores the intersection of market psychology, data systems, and capital strategy — blending foundational 
+          theory with applied modeling. While rooted in academic finance, my focus has shifted toward building tools and frameworks 
+          that enhance investment decisions across both public disclosures and private-market reporting.
+          I aim to bridge conceptual models with real-world execution — turning financial insights into actionable, scalable systems.
         </motion.p>
 
         {/* Desktop Interests - All 6 */}

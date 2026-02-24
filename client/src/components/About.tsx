@@ -211,17 +211,20 @@ const About = () => {
         <div className="hidden md:grid md:grid-cols-5 gap-12 items-start">
           <motion.div className="md:col-span-3" variants={itemVariants}>
             <p className="section-text mb-6">
-              I’m Brayden Swavey, a recent Finance graduate from Texas Tech. I study how money moves through 
-              different systems because it tells a story most people do not see. From the decisions buried in 
-              a municipal budget to the strategies that shape a corporation’s next move, my work explores those 
-              stories and makes them clear enough for someone else to follow. </p>
+              I’m Brayden Swavey, a Finance graduate from Texas Tech and a Mortgage Loan Services Analyst within Global Markets Operations. 
+              I focus on how money moves through complex systems, because those movements tell stories most people never see. 
+              From decisions buried in municipal budgets to the mechanics behind institutional trading and loan servicing, 
+              I work to surface what actually drives outcomes. </p>
 
             <p className="section-text mb-6">
-             This portfolio is a curated look at the way I approach finance and problem solving. Each project is
-             part of a broader effort to connect ideas across markets, technologies, and analytical methods. Whether
-             it is building a public market dashboard, modeling risk, or exploring market microstructure, the goal is 
-             the same. I aim to turn complexity into clear and actionable insights.
-            </p>
+             This portfolio is a curated look at how I approach finance, operations, and problem solving. Each project reflects a broader effort 
+             to connect market structure, risk, and execution across different financial environments. Whether I’m analyzing loan trade workflows, 
+             modeling risk, or building market-focused tools, the objective is the same: reduce complexity, improve clarity, and support better decision-making. </p>
+
+              <p className="section-text mb-6">
+            I’m especially interested in the intersection of financial markets, operational discipline, and analytical rigor, where precision matters, details 
+            compound, and small mistakes carry real consequences.</p>
+
             <div className="mt-8">
               <h3 className="text-xl font-medium mb-4">Core Interests</h3>
               <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
@@ -265,7 +268,14 @@ const About = () => {
           </motion.div>
           <motion.div className="order-2" variants={itemVariants}>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed text-center">
-              Finance graduate specializing in financial data analysis and capital allocation.
+              This portfolio is a curated look at how I approach finance, operations, and problem solving. Each project reflects a broader effort
+              to connect market structure, risk, and execution across different financial environments. Whether I'm analyzing loan trade workflows,
+              modeling risk, or building market-focused tools, the objective is the same: reduce complexity, improve clarity, and support better decision-making.
+            </p>
+
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed text-center">
+              I'm especially interested in the intersection of financial markets, operational discipline, and analytical rigor, where precision matters, details
+              compound, and small mistakes carry real consequences.
             </p>
 
           </motion.div>

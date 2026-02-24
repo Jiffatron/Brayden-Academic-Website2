@@ -686,6 +686,46 @@ content: `
 
   },
 
+{
+  id: "interpolation-calculator",
+  title: "Interpolated Yield Curve Calculator",
+  description: "A tool that calculates intermediate yields between known maturities on a yield curve using linear interpolation, allowing investors and analysts to estimate yields for any term structure point.",
+  image: "https://via.placeholder.com/400x200/2563EB/FFFFFF?text=Yield+Curve+Interpolation",
+  tags: ["Finance", "Yield Curve", "Interpolation", "Excel"],
+  pdfUrl: "",
+  hasPreview: false,
+  position: 6,
+  content: `
+    <p class="mb-4">The Interpolated Yield Curve Calculator estimates yields for maturities not directly quoted on the Treasury curve. 
+    It uses linear interpolation between two known maturity points to derive the missing yield, an essential step in bond valuation and duration analysis.</p>
+
+    <h3 class="text-xl font-medium mb-3">Key Features</h3>
+    <ul class="mb-6 space-y-2">
+      <li>• Supports manual or automatic data entry for known maturities (e.g., 1Y, 2Y, 5Y, 10Y, 30Y)</li>
+      <li>• Performs linear interpolation using the formula:<br><code>y = y1 + (y2 - y1) × (x - x1) / (x2 - x1)</code></li>
+      <li>• Outputs the interpolated yield with 4-decimal precision</li>
+      <li>• Includes a visual representation of the full yield curve and the interpolated point</li>
+      <li>• Compatible with Excel and JavaScript numerical methods</li>
+    </ul>
+
+    <h3 class="text-xl font-medium mb-3">Example Calculation</h3>
+    <p class="mb-4">If the 2-Year yield is 4.20% and the 5-Year yield is 4.65%, the 3-Year interpolated yield is:</p>
+    <pre class="bg-gray-100 p-3 rounded-md text-sm mb-4">
+    y = 4.20 + (4.65 - 4.20) × (3 - 2) / (5 - 2)
+    y = 4.35%
+    </pre>
+
+    <h3 class="text-xl font-medium mb-3">Applications</h3>
+    <ul class="space-y-2">
+      <li>• Estimating zero-coupon yield curves for bond pricing</li>
+      <li>• Deriving discount factors for fixed-income valuation</li>
+      <li>• Filling missing yield data in incomplete Treasury datasets</li>
+      <li>• Enhancing accuracy in duration and convexity models</li>
+    </ul>
+  `
+},
+
+
   //{
     //id: "test4",
     //title: "Test Project 4",
@@ -706,6 +746,7 @@ content: `
       //</ul>
     //`
   //}
+
 ];
 
 // Academic interests data

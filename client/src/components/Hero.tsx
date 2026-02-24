@@ -60,7 +60,8 @@ const Hero = () => {
           <motion.h2
             className="text-xl text-muted-foreground font-light mb-6"
             variants={itemVariants}
-          >
+          > Global Markets Operations Analyst
+            <br />
             Finance Graduate | Texas Tech University
           </motion.h2>
 
